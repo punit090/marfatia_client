@@ -1,0 +1,319 @@
+{
+  "data": [
+    {
+      "_id": "6501c54415bfa912f1831806",
+      "contentType": "Company Profile",
+      "content": "<h1>Company Profile</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:20:52.282Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c56515bfa912f1831809",
+      "contentType": "Vision and Mission",
+      "content": "<h1>Vision and Mission</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:21:25.875Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c59215bfa912f183180c",
+      "contentType": "Advantages",
+      "content": "<h1><strong>Advantages</strong></h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:22:10.377Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c5a615bfa912f183180f",
+      "contentType": "The Team",
+      "content": "<h1>The Team</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:22:30.435Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c5be15bfa912f1831812",
+      "contentType": "Milestones",
+      "content": "<h1>Milestones</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:22:54.793Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c5ce15bfa912f1831815",
+      "contentType": "Client Speaks",
+      "content": "<p>Client Speaks</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:23:10.987Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c5f215bfa912f1831818",
+      "contentType": "Stock Market",
+      "content": "<h1>Stock Market</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:23:46.380Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c60615bfa912f183181b",
+      "contentType": "Currency",
+      "content": "<h1>Currency</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:24:06.796Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c61615bfa912f183181e",
+      "contentType": "Depository Services",
+      "content": "<p>Depository Services</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:24:22.049Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c62d15bfa912f1831821",
+      "contentType": "Mobile Trading",
+      "content": "<h1>Mobile Trading</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:24:45.753Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c64115bfa912f1831824",
+      "contentType": "Portfolio Management Services",
+      "content": "<h1>Portfolio Management Services</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:25:05.214Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c64f15bfa912f1831827",
+      "contentType": "Premium Client Services",
+      "content": "<p>Premium Client Services</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:25:19.411Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c65f15bfa912f183182a",
+      "contentType": "Digital Library",
+      "content": "<p>Digital Library</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:25:35.167Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c66d15bfa912f183182d",
+      "contentType": "Dial N Trade",
+      "content": "<p>Dial N Trade</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:25:49.040Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c68415bfa912f1831830",
+      "contentType": "NRI Desk",
+      "content": "<p>NRI Desk</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:26:12.639Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c69d15bfa912f1831833",
+      "contentType": "SLBM [Security Landing & Borrowing Merchandise]",
+      "content": "<p>SLBM [Security Landing &amp; Borrowing Merchandise]</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:26:37.372Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c7ed15bfa912f1831836",
+      "contentType": "Equity",
+      "content": "<h1>Equity</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:32:13.424Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c7fe15bfa912f1831839",
+      "contentType": "Derivatives",
+      "content": "<h1>Derivatives</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:32:30.733Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c80b15bfa912f183183c",
+      "contentType": "Currency",
+      "content": "<p>Currency</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:32:43.700Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c81915bfa912f183183f",
+      "contentType": "IPO",
+      "content": "<p>IPO</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:32:57.293Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c84215bfa912f1831842",
+      "contentType": "Daily Tips",
+      "content": "<h1>Daily Tips<span style=\"font-size: 72px;\"></span></h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:33:38.059Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c85315bfa912f1831845",
+      "contentType": "Research Reports",
+      "content": "<h1>Research Reports</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:33:55.828Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c86415bfa912f1831848",
+      "contentType": "How to Trade",
+      "content": "<h1>How to Trade</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:34:12.117Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c87115bfa912f183184b",
+      "contentType": "Mobile App",
+      "content": "<p>Mobile App</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:34:25.794Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c88015bfa912f183184e",
+      "contentType": "PMS",
+      "content": "<h1>PMS</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:34:40.784Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c8a115bfa912f1831851",
+      "contentType": "Partner With Us",
+      "content": "<p>Partner With Us</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:35:13.952Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c8bb15bfa912f1831854",
+      "contentType": "Disclamer",
+      "content": "<h1>Disclamer</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:35:39.243Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c8cf15bfa912f1831857",
+      "contentType": "Privacy Policy",
+      "content": "<style type=\"text/css\"><!--td {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}--></style><p><span style=\"font-size:24pt;font-family:times new roman;font-weight:normal;font-style:normal;color:#333333;text-align:center;\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Privacy Policy&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14915,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;9&quot;:1,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:3355443},&quot;15&quot;:&quot;\\&quot;times new roman\\&quot;, serif&quot;,&quot;16&quot;:24}\">Privacy Policy</span></p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:35:59.167Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c8db15bfa912f183185a",
+      "contentType": "Terms of Use",
+      "content": "<style type=\"text/css\"><!--td {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}--></style><p><span style=\"font-size:23pt;font-family:Lora,Arial;font-weight:bold;font-style:normal;color:#318235;text-align:center;\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Terms of Use&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:31299,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;9&quot;:1,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:3244597},&quot;15&quot;:&quot;Lora&quot;,&quot;16&quot;:23,&quot;17&quot;:1}\">Terms of Use</span></p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:36:11.355Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c8f015bfa912f183185d",
+      "contentType": "AdvisoryInvestors",
+      "content": "<h1>AdvisoryInvestors</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:36:32.688Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c90415bfa912f1831860",
+      "contentType": "Investor Charter Stock Broker",
+      "content": "<p>Investor Charter Stock Broker</p>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:36:52.423Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c91515bfa912f1831863",
+      "contentType": "Investor Charter Research Analyst",
+      "content": "<h1>Investor Charter Research Analyst</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:37:09.051Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c92315bfa912f1831866",
+      "contentType": "Investor Charter of Depository Participant",
+      "content": "<h1>Investor Charter of Depository Participant</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:37:23.440Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c93115bfa912f1831869",
+      "contentType": "Advisory KYC Compliance",
+      "content": "<h1>Advisory KYC Compliance</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:37:37.275Z",
+      "__v": 0
+    },
+    {
+      "_id": "6501c94115bfa912f183186c",
+      "contentType": "Investor Charter in Respect of Portfolio Management Services",
+      "content": "<h1>Investor Charter in Respect of Portfolio Management Services</h1>",
+      "deleted": false,
+      "active": true,
+      "createdAt": "2023-09-13T14:37:53.841Z",
+      "__v": 0
+    }
+  ]
+}
