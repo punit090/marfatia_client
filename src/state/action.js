@@ -17,3 +17,8 @@ export const storeContent = (payload) => ({
     type: 'STORE_GALLARY_CATEGORY',
     payload,
   });
+  
+  export const storeGallery = (payload) => ({
+    type: 'STORE_GALLARY',
+    payload,
+  });

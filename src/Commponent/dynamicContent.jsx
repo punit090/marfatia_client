@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import HaderContent2 from "./HaderContent2";
 import { useSelector } from "react-redux";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import ContentFooterButton from "./contentFooterButton";
 import { Link, useLocation } from "react-router-dom";
 
@@ -19,6 +19,8 @@ const DynamicContent = () => {
 
   return (
     <React.Fragment>
+       {pageContent  ? (
+        <React.Fragment>
       <HaderContent2 Title={pageContent.contentType} SubTitle={pageContent.contentType} />
       <Container>
 
@@ -27,6 +29,13 @@ const DynamicContent = () => {
         {/* <ContentFooterButton></ContentFooterButton> */}
 
       </Container>
+      </React.Fragment>
+
+      ) :(
+        <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <Spinner animation="border" variant="primary" size="lg" />
+      </div>
+        )}
     </React.Fragment>
   );
 };

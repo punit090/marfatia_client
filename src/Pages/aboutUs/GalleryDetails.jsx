@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HaderContent2 from "../../Commponent/HaderContent2";
 import CrsProgram2 from "../../assets/img/CRS2.jpg";
 import CrsProgram from "../../assets/img/CRSProgram.jpg";
@@ -8,6 +8,12 @@ import Independence2 from "../../assets/img/Independence2.jpg";
 import Independence from "../../assets/img/indipendanceDay.jpg";
 
 const GalleryDetails = () => {
+
+  const location = useLocation();
+  const propsData = location.categoryId;
+  console.log(propsData);
+
+
   return (
     <React.Fragment>
       <HaderContent2 Title="Gallery Details" SubTitle="Gallery Details" />

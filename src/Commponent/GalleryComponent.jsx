@@ -11,7 +11,7 @@ import Waterfall from "./../assets/img/whaterFall.jpg";
 import "./../css/elements-css/team.css";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { storeGalleryCategory } from "../state/action";
+import { storeGallery, storeGalleryCategory } from "../state/action";
 
 const GalleryComponent = () => {
 
@@ -30,8 +30,21 @@ const GalleryComponent = () => {
       
   };
 
+  const fetchGallery = () => {
+    axios
+      .get(`http://localhost:3200/api/gallery`)
+      .then((res) => {
+        dispatch(storeGallery(res.data.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      
+  };
+
   useEffect(()=>{
     fetchgalleryCategory();
+    fetchGallery()
 
   },[dispatch])
 
@@ -44,10 +57,12 @@ const GalleryComponent = () => {
             <h2>Gallery</h2>
           </div>
 
+ 
+
+          <div className="row clearfix" style={{ padding: "30px 0px" }}>
           {arrayOfContents && arrayOfContents.length > 0 ? arrayOfContents.map(item=> (
-          <div className="row clearfix">
-            <div className="col-lg-3 col-md-6 col-sm-12 team-block">
-              <Link to="/gallery-details">
+            <div className="col-lg-3 col-md-6 mb-4 col-sm-12 team-block">
+              <Link to="/gallery-details" categoryId={item._id}>
                 <div
                   className="team-block-one wow fadeInUp animated"
                   data-wow-delay="00ms"
@@ -61,111 +76,14 @@ const GalleryComponent = () => {
                     </div>
                     <div className="lower-content">
                       <h3>
-                        <Link to="/gallery-details">{item.gallaryCategoryTitle}</Link>
+                        <Link to="/gallery-details" categoryId={item._id}>{item.gallaryCategoryTitle}</Link>
                       </h3>
                     </div>
                   </div>
                 </div>
               </Link>
             </div>
-          </div>
           )):(<div>loading plese wait ...</div>)}
-
-          <div className="row clearfix" style={{ padding: "30px 0px" }}>
-            <div className="col-lg-3 col-md-6 col-sm-12 team-block">
-              <Link to="/gallery-details">
-                <div
-                  className="team-block-one wow fadeInUp animated"
-                  data-wow-delay="600ms"
-                  data-wow-duration="1500ms"
-                >
-                  <div className="inner-box">
-                    <Link to="#">
-                      <div className="image-box">
-                        <figure className="image">
-                          <img src={Waterfall} alt="img" />
-                        </figure>
-                      </div>
-                    </Link>
-                    <div className="lower-content">
-                      <h3>
-                        <Link to="/gallery-details">
-                          Picnic at Ninai Waterfall
-                        </Link>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 team-block">
-              <Link to="/gallery-details">
-                <div
-                  className="team-block-one wow fadeInUp animated"
-                  data-wow-delay="600ms"
-                  data-wow-duration="1500ms"
-                >
-                  <div className="inner-box">
-                    <div className="image-box">
-                      <figure className="image">
-                        <img src={Awards} alt="img" />
-                      </figure>
-                    </div>
-                    <div className="lower-content">
-                      <h3>
-                        <Link to="/gallery-details">Awards to Sales Team</Link>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 team-block">
-              <Link to="/gallery-details">
-                <div
-                  className="team-block-one wow fadeInUp animated"
-                  data-wow-delay="600ms"
-                  data-wow-duration="1500ms"
-                >
-                  <div className="inner-box">
-                    <div className="image-box">
-                      <figure className="image">
-                        <img src={Successfully} alt="img" />
-                      </figure>
-                    </div>
-                    <div className="lower-content">
-                      <h3>
-                        <Link to="/gallery-details">CSR Program</Link>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 team-block">
-              <Link to="/gallery-details">
-                <div
-                  className="team-block-one wow fadeInUp animated"
-                  data-wow-delay="600ms"
-                  data-wow-duration="1500ms"
-                >
-                  <div className="inner-box">
-                    <div className="image-box">
-                      <figure className="image">
-                        <img src={Trading} alt="img" />
-                      </figure>
-                    </div>
-                    <div className="lower-content">
-                      <h3>
-                        <Link to="/gallery-details">
-                          Great Successfully Completion
-                        </Link>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
           </div>
           {/* <div className="more-btn mt_60">
             <Link to="/gallery-details" className="theme-btn-one">

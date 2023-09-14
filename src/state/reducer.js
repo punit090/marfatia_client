@@ -2,7 +2,8 @@ const initialState = {
   content: [],
   bannerList: [],
   newsList: [],
-  galleryCategoryList:[]
+  galleryCategoryList:[],
+  gallery:[]
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -18,6 +19,9 @@ const rootReducer = (state = initialState, action) => {
 
       case "STORE_GALLARY_CATEGORY":
       return { ...state, galleryCategoryList: action.payload };
+
+      case "STORE_GALLARY":
+      return { ...state, gallery: action.payload };
 
     default:
       return state;
