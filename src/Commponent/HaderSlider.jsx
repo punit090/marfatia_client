@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import SliderImg4 from "./../assets/img/Banner1.jpg";
-import SliderImg5 from "./../assets/img/Banner12f41.jpg";
-import SliderImg2 from "./../assets/img/Banner1newbanner1.jpg";
-import SliderImg3 from "./../assets/img/Banner2marfatianewbanner2.jpg";
-import SliderImg1 from "./../assets/img/Banner4newbanner5.jpg";
+
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { storeBanner } from "../state/action";

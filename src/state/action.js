@@ -22,3 +22,20 @@ export const storeContent = (payload) => ({
     type: 'STORE_GALLARY',
     payload,
   });
+
+
+  export const setCategory = (payload) => ({
+    type: 'SET_CATEGORY',
+    payload,
+  });
+
+
+  export const setNews = (payload) => ({
+    type: 'SET_NEWS',
+    payload,
+  });
+
+  export const storeDownloads = (payload) =>({
+    type: 'SET_DOWNLOAD',
+    payload,
+  })

@@ -1,20 +1,47 @@
 import { Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import Footer from "../Commponent/Footer";
 import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
+import axios from "axios";
+import { BASE_API_URL } from "../helpers/apiHelper";
 
 const WithdrawlForm = () => {
+  const [errorBanner, setErrorBanner] = useState("");
+  const [successBanner, setSuccessBanner] = useState("");
+
+  const addWidrow = async (data) => {
+    console.log("called postPI");
+  
+    try {
+      const res = await axios.post(BASE_API_URL+"/api/withdrow", data);
+      console.log("res == >", res);
+  
+      if (res.data) {
+        setSuccessBanner(res.data.message);
+        setTimeout(() => {
+          setSuccessBanner(""); // Clear the success banner message
+        }, 3000);
+      }
+      if (res.error) {
+        setErrorBanner(res.error.message);
+        setTimeout(() => {
+          setErrorBanner(""); // Clear the success banner message
+        }, 3000);
+      }
+    } catch (err) {
+      setErrorBanner(err.message); // Assuming err.message contains the error message
+    }
+  };
+
   // Creating schema
   const schema = Yup.object().shape({
     email: Yup.string()
       .required("Email is a required field")
       .email("Invalid email format"),
-    password: Yup.string()
-      .required("Password is a required field")
-      .min(8, "Password must be at least 8 characters"),
+
     clinetCode: Yup.string().required("Clinet Code  is a required "),
     name: Yup.string().required("Name  is a required "),
     segment: Yup.string().required("Segment  is a required "),
@@ -38,9 +65,12 @@ const WithdrawlForm = () => {
             panNo: "",
             withdraw: "",
           }}
-          onSubmit={(values) => {
+          onSubmit={async (values,{ resetForm }) => {
             // Alert the input values of the form that we filled
-            alert(JSON.stringify(values));
+            console.log(values)
+            await addWidrow(values);
+            resetForm()
+            
           }}
         >
           {({
@@ -58,10 +88,26 @@ const WithdrawlForm = () => {
                   <h1 className="formTitle">Withdraw Funds From Marfatia</h1>
                   {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
                   <Card style={{ padding: "20px" }}>
+
+                    {
+                      successBanner?(
+                        <div class="alert alert-success" role="alert">
+                        {successBanner}
+                      </div>
+                      ):null
+                    }
+                    {
+                      errorBanner?(
+                        <div class="alert alert-danger" role="alert">
+                        {errorBanner}
+                      </div>
+                      ):null
+                    }
+                   
                     <Row>
                       <Col lg="6">
                         <div className="mainLableDiv">
-                          <lable>Client Code*</lable>
+                          <label>Client Code*</label>
                           <input
                             type="text"
                             name="clinetCode"
@@ -187,7 +233,7 @@ const WithdrawlForm = () => {
                         <div className="mainLableDiv">
                           <lable>Withdraw Amount (in Rs.):*</lable>
                           <input
-                            type="text"
+                            type="number"
                             name="withdraw"
                             onChange={handleChange}
                             onBlur={handleBlur}

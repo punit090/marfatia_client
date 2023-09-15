@@ -4,23 +4,48 @@ import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import "./../Modal/modal.css";
+import axios from "axios";
+import { BASE_API_URL } from "../helpers/apiHelper";
 
 const QuickContact = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [errorBanner, setErrorBanner] = useState("");
+  const [successBanner, setSuccessBanner] = useState("");
+
+  const addContect = async (data) => {
+    console.log("called postPI");
+
+    try {
+      const res = await axios.post(BASE_API_URL + "/api/quick-connect", data);
+      console.log("res == >", res);
+
+      if (res.data) {
+        setSuccessBanner(res.data.message);
+        setTimeout(() => {
+          setSuccessBanner(""); // Clear the success banner message
+        }, 3000);
+      }
+      if (res.error) {
+        setErrorBanner(res.error.message);
+        setTimeout(() => {
+          setErrorBanner(""); // Clear the success banner message
+        }, 3000);
+      }
+    } catch (err) {
+      setErrorBanner(err.message); // Assuming err.message contains the error message
+    }
+  };
+
   const schema = Yup.object().shape({
+    name: Yup.string().required("Name is must be required !!!"),
+    contactNo: Yup.string().required("number is must be required !!!"),
+    subject: Yup.string().required("subject is must be required !!!"),
     email: Yup.string()
       .required("Email is a required field")
       .email("Invalid email format"),
-    password: Yup.string()
-      .required("Password is a required field")
-      .min(8, "Password must be at least 8 characters"),
-    applying: Yup.string().required("required !!!"),
-    name: Yup.string().required("Name is must be required !!!"),
-    mobileNumber: Yup.string().required("number is must be required !!!"),
-    choiseFile: Yup.string().required("required !!!"),
     message: Yup.string().required("Message is required !!!"),
   });
 
@@ -37,22 +62,31 @@ const QuickContact = () => {
           <Modal.Title> Quick Contact Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {" "}
+          {successBanner ? (
+            <div class="alert alert-success" role="alert">
+              {successBanner}
+            </div>
+          ) : null}
+          {errorBanner ? (
+            <div class="alert alert-danger" role="alert">
+              {errorBanner}
+            </div>
+          ) : null}{" "}
           {/* Wrapping form inside formik tag and passing our schema to validationSchema prop */}
           <Formik
             validationSchema={schema}
             initialValues={{
-              email: "",
-              password: "",
-              applying: "",
               name: "",
-              mobileNumber: "",
-              choiseFile: "",
+              email: "",
+              contactNo: "",
+              subject: "",
               message: "",
             }}
-            onSubmit={(values) => {
+            onSubmit={async (values, { resetForm }) => {
               // Alert the input values of the form that we filled
-              alert(JSON.stringify(values));
+              console.log(values);
+              await addContect(values);
+              resetForm();
             }}
           >
             {({
@@ -86,19 +120,19 @@ const QuickContact = () => {
                     <lable className="modalLable">Phone Number *</lable>
                     <input
                       type="text"
-                      name="mobileNumber"
+                      name="contactNo"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.mobileNumber}
+                      value={values.contactNo}
                       placeholder="Enter your number"
                       className="form-control inp_text modalInput"
-                      id="mobileNumber"
+                      id="contactNo"
                     />
                     {/* If validation is not passed show errors */}
                     <p className="error">
-                      {errors.mobileNumber &&
-                        touched.mobileNumber &&
-                        errors.mobileNumber}
+                      {errors.contactNo &&
+                        touched.contactNo &&
+                        errors.contactNo}
                     </p>
                     {/* <lable className="modalLable">Prefered Location *</lable>
                     <Select className=" modalInput" options={options} /> */}
@@ -120,21 +154,38 @@ const QuickContact = () => {
                     <lable className="modalLable">
                       Subject (Let us know your topic of interest) *
                     </lable>
-                    <select class="form-select" id="sel1" name="sellist1">
-                      <option>-- Select Subject --</option>
-                      <option>Currency</option>
-                      <option>Depository Services</option>
-                      <option>Mobile Trading</option>
-                      <option>Portfolio Management Services</option>
-                      <option>Premium Client Services</option>
-                      <option>Mutual Fundss</option>
-                      <option>Digital Library</option>
-                      <option>NRI Desk</option>
-                      <option>Dial N Trade</option>
-                      <option>
+                    <select
+                      class="form-select"
+                      name="subject"
+                      type="subject"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.subject}
+                      placeholder="Enter email id / username"
+                      className="form-control inp_text modalInput"
+                      id="subject"
+                    >
+                      <option value="">-- Select Subject --</option>
+                      <option value="Currency">Currency</option>
+                      <option value="Depository Services">
+                        Depository Services
+                      </option>
+                      <option value="Mobile Trading">Mobile Trading</option>
+                      <option value="Portfolio Management Services">
+                        Portfolio Management Services
+                      </option>
+                      <option value="Premium Client Services">
+                        Premium Client Services
+                      </option>
+                      <option value="Mutual Funds">Mutual Funds</option>
+                      <option value="Digital Library">Digital Library</option>
+                      <option value="NRI Desk">NRI Desk</option>
+                      <option value="Dial N Trade">Dial N Trade</option>
+                      <option value="SLBM [Security Landing & Borrowing Merchandise]">
                         SLBM [Security Landing & Borrowing Merchandise]
                       </option>
                     </select>
+
                     <lable className="modalLable">Message</lable>
                     <textarea
                       name="message"
@@ -142,6 +193,10 @@ const QuickContact = () => {
                       defaultValue={values.message}
                       rows={4}
                       className="contactTextAria modalInput"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.message}
+                      id="message"
                     />
                     {/* If validation is not passed show errors */}
                     {/* <p className="error">

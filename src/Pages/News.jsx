@@ -6,8 +6,14 @@ import HaderContent2 from "../Commponent/HaderContent2";
 import NewsImg from "../assets/img/Sensex.jpg";
 import PostNews from "../assets/img/post-1.jpg";
 import "../css/elements-css/blog.css";
+import { useSelector } from "react-redux";
+
 
 const News = () => {
+
+  const selectedNews = useSelector((state) => state.selectedNews);
+
+
   return (
     <React.Fragment>
       <HaderContent2 Title="News" SubTitle="News" />
@@ -50,7 +56,7 @@ const News = () => {
                         Soon...Text Will Be Coming Soon...Text Will Be Coming
                         Soon.
                       </p>
-                      <blockquote>
+                      {/* <blockquote>
                         <div className="icon-box">
                           <i className="icon-47" />
                         </div>
@@ -59,7 +65,7 @@ const News = () => {
                           Soon...Text Will Be Coming Soon...Text Will Be Coming
                         </p>
                         <h4>Text Will Be Coming Soon...</h4>
-                      </blockquote>
+                      </blockquote> */}
                       <p>
                         Text Will Be Coming Soon...Text Will Be Coming
                         Soon...Text Will Be Coming Soon...Text Will Be Coming

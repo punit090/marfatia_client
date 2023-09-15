@@ -23,11 +23,8 @@ const DynamicContent = () => {
         <React.Fragment>
       <HaderContent2 Title={pageContent.contentType} SubTitle={pageContent.contentType} />
       <Container>
-
         <div dangerouslySetInnerHTML={{ __html: pageContent.content }} />
-        
         {/* <ContentFooterButton></ContentFooterButton> */}
-
       </Container>
       </React.Fragment>
 

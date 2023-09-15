@@ -216,7 +216,7 @@ const Hader = () => {
                                 </Link>
                               </div>
                               <div className="col-lg-6">
-                                <Link to="/premium-client-services">
+                                <Link to="/cms" state={"6501c64f15bfa912f1831827"}>
                                   Premium Client Services
                                 </Link>
                                 <Link to="#">Mutual Funds</Link>
@@ -263,8 +263,8 @@ const Hader = () => {
                             Research & Knowledge <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            <Link to="/cms" state={"6501c84215bfa912f1831842"}>Daily Tips</Link>
-                            <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link>
+                            {/* <Link to="/cms" state={"6501c84215bfa912f1831842"}>Daily Tips</Link> */}
+                            {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
                             <Link to="/cms" state={"6501c86415bfa912f1831848"}>How to Trade</Link>
                             <Link to="/cms" state={"6501c87115bfa912f183184b"}>Mobile App </Link>
                             <Link to="/cms" state={"6501c88015bfa912f183184e"}>PMS</Link>
@@ -300,7 +300,7 @@ const Hader = () => {
                             >
                               Open An Account
                             </Link>
-                            <Link to="#">Partner With Us</Link>
+                            <Link to="/cms" state={"6501c8a115bfa912f1831851"}>Partner With Us</Link>
                           </div>
                         </div>
                       </li>

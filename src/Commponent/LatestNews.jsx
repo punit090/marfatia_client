@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import News1 from "./../assets/img/Sensex.jpg";
 import "./../css/elements-css/news.css";
 
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setNews, storeNews } from "../state/action";
+
 const LatestNews = () => {
+
+  const shortMonthNames = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+
+  const arrayOfNews = useSelector((state) => state.newsList);
+  const dispatch = useDispatch();
+
+  const fetchNews = () => {
+    axios
+      .get(`http://localhost:3200/api/news-master`)
+      .then((res) => {
+        dispatch(storeNews(res.data.data));
+        console.log(res.data.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log("news master done");
+      });
+  };
+
+  function handleClick(item){
+    dispatch(setNews(item));
+}
+
+
+  useEffect(() => {
+    fetchNews();
+  }, []);
+
+
+
+
   return (
     <div>
       {/* news-section */}
@@ -14,121 +54,62 @@ const LatestNews = () => {
             <h2>
               Get More Update For <br />
               Tread
+              
             </h2>
           </div>
           <div className="row clearfix">
-            <div className="col-lg-4 col-md-6 col-sm-12 news-block">
+           
+                
+                {arrayOfNews && arrayOfNews.length > 0 ? (
+              arrayOfNews.map((item) => (
+                <React.Fragment>
+ <div className="col-lg-4 col-md-6 col-sm-12 news-block">
               <div
                 className="news-block-one wow fadeInUp animated"
                 data-wow-delay="00ms"
                 data-wow-duration="1500ms"
               >
+
                 <div className="inner-box">
+
                   <div className="image-box">
                     <figure className="image">
                       <Link to="/news">
-                        <img src={News1} alt="img" />
+                        <img src={`http://localhost:3200/api/news-images/${item.imagePath}`} alt="img" onClick={()=>{handleClick(item)}} />
                       </Link>
                     </figure>
                     <h2>
-                      15<span>APRIL</span>
+                      {item.date.split("T")[0].split("-")[2]}<span>{item.date.split("T")[0].split("-")[2]}</span>
                     </h2>
                   </div>
                   <div className="lower-content">
                     <h3>
-                      <Link to="/news">
-                        Rishabh Instruments IPO GMP (Grey Market Premium)
+                      <Link to="/news" onClick={()=>{handleClick(item)}}>
+                        {item.newsTitle}
                       </Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon...Text Will Be Coming Soon
+                     {item.description}
                     </p>
                     <ul className="post-info">
                       <li>
                         <i className="icon-21" />
-                        <Link to="/news">29-08-2023</Link>
+                        <Link to="/news" onClick={()=>{handleClick(item)}}>{item.date.split("T")[0]}</Link>
                       </li>
                     </ul>
                   </div>
-                </div>
+                  </div>
+
+                  
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 news-block">
-              <div
-                className="news-block-one wow fadeInUp animated"
-                data-wow-delay="300ms"
-                data-wow-duration="1500ms"
-              >
-                <div className="inner-box">
-                  <div className="image-box">
-                    <figure className="image">
-                      <Link to="/news">
-                        <img src={News1} alt="img" />
-                      </Link>
-                    </figure>
-                    <h2>
-                      14<span>APRIL</span>
-                    </h2>
-                  </div>
-                  <div className="lower-content">
-                    <h3>
-                      <Link to="/news">
-                        Vishnu Prakash R Punglia IPO subscribed 87.82 times at
-                        close
-                      </Link>
-                    </h3>
-                    <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon...Text Will Be Coming Soon.
-                    </p>
-                    <ul className="post-info">
-                      <li>
-                        <i className="icon-21" />
-                        <Link to="/news">29-08-2023</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 news-block">
-              <div
-                className="news-block-one wow fadeInUp animated"
-                data-wow-delay="600ms"
-                data-wow-duration="1500ms"
-              >
-                <div className="inner-box">
-                  <div className="image-box">
-                    <figure className="image">
-                      <Link to="/news">
-                        <img src={News1} alt="img" />
-                      </Link>
-                    </figure>
-                    <h2>
-                      13<span>APRIL</span>
-                    </h2>
-                  </div>
-                  <div className="lower-content">
-                    <h3>
-                      <Link to="/news">
-                        Tiger Global Fully Exits Zomato, Sells 1.4% Stake?
-                      </Link>
-                    </h3>
-                    <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon...Text Will Be Coming Soon
-                    </p>
-                    <ul className="post-info">
-                      <li>
-                        <i className="icon-21" />
-                        <Link to="/news">29-08-2023</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </React.Fragment>
+                  
+                ))) : (
+                  <div>loading plese wait ...</div>
+                )}
+
+           
           </div>
         </div>
         <div className="more-btn ">

@@ -34,6 +34,7 @@ import Footer from "./Commponent/Footer";
 import GalleryDetails from "./Pages/aboutUs/GalleryDetails";
 import Gallery from "./Pages/aboutUs/Gallery";
 import DynamicContent from "./Commponent/dynamicContent";
+import DownloadForm from "./Modal/downloadForm";
 
 const apiUrl = process.env.API_URL;
 function App() {
@@ -55,24 +56,11 @@ function App() {
 
 
 
-  const fetchNews = () => {
-    axios
-      .get(`http://localhost:3200/api/news-master`)
-      .then((res) => {
-        dispatch(storeNews(res.data.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        console.log("news master done");
-      });
-  };
-
+  
 
   useEffect(() => {
+    console.log(process.env.NODE_ENV)
     fetchContents();
-    fetchNews();
   }, []);
 
   return (
@@ -96,6 +84,9 @@ function App() {
           {/* <Route path="/careers" element={<Career />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/cms" element={<DynamicContent />} />
+          <Route path="/complains" element={<Complain />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/new-downloads" element={<DownloadForm/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
