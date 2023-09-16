@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import News1 from "./../assets/img/Sensex.jpg";
 import "./../css/elements-css/news.css";
+import { Container, Spinner } from "react-bootstrap";
 
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,44 +10,51 @@ import { setNews, storeNews } from "../state/action";
 import { BASE_API_URL } from "../helpers/apiHelper";
 
 const LatestNews = () => {
-
   const shortMonthNames = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
-  const newsImagesPath = BASE_API_URL+"/api/news-images/"
-  const newsApi = BASE_API_URL+"/api/news-master"
-
-  const arrayOfNews = useSelector((state) => state.newsList);
+  const newsImagesPath = BASE_API_URL + "/api/news-images/";
+  const newsApi = BASE_API_URL + "/api/news-master";
+  const allNews = useSelector((state) => state.newsList);
+  const arrayOfNews = allNews.slice(0, 3);
   const dispatch = useDispatch();
 
   const fetchNews = () => {
-    axios
-      .get(newsApi)
-      .then((res) => {
-        dispatch(storeNews(res.data.data));
-        console.log(res.data.data)
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        console.log("news master done");
-      });
+    if (arrayOfNews.length === 0) {
+      axios
+        .get(newsApi)
+        .then((res) => {
+          dispatch(storeNews(res.data.data));
+          console.log(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("news master done");
+        });
+    }
   };
 
-  function handleClick(item){
+  function handleClick(item) {
     dispatch(setNews(item));
-}
-
+  }
 
   useEffect(() => {
     fetchNews();
   }, []);
-
-
-
 
   return (
     <div>
@@ -58,66 +66,85 @@ const LatestNews = () => {
             <h2>
               Get More Update For <br />
               Tread
-              
             </h2>
           </div>
           <div className="row clearfix">
-           
-                
-                {arrayOfNews && arrayOfNews.length > 0 ? (
+            {arrayOfNews && arrayOfNews.length > 0 ? (
               arrayOfNews.map((item) => (
                 <React.Fragment>
- <div className="col-lg-4 col-md-6 col-sm-12 news-block">
-              <div
-                className="news-block-one wow fadeInUp animated"
-                data-wow-delay="00ms"
-                data-wow-duration="1500ms"
-              >
-
-                <div className="inner-box">
-
-                  <div className="image-box">
-                    <figure className="image">
-                      <Link to="/news">
-                        <img src={newsImagesPath+item.imagePath} alt="img" onClick={()=>{handleClick(item)}} />
-                      </Link>
-                    </figure>
-                    <h2>
-                      {item.date.split("T")[0].split("-")[2]}<span>{shortMonthNames[parseInt(item.date.split("T")[0].split("-")[2], 10)]}</span>
-                    </h2>
+                  <div className="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div
+                      className="news-block-one wow fadeInUp animated"
+                      data-wow-delay="00ms"
+                      data-wow-duration="1500ms"
+                    >
+                      <div className="inner-box">
+                        <div className="image-box">
+                          <figure className="image">
+                            <Link to="/news">
+                              <img
+                                src={newsImagesPath + item.imagePath}
+                                alt="img"
+                                onClick={() => {
+                                  handleClick(item);
+                                }}
+                              />
+                            </Link>
+                          </figure>
+                          <h2>
+                            {item.date.split("T")[0].split("-")[2]}
+                            <span>
+                              {
+                                shortMonthNames[
+                                  parseInt(
+                                    item.date.split("T")[0].split("-")[2],
+                                    10
+                                  ) - 1
+                                ]
+                              }
+                            </span>
+                          </h2>
+                        </div>
+                        <div className="lower-content">
+                          <h3>
+                            <Link
+                              to="/news"
+                              onClick={() => {
+                                handleClick(item);
+                              }}
+                            >
+                              {item.newsTitle}
+                            </Link>
+                          </h3>
+                          <p>{item.description}</p>
+                          <ul className="post-info">
+                            <li>
+                              <i className="icon-21" />
+                              <Link
+                                to="/news"
+                                onClick={() => {
+                                  handleClick(item);
+                                }}
+                              >
+                                {item.date.split("T")[0]}
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="lower-content">
-                    <h3>
-                      <Link to="/news" onClick={()=>{handleClick(item)}}>
-                        {item.newsTitle}
-                      </Link>
-                    </h3>
-                    <p>
-                     {item.description}
-                    </p>
-                    <ul className="post-info">
-                      <li>
-                        <i className="icon-21" />
-                        <Link to="/news" onClick={()=>{handleClick(item)}}>{item.date.split("T")[0]}</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  </div>
-
-                  
-              </div>
-            </div>
                 </React.Fragment>
-                  
-                ))) : (
-                  <div>loading plese wait ...</div>
-                )}
-
-           
+              ))
+            ) : (
+              <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+              <Spinner animation="border" variant="primary" size="lg" />
+            </div>
+            )}
           </div>
         </div>
         <div className="more-btn ">
-          <Link to="/news" className="theme-btn-one">
+          <Link to="/all-news" className="theme-btn-one">
             See More
           </Link>
         </div>

@@ -36,6 +36,7 @@ import Gallery from "./Pages/aboutUs/Gallery";
 import DynamicContent from "./Commponent/dynamicContent";
 import DownloadForm from "./Modal/downloadForm";
 import { BASE_API_URL } from "./helpers/apiHelper";
+import AllNews from "./Pages/AllNews";
 
 const apiPath = BASE_API_URL+"/api/content-master"
 
@@ -89,7 +90,7 @@ function App() {
           <Route path="/cms" element={<DynamicContent />} />
           <Route path="/complains" element={<Complain />} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/new-downloads" element={<NewDownloads/>} />
+          <Route path="/all-news" element={<AllNews/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
