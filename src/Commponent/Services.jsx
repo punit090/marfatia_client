@@ -54,11 +54,9 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="#">Stock &amp; Market</Link>
+                      <Link to="/cms" state={"6501c5f215bfa912f1831818"}>Stock &amp; Market</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
                     </p>
                   </div>
                   <div className="overlay-content">
@@ -69,14 +67,13 @@ const Services = () => {
                       }}
                     />
                     <h3>
-                      <Link to="#">Stock &amp; Market</Link>
+                      <Link to="/cms" state={"6501c5f215bfa912f1831818"}>Stock &amp; Market</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                    stock market is the aggregation of buyers and sellers
                     </p>
                     <div className="btn-box">
-                      <Link to="#" className="theme-btn-one">
+                      <Link to="/cms" state={"6501c5f215bfa912f1831818"} className="theme-btn-one">
                         Read More
                       </Link>
                     </div>
@@ -98,23 +95,20 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="#">Depository Services</Link>
+                      <Link tto="/cms" state={"6501c61615bfa912f183181e"}>Depository Services</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
                     </p>
                   </div>
                   <div className="overlay-content">
                     <h3>
-                      <Link to="#">Depository Services</Link>
+                      <Link to="/cms" state={"6501c61615bfa912f183181e"}>Depository Services</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon..
+                      The first central securities depository in India based in Mumbai
                     </p>
                     <div className="btn-box">
-                      <Link to="#" className="theme-btn-one">
+                      <Link to="/cms" state={"6501c61615bfa912f183181e"} className="theme-btn-one">
                         Read More
                       </Link>
                     </div>
@@ -142,11 +136,9 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="#">Mobile Trading </Link>
+                      <Link to="/cms" state={"6501c62d15bfa912f1831821"}>Mobile Trading </Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon..
                     </p>
                   </div>
                   <div className="overlay-content">
@@ -157,14 +149,13 @@ const Services = () => {
                       }}
                     />
                     <h3>
-                      <Link to="#">Mobile Trading</Link>
+                      <Link to="/cms" state={"6501c62d15bfa912f1831821"}>Mobile Trading</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                    So you want to trade from any where?
                     </p>
                     <div className="btn-box">
-                      <Link to="#" className="theme-btn-one">
+                      <Link to="/cms" state={"6501c62d15bfa912f1831821"} className="theme-btn-one">
                         Read More
                       </Link>
                     </div>
@@ -192,11 +183,9 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="#">Portfolio Management Services</Link>
+                      <Link to="/cms" state={"6501c64115bfa912f1831824"}>Portfolio Management Services</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
                     </p>
                   </div>
                   <div className="overlay-content">
@@ -207,14 +196,13 @@ const Services = () => {
                       }}
                     />
                     <h3>
-                      <Link to="#">Portfolio Management</Link>
+                      <Link to="/cms" state={"6501c64115bfa912f1831824"}>Portfolio Management</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                    designed to provide total end to end customised/personalised services to HNI
                     </p>
                     <div className="btn-box">
-                      <Link to="#" className="theme-btn-one">
+                      <Link to="/cms" state={"6501c64115bfa912f1831824"} className="theme-btn-one">
                         Read More
                       </Link>
                     </div>
@@ -236,23 +224,21 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="#">Premium Client Services</Link>
+                      <Link to="/cms" state={"6501c64f15bfa912f1831827"}>Premium Client Services</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                      
                     </p>
                   </div>
                   <div className="overlay-content">
                     <h3>
-                      <Link to="#">Premium Client Services</Link>
+                      <Link to="/cms" state={"6501c64f15bfa912f1831827"}>Premium Client Services</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                    reduced charges from our advanced charting package and cutting-edge tools to live data feeds.
                     </p>
                     <div className="btn-box">
-                      <Link to="#" className="theme-btn-one">
+                      <Link to="/cms" state={"6501c64f15bfa912f1831827"} className="theme-btn-one">
                         Read More
                       </Link>
                     </div>
@@ -280,11 +266,10 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="#">Mutual Funds</Link>
+                      <Link to="https://marfatia.wealthmagic.in/" target="_blanck">Mutual Funds</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                     
                     </p>
                   </div>
                   <div className="overlay-content">
@@ -295,14 +280,13 @@ const Services = () => {
                       }}
                     />
                     <h3>
-                      <Link to="#">Mutual Funds</Link>
+                      <Link to="https://marfatia.wealthmagic.in/" target="_blanck">Mutual Funds</Link>
                     </h3>
                     <p>
-                      Text Will Be Coming Soon...Text Will Be Coming Soon...Text
-                      Will Be Coming Soon.
+                    A mutual fund is a pool of money managed by a professional Fund Manager.
                     </p>
                     <div className="btn-box">
-                      <Link to="#" className="theme-btn-one">
+                      <Link to="https://marfatia.wealthmagic.in/" target="_blanck" className="theme-btn-one">
                         Read More
                       </Link>
                     </div>

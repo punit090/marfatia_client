@@ -219,7 +219,7 @@ const Hader = () => {
                                 <Link to="/cms" state={"6501c64f15bfa912f1831827"}>
                                   Premium Client Services
                                 </Link>
-                                <Link to="#">Mutual Funds</Link>
+                                <Link to="https://marfatia.wealthmagic.in/" target="_blanck">Mutual Funds</Link>
                                 <Link to="/cms" state={"6501c65f15bfa912f183182a"}>Digital Library</Link>
                                 <Link to="/cms" state={"6501c66d15bfa912f183182d"}>Dial N Trade</Link>
                                 <Link to="/cms" state={"6501c68415bfa912f1831830"}>NRI Desk</Link>

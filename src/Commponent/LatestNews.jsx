@@ -72,7 +72,7 @@ const LatestNews = () => {
             {arrayOfNews && arrayOfNews.length > 0 ? (
               arrayOfNews.map((item) => (
                 <React.Fragment>
-                  <div className="col-lg-4 col-md-6 col-sm-12 news-block">
+                  <div className="col-lg-4 mt-4 col-md-6 col-sm-12 news-block">
                     <div
                       className="news-block-one wow fadeInUp animated"
                       data-wow-delay="00ms"
@@ -83,6 +83,8 @@ const LatestNews = () => {
                           <figure className="image">
                             <Link to="/news">
                               <img
+                               style={{height:"200px",width: "100%",    // Ensure the width scales proportionally
+                               objectFit: "cover"}}
                                 src={newsImagesPath + item.imagePath}
                                 alt="img"
                                 onClick={() => {
@@ -113,10 +115,14 @@ const LatestNews = () => {
                                 handleClick(item);
                               }}
                             >
-                              {item.newsTitle}
+                              {item.newsTitle.length > 30
+                                    ? item.newsTitle.substring(0, 30) + "..."
+                                    : item.newsTitle}
                             </Link>
                           </h3>
-                          <p>{item.description}</p>
+                          <p>{item.description.length > 100
+                                    ? item.description.substring(0, 100) + "..."
+                                    : item.description}</p>
                           <ul className="post-info">
                             <li>
                               <i className="icon-21" />
@@ -143,11 +149,7 @@ const LatestNews = () => {
             )}
           </div>
         </div>
-        <div className="more-btn ">
-          <Link to="/all-news" className="theme-btn-one">
-            See More
-          </Link>
-        </div>
+        
       </section>
       {/* news-section end */}
     </div>
