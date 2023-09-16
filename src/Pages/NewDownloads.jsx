@@ -13,7 +13,6 @@ const NewDownloads = () => {
 
 
   const mainFilePath = BASE_API_URL+"/api/downloads/"
-  const [show, setShow] = useState(false);
 
 
   const arrayOfContents = useSelector((state) => state.downloads);
@@ -32,6 +31,10 @@ const NewDownloads = () => {
       });
   };
 
+  useEffect(() => {
+    fetchDownloads();
+    console.log(arrayOfContents)
+  }, [dispatch]);
 
 
   return (

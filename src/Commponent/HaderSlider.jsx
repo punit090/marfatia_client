@@ -4,14 +4,20 @@ import Carousel from "react-bootstrap/Carousel";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { storeBanner } from "../state/action";
+import { BASE_API_URL } from "../helpers/apiHelper";
+
 const HaderSlider = () => {
   
   const arrayOfContents = useSelector((state) => state.bannerList);
   const dispatch = useDispatch();
 
+  const bannerApi = BASE_API_URL+"/api/banner"
+  const bannerImagePath = BASE_API_URL+"/api/banner-images/"
+
+
   const fetchBanner = () => {
     axios
-      .get(`http://localhost:3200/api/banner`)
+      .get(bannerApi)
       .then((res) => {
         dispatch(storeBanner(res.data.data));
       })
@@ -34,13 +40,11 @@ const HaderSlider = () => {
       <Carousel>
         {arrayOfContents && arrayOfContents.length > 0 ? arrayOfContents.map(item=> (
           <Carousel.Item>
-            {/* <img src={`http://localhost:3200/api/banner-images/${item.imagePath}`} alt="img" /> */}
-            <img src={`http://localhost:3200/api/banner-images/${item.imagePath}`} alt="img" />
+            <img src={bannerImagePath+item.imagePath} alt="img" />
           </Carousel.Item>
         ) ):(
           <Carousel.Item>
-          {/* <img src={`http://localhost:3200/api/banner-images/${item.imagePath}`} alt="img" /> */}
-          <img src={`http://localhost:3200/api/banner-images/1694670147496_banner.png}`} alt="img" />
+          <img src={bannerImagePath+"1694670147496_banner.png"} alt="img" />
         </Carousel.Item>
         )}
 

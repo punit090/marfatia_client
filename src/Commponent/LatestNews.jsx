@@ -15,14 +15,15 @@ const LatestNews = () => {
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
-  const mainFilePath = BASE_API_URL+"/api/news-images/"
+  const newsImagesPath = BASE_API_URL+"/api/news-images/"
+  const newsApi = BASE_API_URL+"/api/news-master"
 
   const arrayOfNews = useSelector((state) => state.newsList);
   const dispatch = useDispatch();
 
   const fetchNews = () => {
     axios
-      .get(`http://localhost:3200/api/news-master`)
+      .get(newsApi)
       .then((res) => {
         dispatch(storeNews(res.data.data));
         console.log(res.data.data)
@@ -78,7 +79,7 @@ const LatestNews = () => {
                   <div className="image-box">
                     <figure className="image">
                       <Link to="/news">
-                        <img src={mainFilePath+item.imagePath} alt="img" onClick={()=>{handleClick(item)}} />
+                        <img src={newsImagesPath+item.imagePath} alt="img" onClick={()=>{handleClick(item)}} />
                       </Link>
                     </figure>
                     <h2>

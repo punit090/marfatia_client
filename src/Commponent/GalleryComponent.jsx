@@ -4,6 +4,12 @@ import "./../css/elements-css/team.css";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { setCategory, storeGallery, storeGalleryCategory } from "../state/action";
+import { BASE_API_URL } from "../helpers/apiHelper";
+
+const categoryApiPath = BASE_API_URL+"/api/gallery-category"
+const galleryApiPath = BASE_API_URL+"/api/gallery"
+const galleryFilesPath = BASE_API_URL+"/api/gallery-images/"
+
 
 const GalleryComponent = () => {
   const arrayOfContents = useSelector((state) => state.galleryCategoryList);
@@ -11,7 +17,7 @@ const GalleryComponent = () => {
 
   const fetchgalleryCategory = () => {
     axios
-      .get(`http://localhost:3200/api/gallery-category`)
+      .get(categoryApiPath)
       .then((res) => {
         dispatch(storeGalleryCategory(res.data.data));
       })
@@ -22,7 +28,7 @@ const GalleryComponent = () => {
 
   const fetchGallery = () => {
     axios
-      .get(`http://localhost:3200/api/gallery`)
+      .get(galleryApiPath)
       .then((res) => {
         dispatch(storeGallery(res.data.data));
       })
@@ -66,7 +72,7 @@ const GalleryComponent = () => {
                         <div className="image-box">
                           <figure className="image">
                             <img
-                              src={`http://localhost:3200/api/gallery-images/${item.imagePath}`}
+                              src={galleryFilesPath+item.imagePath}
                               alt="img"
                             />
                           </figure>

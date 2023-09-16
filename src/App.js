@@ -35,6 +35,9 @@ import GalleryDetails from "./Pages/aboutUs/GalleryDetails";
 import Gallery from "./Pages/aboutUs/Gallery";
 import DynamicContent from "./Commponent/dynamicContent";
 import DownloadForm from "./Modal/downloadForm";
+import { BASE_API_URL } from "./helpers/apiHelper";
+
+const apiPath = BASE_API_URL+"/api/content-master"
 
 const apiUrl = process.env.API_URL;
 function App() {
@@ -42,7 +45,7 @@ function App() {
 
   const fetchContents = () => {
     axios
-      .get(`http://localhost:3200/api/content-master`)
+      .get(apiPath)
       .then((res) => {
         dispatch(storeContent(res.data.data));
       })
