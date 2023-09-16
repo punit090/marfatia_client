@@ -1,12 +1,39 @@
-import React from "react";
+import React ,{ useEffect, useState }from "react";
 import { Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import { Link } from "react-router-dom";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
+import { storeDownloads, storeGalleryCategory } from "../state/action";
+import axios from "axios";
+import { BASE_API_URL } from "../helpers/apiHelper";
+import { useDispatch, useSelector } from "react-redux";
+
+
 
 const NewDownloads = () => {
+
+
+  const mainFilePath = BASE_API_URL+"/api/downloads/"
+  const [show, setShow] = useState(false);
+
+
+  const arrayOfContents = useSelector((state) => state.downloads);
+
+  const dispatch = useDispatch();
+
+  const fetchDownloads = () => {
+    axios
+      .get(BASE_API_URL+"/api/downloads/")
+      .then((res) => {
+       
+        dispatch(storeDownloads(res.data.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+
+
   return (
     <React.Fragment>
       <HaderContent2 Title="New Downloads" SubTitle="New Downloads" />
@@ -19,23 +46,24 @@ const NewDownloads = () => {
             </tr>
           </thead>
           <tbody>
+          {arrayOfContents && arrayOfContents.length > 0 ? (
+              arrayOfContents.map((item,key) => (
+            
             <tr>
-              <td>1</td>
+              <td>{key+1}</td>
               <td>
                 {" "}
-                <Link to="#">
-                  <p>NSE EXCHANGE MARGIN FILE</p>
-                </Link>
+                  <p>{item.fileName}</p>
               </td>
-            </tr>
-            <tr>
-              <td>2</td>
               <td>
-                <Link to="#">
-                  <p> MSBPL_RemoteSupport</p>
-                </Link>
+                {" "}
+                  <a href={mainFilePath+item.filePath}>Download</a>
               </td>
             </tr>
+            ))
+            ) : (
+              <div>loading plese wait ...</div>
+            )}
           </tbody>
         </Table>
       </Container>

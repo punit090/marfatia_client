@@ -4,28 +4,28 @@ import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import "./../Modal/modal.css";
 import { useDispatch, useSelector } from "react-redux";
-import { storeDownloads, storeGalleryCategory } from "../state/action";
+import { storeDownloadForm, storeDownloads, storeGalleryCategory } from "../state/action";
 import axios from "axios";
 import { BASE_API_URL } from "../helpers/apiHelper";
 
 const DownloadForm = () => {
 
-  const mainFilePath = BASE_API_URL+"/api/downloads/"
+  const mainFilePath = BASE_API_URL+"/api/download-form/"
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const arrayOfContents = useSelector((state) => state.downloads);
+  const arrayOfContents = useSelector((state) => state.downloadForm);
 
   const dispatch = useDispatch();
 
   const fetchDownloads = () => {
     axios
-      .get(BASE_API_URL+"/api/downloads/")
+      .get(BASE_API_URL+"/api/download-form/")
       .then((res) => {
        
-        dispatch(storeDownloads(res.data.data));
+        dispatch(storeDownloadForm(res.data.data));
       })
       .catch((err) => {
         console.log(err);

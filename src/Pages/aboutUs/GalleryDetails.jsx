@@ -2,17 +2,14 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import HaderContent2 from "../../Commponent/HaderContent2";
-import CrsProgram2 from "../../assets/img/CRS2.jpg";
-import CrsProgram from "../../assets/img/CRSProgram.jpg";
-import Independence2 from "../../assets/img/Independence2.jpg";
-import Independence from "../../assets/img/indipendanceDay.jpg";
 import { useSelector } from "react-redux";
+import { BASE_API_URL } from "../../helpers/apiHelper";
 
 const GalleryDetails = () => {
 
  
 
-
+  const mainFilePath = BASE_API_URL+"/api/gallery-images/"
   const selectedCategory = useSelector((state) => state.selectedCategory);
 
   const arrayOfAllImages = useSelector((state) => state.gallery);
@@ -44,7 +41,7 @@ const GalleryDetails = () => {
                         <div className="image-box">
                           <figure className="image">
                             <img
-                              src={`http://localhost:3200/api/gallery-images/${item.imagePath}`}
+                              src={mainFilePath+item.imagePath}
                               alt="img"
                             />
                           </figure>

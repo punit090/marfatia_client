@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
 import NewsImg from "../assets/img/Sensex.jpg";
 import PostNews from "../assets/img/post-1.jpg";
 import "../css/elements-css/blog.css";
 import { useSelector } from "react-redux";
+import { BASE_API_URL } from "../helpers/apiHelper";
 
 
 const News = () => {
+  const shortMonthNames = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  const mainFilePath = BASE_API_URL+"/api/news-images/"
 
   const selectedNews = useSelector((state) => state.selectedNews);
 
@@ -27,35 +31,22 @@ const News = () => {
                   <div className="inner-box">
                     <div className="image-box">
                       <figure className="image">
-                        <img src={NewsImg} alt="img" />
+                        <img src={mainFilePath+selectedNews.imagePath} alt="img" />
                       </figure>
                       <h2>
-                        18<span>APRIL</span>
+                      {selectedNews.date.split("T")[0].split("-")[2]}<span>{shortMonthNames[parseInt(selectedNews.date.split("T")[0].split("-")[2], 10)-1]}</span>
                       </h2>
                     </div>
                     <div className="lower-content">
                       <h2>
-                        Vishnu Prakash R Punglia IPO subscribed 87.82 times at
-                        close
+                      {selectedNews.newsTitle}
                       </h2>
                       <p>
-                        Text Will Be Coming Soon...Text Will Be Coming
-                        Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        Soon.Text Will Be Coming Soon...Text Will Be Coming
-                        Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        Soon.Text Will Be Coming Soon...Text Will Be Coming
-                        Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        Soon.
+                      {selectedNews.description}
                       </p>
-                      <p>
-                        Text Will Be Coming Soon...Text Will Be Coming
-                        Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        Soon.Text Will Be Coming Soon...Text Will Be Coming
-                        Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        Soon.Text Will Be Coming Soon...Text Will Be Coming
-                        Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        Soon.
-                      </p>
+                     <div>
+                     <div dangerouslySetInnerHTML={{ __html: selectedNews.news }} />
+                     </div>
                       {/* <blockquote>
                         <div className="icon-box">
                           <i className="icon-47" />

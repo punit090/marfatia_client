@@ -5,6 +5,7 @@ const initialState = {
   galleryCategoryList:[],
   gallery:[],
   downloads:[],
+  downloadForm:[],
   selectedCategory:null
 };
 
@@ -33,6 +34,10 @@ const rootReducer = (state = initialState, action) => {
 
         case "SET_DOWNLOAD":
           return { ...state, downloads: action.payload };
+
+          case "SET_DOWNLOAD_FORM":
+          return { ...state, downloadForm: action.payload };
+  
   
 
     default:

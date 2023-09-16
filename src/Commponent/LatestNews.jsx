@@ -6,6 +6,7 @@ import "./../css/elements-css/news.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setNews, storeNews } from "../state/action";
+import { BASE_API_URL } from "../helpers/apiHelper";
 
 const LatestNews = () => {
 
@@ -13,6 +14,8 @@ const LatestNews = () => {
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
+
+  const mainFilePath = BASE_API_URL+"/api/news-images/"
 
   const arrayOfNews = useSelector((state) => state.newsList);
   const dispatch = useDispatch();
@@ -75,11 +78,11 @@ const LatestNews = () => {
                   <div className="image-box">
                     <figure className="image">
                       <Link to="/news">
-                        <img src={`http://localhost:3200/api/news-images/${item.imagePath}`} alt="img" onClick={()=>{handleClick(item)}} />
+                        <img src={mainFilePath+item.imagePath} alt="img" onClick={()=>{handleClick(item)}} />
                       </Link>
                     </figure>
                     <h2>
-                      {item.date.split("T")[0].split("-")[2]}<span>{item.date.split("T")[0].split("-")[2]}</span>
+                      {item.date.split("T")[0].split("-")[2]}<span>{shortMonthNames[parseInt(item.date.split("T")[0].split("-")[2], 10)]}</span>
                     </h2>
                   </div>
                   <div className="lower-content">

@@ -39,3 +39,8 @@ export const storeContent = (payload) => ({
     type: 'SET_DOWNLOAD',
     payload,
   })
+
+  export const storeDownloadForm = (payload) =>({
+    type: 'SET_DOWNLOAD_FORM',
+    payload,
+  })

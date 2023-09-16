@@ -86,7 +86,7 @@ function App() {
           <Route path="/cms" element={<DynamicContent />} />
           <Route path="/complains" element={<Complain />} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/new-downloads" element={<DownloadForm/>} />
+          <Route path="/new-downloads" element={<NewDownloads/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
