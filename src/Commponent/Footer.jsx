@@ -350,10 +350,8 @@ const Footer = () => {
                   <h3>Contact</h3>
                 </div>
               </Col>
-              <Col lg="3" md="4">
-                {/* <Link className="footerLink" to="#">
-                  NSE EXCHANGE MARGIN FILE
-                </Link> */}
+              <Col lg="4" md="4">
+                
                 <i className="icon-3">
                   <HiOutlineMail className="footerLink" />
                 </i>

@@ -1124,13 +1124,23 @@ img {
   display: block;
 }
 
-.dropdown-content a:hover {
+/* .dropdown-content a:hover {
   color: #85c226;
-}
+} */
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.tooltip {
+  background-color: #85c226; /* Green background color */
+  color: #fff; /* White text color */
+}
+
+.tooltip-inner {
+  font-size: 16px; /* Change this value to your desired font size */
+}
+
 
 .dropdown:hover .dropbtn {
   color: #85c226;
@@ -1144,6 +1154,8 @@ img {
   z-index: 1;
   border-top: 3px solid #85c226;
 }
+
+
 .titleLink {
   font-size: 14px;
   color: #000;
@@ -1190,9 +1202,9 @@ img {
   text-decoration: none;
   display: block;
 }
-.dropdown-content2 a:hover {
+/* .dropdown-content2 a:hover {
   color: #85c226;
-}
+} */
 .dropdown:hover .dropdown-content2 {
   display: block;
 }

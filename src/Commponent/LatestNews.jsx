@@ -99,7 +99,7 @@ const LatestNews = () => {
                               {
                                 shortMonthNames[
                                   parseInt(
-                                    item.date.split("T")[0].split("-")[2],
+                                    item.date.split("T")[0].split("-")[1],
                                     10
                                   ) - 1
                                 ]
@@ -149,7 +149,11 @@ const LatestNews = () => {
             )}
           </div>
         </div>
-        
+        <div className="more-btn ">
+                <Link to="/all-news" className="theme-btn-one">
+                  See More
+                </Link>
+              </div>
       </section>
       {/* news-section end */}
     </div>

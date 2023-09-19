@@ -17,6 +17,11 @@ const DynamicContent = () => {
     (item) => item._id === propsData
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    
+  }, [pageContent]);
+
   return (
     <React.Fragment>
        {pageContent  ? (
