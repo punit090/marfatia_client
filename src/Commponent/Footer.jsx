@@ -14,9 +14,9 @@ import DetailsClintBanckAc from "../Modal/DetailsClintBanckAc";
 import KeyManagerialPersonnels from "../Modal/KeyManagerialPersonnels";
 import QuickContact from "../Modal/QuickContact";
 import DownloadForm from "../Modal/downloadForm";
+import { BASE_API_URL } from "../helpers/apiHelper";
 import Background20 from "./../assets/img/shape-20.png";
 import Background21 from "./../assets/img/shape-21.png";
-import { BASE_API_URL } from "../helpers/apiHelper";
 
 const Footer = () => {
   return (
@@ -91,7 +91,7 @@ const Footer = () => {
                           Web Mail
                         </Link>
                       </li>
-                     
+
                       <li>
                         <Link to="/new-downloads" target="_blank">
                           New Downloads
@@ -122,31 +122,61 @@ const Footer = () => {
                   <div className="widget-content">
                     <ul className="links-list clearfix">
                       <li>
-                        <Link to="/new-downloads">NSE EXCHANGE MARGIN FILE</Link>
+                        <Link to="/new-downloads">
+                          NSE EXCHANGE MARGIN FILE
+                        </Link>
                       </li>
                       <li>
-                        <Link to="http://203.88.142.26:84/TradeWeb/login.aspx?ReturnUrl=%2fTradeWeb" target="_blank">DIGITAL CONTRACTS</Link>
+                        <Link
+                          to="http://203.88.142.26:84/TradeWeb/login.aspx?ReturnUrl=%2fTradeWeb"
+                          target="_blank"
+                        >
+                          DIGITAL CONTRACTS
+                        </Link>
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/Policies%20and%20Circulars.rar`}>POLICIES AND CIRCULARS</Link>
+                        <Link
+                          to={`${BASE_API_URL}/api/files/Policies%20and%20Circulars.rar`}
+                        >
+                          POLICIES AND CIRCULARS
+                        </Link>
                       </li>
                       <li>
                         <DownloadForm />
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/VERNACULAR_20LANGUAGES.rar`}>VERNACULAR LANGUAGES</Link>
+                        <Link
+                          to={`${BASE_API_URL}/api/files/VERNACULAR_20LANGUAGES.rar`}
+                        >
+                          VERNACULAR LANGUAGES
+                        </Link>
                       </li>
                       <li>
                         <DetailsClintBanckAc />
                       </li>
                       <li>
-                        <Link to="https://smartodr.in/intermediary/login" target="_blank" >ONLINE DISPUTE RESOLUTION LINK</Link>
+                        <Link
+                          to="https://smartodr.in/intermediary/login"
+                          target="_blank"
+                        >
+                          ONLINE DISPUTE RESOLUTION LINK
+                        </Link>
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/AUTHORISED_PERSON_LIST.pdf`} target="_blank">AUTHORIZED PERSON LIST</Link>
+                        <Link
+                          to={`${BASE_API_URL}/api/files/AUTHORISED_PERSON_LIST.pdf`}
+                          target="_blank"
+                        >
+                          AUTHORIZED PERSON LIST
+                        </Link>
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/FilingComplaints.pdf`} target="_blank">FILLING COMPLAINTS</Link>
+                        <Link
+                          to={`${BASE_API_URL}/api/files/FilingComplaints.pdf`}
+                          target="_blank"
+                        >
+                          FILLING COMPLAINTS
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -155,21 +185,27 @@ const Footer = () => {
               <div className="col-lg-3 col-md-6 col-sm-12 footer-column">
                 <div className="links-widget footer-widget ml_30">
                   <div className="widget-title">
-                    <h3>Usefull Links</h3>
+                    <h3>Useful Links</h3>
                   </div>
                   <div className="widget-content">
                     <ul className="links-list clearfix">
                       <li>
-                        <Link to="/cms" state={"6501c8cf15bfa912f1831857"}>Privacy Policy</Link>
+                        <Link to="/cms" state={"6501c8cf15bfa912f1831857"}>
+                          Privacy Policy
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c8db15bfa912f183185a"}>Terms &amp; Condition</Link>
+                        <Link to="/cms" state={"6501c8db15bfa912f183185a"}>
+                          Terms &amp; Condition
+                        </Link>
                       </li>
                       <li>
                         <Link to="#">Client's Reg. Form</Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>Disclaimer</Link>
+                        <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>
+                          Disclaimer
+                        </Link>
                       </li>
                       <li>
                         <Link to="#">PMS Disclosure</Link>
@@ -221,13 +257,19 @@ const Footer = () => {
                         <QuickContact />
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c8f015bfa912f183185d"}>Advisory for Investors</Link>
+                        <Link to="/cms" state={"6501c8f015bfa912f183185d"}>
+                          Advisory for Investors
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c90415bfa912f1831860"}>Investor Charter Stock Broker</Link>
+                        <Link to="/cms" state={"6501c90415bfa912f1831860"}>
+                          Investor Charter Stock Broker
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c91515bfa912f1831863"}>Investor Charter Research Analyst</Link>
+                        <Link to="/cms" state={"6501c91515bfa912f1831863"}>
+                          Investor Charter Research Analyst
+                        </Link>
                       </li>
                       <li>
                         <Link to="/cms" state={"6501c92315bfa912f1831866"}>
@@ -235,7 +277,9 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c93115bfa912f1831869"}>Advisory KYC Compliance</Link>
+                        <Link to="/cms" state={"6501c93115bfa912f1831869"}>
+                          Advisory KYC Compliance
+                        </Link>
                       </li>
                       <li>
                         <Link to="/cms" state={"6501c94115bfa912f183186c"}>
@@ -350,7 +394,6 @@ const Footer = () => {
                 </div>
               </Col>
               <Col lg="4" md="4">
-                
                 <i className="icon-3">
                   <HiOutlineMail className="footerLink" />
                 </i>
@@ -372,7 +415,7 @@ const Footer = () => {
                   0265-2351355
                 </a>
               </Col>
-              <Col lg="3" md="3">
+              <Col lg="2" md="3">
                 <Link
                   className="footerLinkContact"
                   to="https://www.facebook.com/vadodaraMarfatia"

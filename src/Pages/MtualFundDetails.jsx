@@ -2,8 +2,6 @@ import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Select from "react-select";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
 
 const MtualFundDetails = () => {
@@ -14,7 +12,7 @@ const MtualFundDetails = () => {
   ];
   return (
     <React.Fragment>
-      <HaderContent2 Title="Mutal fund" SubTitle="Mutal fund" />
+      <HaderContent2 Title="Mutual Funds " SubTitle="Mutual Funds" />
       <Container>
         <div style={{ padding: "40px 0px" }}>
           <h5 style={{ padding: "15px 0px", color: "#85c226" }}>
