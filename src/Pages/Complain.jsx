@@ -1,14 +1,10 @@
+import axios from "axios";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import Select from "react-select";
 import * as Yup from "yup";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
-import axios from "axios";
 import { BASE_API_URL } from "../helpers/apiHelper";
-
 
 const Complain = () => {
   const [errorBanner, setErrorBanner] = useState("");
@@ -16,55 +12,57 @@ const Complain = () => {
 
   const addComplain = async (data) => {
     console.log("called postPI");
-  
+
     try {
-      const res = await axios.post(BASE_API_URL+"/api/complain", data);
-      
-  
+      const res = await axios.post(BASE_API_URL + "/api/complain", data);
+
       if (res.data) {
         setSuccessBanner(res.data.message);
         setTimeout(() => {
-          setSuccessBanner(""); 
+          setSuccessBanner("");
         }, 3000);
       }
       if (res.error) {
         setErrorBanner(res.error.message);
         setTimeout(() => {
-          setErrorBanner(""); 
+          setErrorBanner("");
         }, 3000);
       }
     } catch (err) {
-      setErrorBanner(err.message); 
+      setErrorBanner(err.message);
       setTimeout(() => {
-        setErrorBanner(""); 
+        setErrorBanner("");
       }, 3000);
     }
   };
 
-
   const schema = Yup.object().shape({
     fName: Yup.string()
-    .required(' is required')
-    .min(2, ' must be at least 2 characters')
-    .max(25, ' cannot exceed 25 characters')
-    .matches(/^[A-Za-z]+$/, 'only contain letters and spaces'),
+      .required("  First name is required")
+      .min(2, " must be at least 2 characters")
+      .max(25, " cannot exceed 25 characters")
+      .matches(/^[A-Za-z]+$/, "only contain letters and spaces"),
     lName: Yup.string()
-    .required('First name is required')
-    .min(2, 'must be at least 2 characters')
-    .max(25, 'cannot exceed 25 characters')
-    .matches(/^[A-Za-z]+$/, ' only contain letters and spaces'),
+      .required(" Last name is requred")
+      .min(2, "must be at least 2 characters")
+      .max(25, "cannot exceed 25 characters")
+      .matches(/^[A-Za-z]+$/, " only contain letters and spaces"),
     email: Yup.string()
-      .required("Email is a required field")
+      .required("Email is required")
       .email("Invalid email format"),
     contactNo: Yup.string()
-    .required('Contact number is required')
-    .matches(/^[0-9]+$/, 'Contact number must contain only digits')
-    .min(10, 'Contact number must be at least 10 digits')
-    .max(10, 'Contact number cannot exceed 10 digits'),
-    department: Yup.string().required(" required "),
-    address: Yup.string().required(" Addres  is a required ").min(5, 'Address must be at least 5 characters')
-    .max(100, 'Address cannot exceed 100 characters'),
-    complain: Yup.string().required("required ").min(5, 'must be at least 5 characters'),
+      .required("Contact number is required")
+      .matches(/^[0-9]+$/, "Contact number must contain only digits")
+      .min(10, "Contact number must be at least 10 digits")
+      .max(10, "Contact number cannot exceed 10 digits"),
+    department: Yup.string().required(" This fild is  required "),
+    address: Yup.string()
+      .required(" Address is required")
+      .min(5, "Address must be at least 5 characters")
+      .max(100, "Address cannot exceed 100 characters"),
+    complain: Yup.string()
+      .required("This field is required ")
+      .min(5, "must be at least 5 characters"),
   });
   const options = [
     { value: "", label: "select option" },
@@ -76,11 +74,8 @@ const Complain = () => {
     { value: "IT", label: "IT" },
 
     { value: "All Others", label: "All Others" },
-
   ];
 
-
-  
   return (
     <React.Fragment>
       <HaderContent2 Title="Complain" SubTitle="Complain" />
@@ -96,11 +91,10 @@ const Complain = () => {
             address: "",
             complain: "",
           }}
-          onSubmit={async (values,{ resetForm }) => {
+          onSubmit={async (values, { resetForm }) => {
             // Alert the input values of the form that we filled
             await addComplain(values);
-            resetForm()
-            
+            resetForm();
           }}
         >
           {({
@@ -118,20 +112,16 @@ const Complain = () => {
                   <h1 className="formTitle">Complain</h1>
                   {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
                   <Card style={{ padding: "20px" }}>
-                  {
-                      successBanner?(
-                        <div class="alert alert-success" role="alert">
+                    {successBanner ? (
+                      <div class="alert alert-success" role="alert">
                         {successBanner}
                       </div>
-                      ):null
-                    }
-                    {
-                      errorBanner?(
-                        <div class="alert alert-danger" role="alert">
+                    ) : null}
+                    {errorBanner ? (
+                      <div class="alert alert-danger" role="alert">
                         {errorBanner}
                       </div>
-                      ):null
-                    }
+                    ) : null}
                     <Row>
                       <Col lg="6">
                         <div className="mainLableDiv">
@@ -214,7 +204,7 @@ const Complain = () => {
                         </div>
                       </Col>
                       <Col lg="4">
-                        <label>Select an department:</label>
+                        <label>Select department:</label>
                         <div className="">
                           <select
                             type="department"
@@ -232,7 +222,9 @@ const Complain = () => {
                             ))}
                           </select>
                           <p className="error">
-                            {errors.department && touched.department && errors.department}
+                            {errors.department &&
+                              touched.department &&
+                              errors.department}
                           </p>
                         </div>
                       </Col>
@@ -242,16 +234,15 @@ const Complain = () => {
                         <div className="mainLableDiv">
                           <lable>Address</lable>
                           <textarea
-                           type="text"
-                           name="address"
-                           onChange={handleChange}
-                           onBlur={handleBlur}
-                           value={values.address}
-                           placeholder="Enter your contact number"
-                           className="form-control inp_text"
-                           id="address"
-                           rows={4}
-
+                            type="text"
+                            name="address"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.address}
+                            placeholder="Enter your contact number"
+                            className="form-control inp_text"
+                            id="address"
+                            rows={4}
                           />
                           {/* If validation is not passed show errors */}
                           <p className="error">

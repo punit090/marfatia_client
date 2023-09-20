@@ -11,14 +11,14 @@ import {
 } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
+import { BASE_API_URL } from "../helpers/apiHelper";
 import MobileHader from "./../Commponent/MobileHader";
 import Logo from "./../assets/img/Logo1new.png";
 import "./../css/color.css";
-import { BASE_API_URL } from "../helpers/apiHelper";
 
 const Hader = () => {
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const navigate = useNavigate();
   const navigateToAnother = (id) => {
     setIsLoading(true);
@@ -35,7 +35,11 @@ const Hader = () => {
       {isLoading ? (
         <div className="container">
           <div className="loading-spinner-overlay">
-            <div className="spinner-border  text-success" style={{width: "6rem" ,height: "6rem"}} role="status">
+            <div
+              className="spinner-border  text-success"
+              style={{ width: "6rem", height: "6rem" }}
+              role="status"
+            >
               <span className="visually-hidden">Loading...</span>
             </div>
           </div>
@@ -47,7 +51,13 @@ const Hader = () => {
           <div className="upper-box clearfix">
             <figure className="logo-box pull-left">
               <Link to="/">
-                <img src="assets/images/logo.png" alt="img" onClick={()=>{window.location.reload()}} />
+                <img
+                  src="assets/images/logo.png"
+                  alt="img"
+                  onClick={() => {
+                    window.location.reload();
+                  }}
+                />
               </Link>
             </figure>
             <div className="close-search pull-right">
@@ -101,7 +111,7 @@ const Hader = () => {
                     <i className="icon-2">
                       <BiSolidPhoneCall />{" "}
                     </i>
-                    <a  href="tel:0265-2351355"> 0265-2351355</a>
+                    <a href="tel:0265-2351355"> 0265-2351355</a>
                   </li>
                   <li>
                     <i className="icon-3">
@@ -259,41 +269,48 @@ const Hader = () => {
                           <div className="dropdown-content">
                             <div className="row">
                               <div className="col-lg-6">
-
-                                
                                 <Link
                                   onClick={() =>
-                                    navigateToAnother("6501c5f215bfa912f1831818")
-                                  }                                  
+                                    navigateToAnother(
+                                      "6501c5f215bfa912f1831818"
+                                    )
+                                  }
                                 >
                                   Stock Market
                                 </Link>
                                 <Link
                                   onClick={() =>
-                                    navigateToAnother("6501c60615bfa912f183181b")
-                                  }              
-                                  
+                                    navigateToAnother(
+                                      "6501c60615bfa912f183181b"
+                                    )
+                                  }
                                 >
                                   Currency
                                 </Link>
                                 <Link
                                   onClick={() =>
-                                    navigateToAnother("6501c61615bfa912f183181e")
-                                  }  
+                                    navigateToAnother(
+                                      "6501c61615bfa912f183181e"
+                                    )
+                                  }
                                 >
                                   Depository Services
                                 </Link>
                                 <Link
                                   onClick={() =>
-                                    navigateToAnother("6501c62d15bfa912f1831821")
-                                  }  
+                                    navigateToAnother(
+                                      "6501c62d15bfa912f1831821"
+                                    )
+                                  }
                                 >
                                   Mobile Trading{" "}
                                 </Link>
                                 <Link
-                                 onClick={() =>
-                                  navigateToAnother("6501c64115bfa912f1831824")
-                                }  
+                                  onClick={() =>
+                                    navigateToAnother(
+                                      "6501c64115bfa912f1831824"
+                                    )
+                                  }
                                 >
                                   Portfolio Management Services
                                 </Link>
@@ -301,8 +318,10 @@ const Hader = () => {
                               <div className="col-lg-6">
                                 <Link
                                   onClick={() =>
-                                    navigateToAnother("6501c64f15bfa912f1831827")
-                                  }  
+                                    navigateToAnother(
+                                      "6501c64f15bfa912f1831827"
+                                    )
+                                  }
                                 >
                                   Premium Client Services
                                 </Link>
@@ -313,30 +332,38 @@ const Hader = () => {
                                   Mutual Funds
                                 </Link>
                                 <Link
-                                 onClick={() =>
-                                  navigateToAnother("6501c65f15bfa912f183182a")
-                                }  
+                                  onClick={() =>
+                                    navigateToAnother(
+                                      "6501c65f15bfa912f183182a"
+                                    )
+                                  }
                                 >
                                   Digital Library
                                 </Link>
                                 <Link
-                                 onClick={() =>
-                                  navigateToAnother("6501c66d15bfa912f183182d")
-                                }  
+                                  onClick={() =>
+                                    navigateToAnother(
+                                      "6501c66d15bfa912f183182d"
+                                    )
+                                  }
                                 >
                                   Dial N Trade
                                 </Link>
                                 <Link
                                   onClick={() =>
-                                    navigateToAnother("6501c68415bfa912f1831830")
-                                  }  
+                                    navigateToAnother(
+                                      "6501c68415bfa912f1831830"
+                                    )
+                                  }
                                 >
                                   NRI Desk
                                 </Link>
                                 <Link
-                                 onClick={() =>
-                                  navigateToAnother("6501c69d15bfa912f1831833")
-                                }  
+                                  onClick={() =>
+                                    navigateToAnother(
+                                      "6501c69d15bfa912f1831833"
+                                    )
+                                  }
                                 >
                                   SLBM [Security Landing & Borrowing
                                   Merchandise]
@@ -352,20 +379,32 @@ const Hader = () => {
                             Markets <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            <a onClick={() =>
-                                  navigateToAnother("6501c7ed15bfa912f1831836")}>
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c7ed15bfa912f1831836")
+                              }
+                            >
                               Equity
                             </a>
-                            <a onClick={() =>
-                                  navigateToAnother("6501c7fe15bfa912f1831839")} >
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c7fe15bfa912f1831839")
+                              }
+                            >
                               Derivatives
                             </a>
-                            <a onClick={() =>
-                                  navigateToAnother("6501c80b15bfa912f183183c")} >
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c80b15bfa912f183183c")
+                              }
+                            >
                               Currency{" "}
                             </a>
-                            <a onClick={() =>
-                                  navigateToAnother("6501c81915bfa912f183183f")}>
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c81915bfa912f183183f")
+                              }
+                            >
                               IPO
                             </a>
                             <Link to="/all-news">News</Link>
@@ -391,16 +430,25 @@ const Hader = () => {
                           <div className="dropdown-content2">
                             {/* <Link to="/cms" state={"6501c84215bfa912f1831842"}>Daily Tips</Link> */}
                             {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
-                            <a onClick={() =>
-                                  navigateToAnother("6501c86415bfa912f1831848")} >
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c86415bfa912f1831848")
+                              }
+                            >
                               How to Trade
                             </a>
-                            <a onClick={() =>
-                                  navigateToAnother("6501c87115bfa912f183184b")} >
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c87115bfa912f183184b")
+                              }
+                            >
                               Mobile App{" "}
                             </a>
-                            <a onClick={() =>
-                                  navigateToAnother("6501c88015bfa912f183184e")} >
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c88015bfa912f183184e")
+                              }
+                            >
                               PMS
                             </a>
                           </div>
@@ -428,15 +476,18 @@ const Hader = () => {
                             Contact Us <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            <Link to="#">Contact Details</Link>
+                            <Link to="/contact-us">Contact Details</Link>
                             <Link
                               to="https://www.marfatia.net/uploads/pdf/NEWKYCFORM.pdf"
                               target="_blank"
                             >
                               Open An Account
                             </Link>
-                            <Link onClick={() =>
-                                  navigateToAnother("6501c8a115bfa912f1831851")}>
+                            <Link
+                              onClick={() =>
+                                navigateToAnother("6501c8a115bfa912f1831851")
+                              }
+                            >
                               Partner With Us
                             </Link>
                           </div>
@@ -453,7 +504,12 @@ const Hader = () => {
                   </i>
                 </li> */}
                 <li className="btn-box">
-                  <Link to={`${BASE_API_URL}/api/files/Trading Account Activation Form.pdf`} target="_blank">Activate Dormant A/C</Link>
+                  <Link
+                    to={`${BASE_API_URL}/api/files/Trading Account Activation Form.pdf`}
+                    target="_blank"
+                  >
+                    Activate Dormant A/C
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -1,11 +1,10 @@
+import axios from "axios";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import HaderContent2 from "../Commponent/HaderContent2";
-import axios from "axios";
 import { BASE_API_URL } from "../helpers/apiHelper";
-
 
 const Feedback = () => {
   const [errorBanner, setErrorBanner] = useState("");
@@ -13,11 +12,11 @@ const Feedback = () => {
 
   const addFeedback = async (data) => {
     console.log("called postPI");
-  
+
     try {
-      const res = await axios.post(BASE_API_URL+"/api/feedback", data);
+      const res = await axios.post(BASE_API_URL + "/api/feedback", data);
       console.log("res == >", res);
-  
+
       if (res.data) {
         setSuccessBanner(res.data.message);
         setTimeout(() => {
@@ -35,17 +34,16 @@ const Feedback = () => {
     }
   };
 
-
   const schema = Yup.object().shape({
-    fName: Yup.string().required("First name  is a required "),
-    lName: Yup.string().required(" Last name  is a required "),
+    fName: Yup.string().required("First name  is  required "),
+    lName: Yup.string().required(" Last name  is  required "),
     email: Yup.string()
-      .required("Email is a required field")
+      .required("Email is  required ")
       .email("Invalid email format"),
-    contactNo: Yup.string().required("contactNo  is a required "),
-    modeOfCommute: Yup.string().required(" required "),
-    address: Yup.string().required(" Addres  is a required "),
-    feedback: Yup.string().required(" Feedback  is a required "),
+    contactNo: Yup.string().required(" Contact No. is required"),
+    modeOfCommute: Yup.string().required("  This field is required"),
+    address: Yup.string().required(" Addres  is  required "),
+    feedback: Yup.string().required(" Feedback  is  required "),
   });
   const options = [
     { value: "Our Representative", label: "Our Representative" },
@@ -74,11 +72,10 @@ const Feedback = () => {
             address: "",
             feedback: "",
           }}
-          onSubmit={async (values,{ resetForm }) => {
+          onSubmit={async (values, { resetForm }) => {
             // Alert the input values of the form that we filled
             await addFeedback(values);
-            resetForm()
-            
+            resetForm();
           }}
         >
           {({
@@ -96,20 +93,16 @@ const Feedback = () => {
                   <h1 className="formTitle">Feedback</h1>
                   {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
                   <Card style={{ padding: "20px" }}>
-                  {
-                      successBanner?(
-                        <div class="alert alert-success" role="alert">
+                    {successBanner ? (
+                      <div class="alert alert-success" role="alert">
                         {successBanner}
                       </div>
-                      ):null
-                    }
-                    {
-                      errorBanner?(
-                        <div class="alert alert-danger" role="alert">
+                    ) : null}
+                    {errorBanner ? (
+                      <div class="alert alert-danger" role="alert">
                         {errorBanner}
                       </div>
-                      ):null
-                    }
+                    ) : null}
                     <Row>
                       <Col lg="6">
                         <div className="mainLableDiv">
@@ -210,7 +203,9 @@ const Feedback = () => {
                             ))}
                           </select>
                           <p className="error">
-                            {errors.modeOfCommute && touched.modeOfCommute && errors.modeOfCommute}
+                            {errors.modeOfCommute &&
+                              touched.modeOfCommute &&
+                              errors.modeOfCommute}
                           </p>
                         </div>
                       </Col>
@@ -220,16 +215,15 @@ const Feedback = () => {
                         <div className="mainLableDiv">
                           <lable>Address</lable>
                           <textarea
-                           type="text"
-                           name="address"
-                           onChange={handleChange}
-                           onBlur={handleBlur}
-                           value={values.address}
-                           placeholder="Enter your contact number"
-                           className="form-control inp_text"
-                           id="address"
-                           rows={4}
-
+                            type="text"
+                            name="address"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.address}
+                            placeholder="Enter your contact number"
+                            className="form-control inp_text"
+                            id="address"
+                            rows={4}
                           />
                           {/* If validation is not passed show errors */}
                           <p className="error">
