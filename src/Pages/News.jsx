@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import HaderContent2 from "../Commponent/HaderContent2";
 import NewsImg from "../assets/img/Sensex.jpg";
@@ -16,6 +16,15 @@ const News = () => {
   const mainFilePath = BASE_API_URL+"/api/news-images/"
 
   const selectedNews = useSelector((state) => state.selectedNews);
+
+
+  useEffect(() => {
+    const scrollTimeout = setTimeout(() => {
+      window.scrollTo(0, 800);
+    }, 10);
+
+    return () => clearTimeout(scrollTimeout);
+  }, []);
 
 
   return (

@@ -65,7 +65,7 @@ const LatestNews = () => {
             <span className="sub-title">Latest News</span>
             <h2>
               Get More Update For <br />
-              Tread
+              Treading
             </h2>
           </div>
           <div className="row clearfix">
@@ -132,7 +132,7 @@ const LatestNews = () => {
                                   handleClick(item);
                                 }}
                               >
-                                {item.date.split("T")[0]}
+                                {new Date(item.date).toLocaleDateString('en-GB')}
                               </Link>
                             </li>
                           </ul>

@@ -1,5 +1,5 @@
 import React ,{ useEffect, useState }from "react";
-import { Container } from "react-bootstrap";
+import { Container,Card } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import HaderContent2 from "../Commponent/HaderContent2";
 import { storeDownloads, storeGalleryCategory } from "../state/action";
@@ -41,6 +41,7 @@ const NewDownloads = () => {
     <React.Fragment>
       <HaderContent2 Title="New Downloads" SubTitle="New Downloads" />
       <Container>
+        <Card className="m-5">
         <Table striped responsive>
           <thead>
             <tr>
@@ -69,6 +70,8 @@ const NewDownloads = () => {
             )}
           </tbody>
         </Table>
+        </Card>
+        
       </Container>
     </React.Fragment>
   );

@@ -16,6 +16,7 @@ import QuickContact from "../Modal/QuickContact";
 import DownloadForm from "../Modal/downloadForm";
 import Background20 from "./../assets/img/shape-20.png";
 import Background21 from "./../assets/img/shape-21.png";
+import { BASE_API_URL } from "../helpers/apiHelper";
 
 const Footer = () => {
   return (
@@ -90,9 +91,7 @@ const Footer = () => {
                           Web Mail
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/new-downloads">Support</Link>
-                      </li>
+                     
                       <li>
                         <Link to="/new-downloads" target="_blank">
                           New Downloads
@@ -123,31 +122,31 @@ const Footer = () => {
                   <div className="widget-content">
                     <ul className="links-list clearfix">
                       <li>
-                        <Link to="#">NSE EXCHANGE MARGIN FILE</Link>
+                        <Link to="/new-downloads">NSE EXCHANGE MARGIN FILE</Link>
                       </li>
                       <li>
-                        <Link to="#">DIGITAL CONTRACTS</Link>
+                        <Link to="http://203.88.142.26:84/TradeWeb/login.aspx?ReturnUrl=%2fTradeWeb" target="_blank">DIGITAL CONTRACTS</Link>
                       </li>
                       <li>
-                        <Link to="#">POLICIES AND CIRCULARS</Link>
+                        <Link to={`${BASE_API_URL}/api/files/Policies%20and%20Circulars.rar`}>POLICIES AND CIRCULARS</Link>
                       </li>
                       <li>
                         <DownloadForm />
                       </li>
                       <li>
-                        <Link to="#">VERNACULAR LANGUAGES</Link>
+                        <Link to={`${BASE_API_URL}/api/files/VERNACULAR_20LANGUAGES.rar`}>VERNACULAR LANGUAGES</Link>
                       </li>
                       <li>
                         <DetailsClintBanckAc />
                       </li>
                       <li>
-                        <Link to="#">ONLINE DISPUTE RESOLUTION LINK</Link>
+                        <Link to="https://smartodr.in/intermediary/login" target="_blank" >ONLINE DISPUTE RESOLUTION LINK</Link>
                       </li>
                       <li>
-                        <Link to="#">AUTHORIZED PERSON LIST</Link>
+                        <Link to={`${BASE_API_URL}/api/files/AUTHORISED_PERSON_LIST.pdf`} target="_blank">AUTHORIZED PERSON LIST</Link>
                       </li>
                       <li>
-                        <Link to="#">FILLING COMPLAINTS</Link>
+                        <Link to={`${BASE_API_URL}/api/files/FilingComplaints.pdf`} target="_blank">FILLING COMPLAINTS</Link>
                       </li>
                     </ul>
                   </div>
@@ -369,9 +368,9 @@ const Footer = () => {
                 <i className="icon-2">
                   <BiSolidPhoneCall className="footerLink" />{" "}
                 </i>
-                <Link className="footerLinkContact" to="#">
+                <a className="footerLinkContact" href="tel:0265-2351355">
                   0265-2351355
-                </Link>
+                </a>
               </Col>
               <Col lg="3" md="3">
                 <Link

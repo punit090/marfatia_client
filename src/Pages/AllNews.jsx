@@ -53,8 +53,11 @@ const AllNews = () => {
 
   useEffect(() => {
     fetchNews();
-    window.scrollTo(0, 0)
+    const scrollTimeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
 
+    return () => clearTimeout(scrollTimeout);
   }, []);
 
   return (
@@ -89,8 +92,11 @@ const AllNews = () => {
                                 <figure className="image">
                                   <Link to="/news">
                                     <img
-                                    style={{height:"200px",width: "100%",    // Ensure the width scales proportionally
-                                    objectFit: "cover"}}
+                                      style={{
+                                        height: "200px",
+                                        width: "100%", // Ensure the width scales proportionally
+                                        objectFit: "cover",
+                                      }}
                                       src={newsImagesPath + item.imagePath}
                                       alt="img"
                                       onClick={() => {
@@ -122,8 +128,8 @@ const AllNews = () => {
                                     }}
                                   >
                                     {item.newsTitle.length > 30
-                                    ? item.newsTitle.substring(0, 30) + "..."
-                                    : item.newsTitle}
+                                      ? item.newsTitle.substring(0, 30) + "..."
+                                      : item.newsTitle}
                                   </Link>
                                 </h3>
                                 <p>
@@ -140,7 +146,9 @@ const AllNews = () => {
                                         handleClick(item);
                                       }}
                                     >
-                                      {item.date.split("T")[0]}
+                                      {new Date(item.date).toLocaleDateString(
+                                        "en-GB"
+                                      )}
                                     </Link>
                                   </li>
                                 </ul>
@@ -155,7 +163,6 @@ const AllNews = () => {
                   )}
                 </div>
               </div>
-              
             </section>
             {/* news-section end */}
           </div>

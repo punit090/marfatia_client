@@ -29,7 +29,7 @@ const Services = () => {
           <div className="sec-title mb_70">
             <span className="sub-title">Services</span>
             <h2>
-              Provide the Best Treding <br />
+              Provide the Best Trading <br />
               Services
             </h2>
           </div>

@@ -10,7 +10,7 @@ import {
 } from "react-icons/md";
 import { PiHandCoinsLight } from "react-icons/pi";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import * as AiIcons from "react-icons/ai";
 // import { GiHamburgerMenu } from "react-icons/gi";
@@ -24,6 +24,19 @@ const MobileHader = () => {
   const [payment, setPayment] = useState(false);
   const [about, setAbout] = useState(false);
   const [contact, setContact] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  const navigate = useNavigate();
+  const navigateToAnother = (id) => {
+    setSidebar(false)
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate("/cms/", { state: id });
+    }, 700);
+  };
+
 
   const showSidebar = () => setSidebar(!sidebar);
   return (
@@ -67,38 +80,44 @@ const MobileHader = () => {
                   {about && (
                     <div className="list">
                       <div>
-                        <Link className="titleLink" to="/company-profile">
+                        <Link className="titleLink" onClick={() => {
+                                navigateToAnother("6501c54415bfa912f1831806");
+                              }}>
                           {" "}
                           Company Profile
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() => {
+                                navigateToAnother("6501c56515bfa912f1831809");
+                              }}>
                           {" "}
                           Vision and Mission
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() => {
+                                navigateToAnother("6501c59215bfa912f183180c");
+                              }}>
                           {" "}
-                          Advantagesn
+                          Advantages
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                navigateToAnother("6501c5a615bfa912f183180f")
+                              }>
                           The Team
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                navigateToAnother("6501c5be15bfa912f1831812")
+                              }>
                           Milestones
                         </Link>
                       </div>
-                      <div>
-                        <Link className="titleLink" to="#">
-                          Client Speaks
-                        </Link>
-                      </div>
+                      
                       <div>
                         <Link className="titleLink" to="/gallery">
                           Gallery
@@ -122,65 +141,85 @@ const MobileHader = () => {
                   {show && (
                     <div className="list">
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                    navigateToAnother("6501c5f215bfa912f1831818")
+                                  } >
                           {" "}
                           Stock Market
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                    navigateToAnother("6501c60615bfa912f183181b")
+                                  } >
                           {" "}
                           Currency
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                    navigateToAnother("6501c61615bfa912f183181e")
+                                  } >
                           {" "}
                           Depository Services
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                    navigateToAnother("6501c62d15bfa912f1831821")
+                                  } >
                           {" "}
                           Mobile Trading{" "}
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c64115bfa912f1831824")
+                                } >
                           {" "}
                           Portfolio Management Services
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                    navigateToAnother("6501c64f15bfa912f1831827")
+                                  }  >
                           Premium Client Services
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" to="https://marfatia.wealthmagic.in/" target="_blanck">
                           Mutual Funds
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c65f15bfa912f183182a")
+                                } >
                           {" "}
                           Digital Library
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c66d15bfa912f183182d")
+                                } >
                           {" "}
                           Dial N Trade
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                    navigateToAnother("6501c68415bfa912f1831830")
+                                  } >
                           {" "}
                           NRI Desk
                         </Link>
                       </div>
                       <div>
-                        <Link className="titleLink" to="#">
+                        <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c69d15bfa912f1831833")
+                                } >
                           {" "}
                           NRI DeskSLBM [Security Landing & Borrowing
                           Merchandise]
@@ -207,31 +246,35 @@ const MobileHader = () => {
                 {market && (
                   <div className="list">
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c7ed15bfa912f1831836")}>
                         {" "}
                         Equity
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c7fe15bfa912f1831839")}>
                         {" "}
                         Derivatives
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c80b15bfa912f183183c")}>
                         {" "}
                         Currency
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c81915bfa912f183183f")}>
                         {" "}
                         IPO{" "}
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="/news">
+                      <Link className="titleLink" to="/all-news">
                         News
                       </Link>
                     </div>
@@ -286,18 +329,21 @@ const MobileHader = () => {
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c86415bfa912f1831848")}>
                         How to Trade
                       </Link>
                     </div>
 
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c87115bfa912f183184b")}>
                         Mobile App
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c88015bfa912f183184e")}>
                         PMS
                       </Link>
                     </div>
@@ -369,7 +415,8 @@ const MobileHader = () => {
                       </Link>
                     </div>
                     <div>
-                      <Link className="titleLink" to="#">
+                      <Link className="titleLink" onClick={() =>
+                                  navigateToAnother("6501c8a115bfa912f1831851")}>
                         Partner With Us
                       </Link>
                     </div>

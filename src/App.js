@@ -93,6 +93,7 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/all-news" element={<AllNews/>} />
           <Route path="/content-test" element={<ContentTesting/>} />
+          <Route path="/new-downloads" element={<NewDownloads/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
