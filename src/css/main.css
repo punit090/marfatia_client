@@ -1034,6 +1034,7 @@ img {
 }
 .footerLink {
   color: #85c226;
+  margin-right: 10px;
 }
 .contanerCard {
   padding: 20px;
@@ -1099,7 +1100,7 @@ img {
 }
 .footerRow {
   position: relative;
-  z-index: 999999;
+  /* z-index: 999999; */
   padding: 20px 0px;
 }
 .dropdown {
@@ -1141,7 +1142,6 @@ img {
   font-size: 16px; /* Change this value to your desired font size */
 }
 
-
 .dropdown:hover .dropbtn {
   color: #85c226;
 }
@@ -1154,7 +1154,6 @@ img {
   z-index: 1;
   border-top: 3px solid #85c226;
 }
-
 
 .titleLink {
   font-size: 14px;

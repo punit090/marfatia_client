@@ -13,8 +13,6 @@ import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineLocationMarker, HiOutlineMailOpen } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
 import ShaperImg from "../assets/img/shape-32.png";
 import ShaperImg2 from "../assets/img/shape-33.png";
@@ -23,12 +21,12 @@ import "../css/elements-css/contact.css";
 const ContactUs = () => {
   const schema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is a required field")
+      .required("Email is  required ")
       .email("Invalid email format"),
-    name: Yup.string().required("Name  is a required "),
-    subject: Yup.string().required("subject  is a required "),
-    phone: Yup.string().required("Contact number  is a required "),
-    message: Yup.string().required(" message  is a required "),
+    name: Yup.string().required("Name  is  required "),
+    subject: Yup.string().required("subject  is  required "),
+    phone: Yup.string().required("Contact number  is  required "),
+    message: Yup.string().required(" message  is  required "),
   });
   return (
     <React.Fragment>
@@ -456,7 +454,6 @@ const ContactUs = () => {
         ></iframe>
       </section>
       {/* google-map-section end */}
-
     </React.Fragment>
   );
 };

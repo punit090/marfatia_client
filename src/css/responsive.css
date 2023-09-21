@@ -485,7 +485,7 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .banner-carousel .content-box h2 {
     font-size: 40px;
     line-height: 50px;
@@ -725,7 +725,14 @@
   .service-details-content .content-three .single-item {
     margin-bottom: 80px;
   }
-
+  .header-top .info li {
+    margin-right: 22px !important;
+  }
+  .header-top .top-inner {
+    flex-direction: column !important;
+    padding: 10px 24px !important;
+    gap: 13px !important;
+  }
   .service-details-content
     .content-three
     .single-column:last-child
@@ -872,10 +879,19 @@
   .testimonial-block-one .inner-box,
   .content_block_four .content-box,
   .service-sidebar .category-widget {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 34px 55px 34px 55px !important;
+  }
+  .btn-box {
+    display: flex;
+    justify-content: center;
+  }
+  .about-section {
+    padding: 30px 0px;
   }
 
+  .mainDivCaresol {
+    padding: 0px !important;
+  }
   .image_block_two .image-box .image-content {
     position: relative;
     left: 0px;
