@@ -1,11 +1,11 @@
+import axios from "axios";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import "./../Modal/modal.css";
-import axios from "axios";
 import { BASE_API_URL } from "../helpers/apiHelper";
+import "./../Modal/modal.css";
 
 const QuickContact = () => {
   const [show, setShow] = useState(false);
@@ -40,11 +40,11 @@ const QuickContact = () => {
   };
 
   const schema = Yup.object().shape({
-    name: Yup.string().required("Name is must be required !!!"),
-    contactNo: Yup.string().required("number is must be required !!!"),
-    subject: Yup.string().required("subject is must be required !!!"),
+    name: Yup.string().required(" Name is required !!!"),
+    contactNo: Yup.string().required("Phone No. is required !!!"),
+    subject: Yup.string().required("Subject is required !!!"),
     email: Yup.string()
-      .required("Email is a required field")
+      .required("Email is required")
       .email("Invalid email format"),
     message: Yup.string().required("Message is required !!!"),
   });
@@ -185,6 +185,9 @@ const QuickContact = () => {
                         SLBM [Security Landing & Borrowing Merchandise]
                       </option>
                     </select>
+                    <p className="error">
+                      {errors.subject && touched.subject && errors.subject}
+                    </p>
 
                     <lable className="modalLable">Message</lable>
                     <textarea

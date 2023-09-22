@@ -43,7 +43,7 @@ const Complain = () => {
       .max(25, " cannot exceed 25 characters")
       .matches(/^[A-Za-z]+$/, "only contain letters and spaces"),
     lName: Yup.string()
-      .required(" Last name is requred")
+      .required(" Last name is required ")
       .min(2, "must be at least 2 characters")
       .max(25, "cannot exceed 25 characters")
       .matches(/^[A-Za-z]+$/, " only contain letters and spaces"),
@@ -55,7 +55,7 @@ const Complain = () => {
       .matches(/^[0-9]+$/, "Contact number must contain only digits")
       .min(10, "Contact number must be at least 10 digits")
       .max(10, "Contact number cannot exceed 10 digits"),
-    department: Yup.string().required(" This fild is  required "),
+    department: Yup.string().required(" This field  is  required "),
     address: Yup.string()
       .required(" Address is required")
       .min(5, "Address must be at least 5 characters")

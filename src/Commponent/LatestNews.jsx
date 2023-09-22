@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import News1 from "./../assets/img/Sensex.jpg";
 import "./../css/elements-css/news.css";
-import { Container, Spinner } from "react-bootstrap";
 
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setNews, storeNews } from "../state/action";
 import { BASE_API_URL } from "../helpers/apiHelper";
+import { setNews, storeNews } from "../state/action";
 
 const LatestNews = () => {
   const shortMonthNames = [
@@ -65,7 +64,7 @@ const LatestNews = () => {
             <span className="sub-title">Latest News</span>
             <h2>
               Get More Update For <br />
-              Treading
+              Trade
             </h2>
           </div>
           <div className="row clearfix">
@@ -83,8 +82,11 @@ const LatestNews = () => {
                           <figure className="image">
                             <Link to="/news">
                               <img
-                               style={{height:"200px",width: "100%",    // Ensure the width scales proportionally
-                               objectFit: "cover"}}
+                                style={{
+                                  height: "200px",
+                                  width: "100%", // Ensure the width scales proportionally
+                                  objectFit: "cover",
+                                }}
                                 src={newsImagesPath + item.imagePath}
                                 alt="img"
                                 onClick={() => {
@@ -116,13 +118,15 @@ const LatestNews = () => {
                               }}
                             >
                               {item.newsTitle.length > 30
-                                    ? item.newsTitle.substring(0, 30) + "..."
-                                    : item.newsTitle}
+                                ? item.newsTitle.substring(0, 30) + "..."
+                                : item.newsTitle}
                             </Link>
                           </h3>
-                          <p>{item.description.length > 100
-                                    ? item.description.substring(0, 100) + "..."
-                                    : item.description}</p>
+                          <p>
+                            {item.description.length > 100
+                              ? item.description.substring(0, 100) + "..."
+                              : item.description}
+                          </p>
                           <ul className="post-info">
                             <li>
                               <i className="icon-21" />
@@ -132,7 +136,9 @@ const LatestNews = () => {
                                   handleClick(item);
                                 }}
                               >
-                                {new Date(item.date).toLocaleDateString('en-GB')}
+                                {new Date(item.date).toLocaleDateString(
+                                  "en-GB"
+                                )}
                               </Link>
                             </li>
                           </ul>
@@ -143,17 +149,20 @@ const LatestNews = () => {
                 </React.Fragment>
               ))
             ) : (
-              <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-              <Spinner animation="border" variant="primary" size="lg" />
-            </div>
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{ height: "100vh" }}
+              >
+                <Spinner animation="border" variant="primary" size="lg" />
+              </div>
             )}
           </div>
         </div>
         <div className="more-btn ">
-                <Link to="/all-news" className="theme-btn-one">
-                  See More
-                </Link>
-              </div>
+          <Link to="/all-news" className="theme-btn-one">
+            See More
+          </Link>
+        </div>
       </section>
       {/* news-section end */}
     </div>

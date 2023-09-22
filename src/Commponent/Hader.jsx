@@ -415,7 +415,7 @@ const Hader = () => {
                       <li className="current">
                         <div className="dropdown">
                           <button className="dropbtn">
-                            Mutal Funds <AiOutlineDown />
+                            Mutual Funds <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
                             <Link to="/mtual-fund-details">MF Schemes</Link>

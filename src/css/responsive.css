@@ -244,6 +244,13 @@
   .video-btn {
     left: 280px !important;
   }
+  .service-block-one .inner-box {
+    height: 280px !important;
+  }
+  .message-btn {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -509,7 +516,7 @@
   }
 
   .about-section {
-    padding: 70px 0px;
+    padding: 40px 0px;
   }
 
   .service-section .more-btn {
@@ -540,7 +547,7 @@
   }
 
   .news-section {
-    padding-bottom: 70px;
+    padding-bottom: 10px;
   }
 
   .banner-style-two .banner-carousel .slide-item {
@@ -768,12 +775,15 @@
   .image_block_two .image-box .image-content h3 {
     font-size: 24px;
   }
-
+  .message-btn {
+    display: flex;
+    justify-content: center;
+  }
   .subscribe-section .form-inner form {
     padding-right: 0px;
   }
   .linkContact {
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
   .subscribe-section .form-inner .message-btn {
     position: relative;
@@ -825,8 +835,8 @@
     font-size: 30px !important;
   }
   .theme-btn-one {
-    font-size: 13px !important;
-    padding: 9px 12px !important;
+    font-size: 12px !important;
+    padding: 13px 45px !important;
   }
   .footerLinkContact {
     font-size: 17px !important;
