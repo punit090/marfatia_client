@@ -10,10 +10,13 @@ import {
 } from "react-icons/bi";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import AddreshHadeOffice from "../Modal/AddreshHadeOffice";
 import DetailsClintBanckAc from "../Modal/DetailsClintBanckAc";
 import KeyManagerialPersonnels from "../Modal/KeyManagerialPersonnels";
 import QuickContact from "../Modal/QuickContact";
 import DownloadForm from "../Modal/downloadForm";
+import InvestoContact from "../Pages/InvestorContact";
+import SebiRegistration from "../Pages/SebiRegistrationDetails";
 import { BASE_API_URL } from "../helpers/apiHelper";
 import Background20 from "./../assets/img/shape-20.png";
 import Background21 from "./../assets/img/shape-21.png";
@@ -248,10 +251,10 @@ const Footer = () => {
                   <div className="widget-content">
                     <ul className="links-list clearfix">
                       <li>
-                        <Link to="#">For Investor Grievances Contact:</Link>
+                        <InvestoContact />
                       </li>
                       <li>
-                        <Link to="#">Exchange/SEBI Registration Details</Link>
+                        <SebiRegistration />
                       </li>
                       <li>
                         <QuickContact />
@@ -295,7 +298,7 @@ const Footer = () => {
                       </li>
                       <li>
                         <Link to="#">
-                          Registered Address of Head Office and Branches
+                          <AddreshHadeOffice />
                         </Link>
                       </li>
                     </ul>
@@ -306,7 +309,7 @@ const Footer = () => {
             <Row className="footerRow">
               <Col lg="2" md="3" sm="12">
                 <div className="widget-title">
-                  <h3>Usefull Links</h3>
+                  <h3>useful Links</h3>
                 </div>
               </Col>
               <Col lg="1" md="2">
@@ -405,7 +408,7 @@ const Footer = () => {
                 <i className="icon-23">
                   <HiOutlineLocationMarker className="footerLink" />
                 </i>
-                <span className="footerLinkContact"> vadodara Gujarat</span>
+                <span className="footerLinkContact"> vadodara & Gujarat</span>
               </Col>
               <Col lg="2" md="3">
                 <i className="icon-2">

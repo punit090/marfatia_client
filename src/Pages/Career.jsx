@@ -3,8 +3,6 @@ import { Container } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaRupeeSign } from "react-icons/fa";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
 import JobApllayModal from "../Modal/JobApllayModal";
 

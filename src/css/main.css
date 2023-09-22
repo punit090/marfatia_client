@@ -1160,7 +1160,16 @@ img {
   color: #000;
 }
 .mainDivCaresol {
-  padding: 40px 0px;
+  /* padding: 40px 0px; */
+}
+.accordion-button:not(.collapsed)::after {
+  display: none !important;
+}
+.accordion-button::after {
+  display: none !important;
+}
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 0px !important;
 }
 .title {
   padding: 15px 0px;

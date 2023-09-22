@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import HaderContent2 from "../Commponent/HaderContent2";
-import { useDispatch, useSelector } from "react-redux";
-import { Container, Spinner } from "react-bootstrap";
-import ContentFooterButton from "../Commponent/Footer";
-import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-import { setNews, storeNews } from "../state/action";
+import React, { useEffect } from "react";
+import { Container } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import HaderContent2 from "../Commponent/HaderContent2";
 import { BASE_API_URL } from "../helpers/apiHelper";
+import { setNews, storeNews } from "../state/action";
 
 const AllNews = () => {
   const shortMonthNames = [
@@ -69,7 +68,7 @@ const AllNews = () => {
             {/* news-section */}
             <section className="news-section sec-pad">
               <div className="auto-container">
-                <div className="sec-title centred mb_50">
+                <div className="sec-title centred ">
                   <div class="news-section">
                     <p class="section-description sub-title">
                       Stay updated with the latest news.
