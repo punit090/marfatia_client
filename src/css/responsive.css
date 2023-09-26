@@ -499,6 +499,12 @@
   .pb_150 {
     padding-bottom: 80px !important;
   }
+  .about-section {
+    padding: 40px 0px !important;
+  }
+  .service-block-one .inner-box .overlay-content {
+    padding: 40px 55px 34px 55px !important;
+  }
 }
 @media only screen and (max-width: 768px) {
   .banner-carousel .content-box h2 {
