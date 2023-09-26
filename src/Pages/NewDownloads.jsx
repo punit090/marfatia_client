@@ -11,6 +11,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 const NewDownloads = () => {
 
+  useEffect(() => {
+    const scrollDelay = 100; // 100 ms delay
+  
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 200);
+    }, scrollDelay);
+  
+    return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
+  }, []);
 
   const mainFilePath = BASE_API_URL+"/api/downloads/"
 
