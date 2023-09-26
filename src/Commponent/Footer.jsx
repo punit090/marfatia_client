@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import {
   BiLogoFacebook,
@@ -9,7 +9,7 @@ import {
   BiSolidPhoneCall,
 } from "react-icons/bi";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AddreshHadeOffice from "../Modal/AddreshHadeOffice";
 import DetailsClintBanckAc from "../Modal/DetailsClintBanckAc";
 import KeyManagerialPersonnels from "../Modal/KeyManagerialPersonnels";
@@ -22,9 +22,35 @@ import Background20 from "./../assets/img/shape-20.png";
 import Background21 from "./../assets/img/shape-21.png";
 
 const Footer = () => {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
+  const navigateToAnother = (id) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate("/cms/", { state: id });
+    }, 700);
+  };
+
   return (
     <React.Fragment>
       {/* main-footer */}
+
+      {isLoading ? (
+        <div className="container">
+          <div className="loading-spinner-overlay">
+            <div
+              className="spinner-border  text-success"
+              style={{ width: "6rem", height: "6rem" }}
+              role="status"
+            >
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <footer className="main-footer">
         <div className="widget-section">
@@ -82,7 +108,12 @@ const Footer = () => {
                         <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <Link to="#">About Us</Link>
+                        <Link  onClick={() => {
+                                navigateToAnother("6501c54415bfa912f1831806");
+                              }}>About Us</Link>
+
+                      
+
                       </li>
 
                       <li>
@@ -96,7 +127,7 @@ const Footer = () => {
                       </li>
 
                       <li>
-                        <Link to="/new-downloads" target="_blank">
+                        <Link to="/new-downloads" >
                           New Downloads
                         </Link>
                       </li>
@@ -149,7 +180,7 @@ const Footer = () => {
                       </li>
                       <li>
                         <Link
-                          to={`${BASE_API_URL}/api/files/VERNACULAR_20LANGUAGES.rar`}
+                          to={`${BASE_API_URL}/api/files/VERNACULAR_LANGUAGES.rar`}
                         >
                           VERNACULAR LANGUAGES
                         </Link>
@@ -203,7 +234,7 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#">Client's Reg. Form</Link>
+                        <Link to={`${BASE_API_URL}/api/files/NEWKYCFORM.pdf`} target="_blank">Client's Reg. Form</Link>
                       </li>
                       <li>
                         <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>
