@@ -85,11 +85,8 @@ const ContactUs = () => {
                   <p>
                     <Link to="#">customercare@marfatia.net</Link>
                     <br />
-                    <Link to="#">kyc@marfatia.net</Link>
-                    <br />
+
                     <Link to="#">compliance@marfatia.net</Link>
-                    <br />
-                    <Link to="#">shreyanishil@yahoo.com</Link>
                   </p>
                 </div>
               </div>
