@@ -127,7 +127,7 @@ const Footer = () => {
                       </li>
 
                       <li>
-                        <Link to="/new-downloads" target="_blank">
+                        <Link to="/new-downloads" >
                           New Downloads
                         </Link>
                       </li>
@@ -180,7 +180,7 @@ const Footer = () => {
                       </li>
                       <li>
                         <Link
-                          to={`${BASE_API_URL}/api/files/VERNACULAR_20LANGUAGES.rar`}
+                          to={`${BASE_API_URL}/api/files/VERNACULAR_LANGUAGES.rar`}
                         >
                           VERNACULAR LANGUAGES
                         </Link>
@@ -234,7 +234,7 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#">Client's Reg. Form</Link>
+                        <Link to={`${BASE_API_URL}/api/files/NEWKYCFORM.pdf`} target="_blank">Client's Reg. Form</Link>
                       </li>
                       <li>
                         <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>

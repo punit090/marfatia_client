@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import HaderContent2 from "../Commponent/HaderContent2";
 
 const MtualFundDetails = () => {
+  useEffect(() => {
+    const scrollDelay = 100; // 100 ms delay
+  
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, scrollDelay);
+  
+    return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
+  }, []);
   const options = [
     { value: "test1", label: "test1" },
     { value: "test2", label: "test2" },

@@ -124,7 +124,7 @@ const LatestNews = () => {
                           </h3>
                           <p>
                             {item.description.length > 100
-                              ? item.description.substring(0, 100) + "..."
+                              ? item.description.substring(0, 110) + "..."
                               : item.description}
                           </p>
                           <ul className="post-info">
