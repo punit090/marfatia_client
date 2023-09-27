@@ -11,15 +11,20 @@ const MtualFundDetails = () => {
   const [AMCCategoryData, setAMCCategoryData] = useState([]);
   const [AMCSchemeData, setAMCSchemeData] = useState([]);
 
+  const [selectedAMC, setSelectedAMC] = useState("");
+  const [selectedAMCCategory, setSelectedCategory] = useState("");
+
+  const [schemsLoading,setSchemsLoading] = useState(false);
+
   const AMCUrl = BASE_API_URL + "/api/amc-master";
   const AMCCategoryUrl = BASE_API_URL + "/api/amc-category";
-  const AMCSchemeUrl = BASE_API_URL + "/api/amc-scheme";
+  const AMCSchemeUrl = BASE_API_URL + "/api/amc-scheme/";
 
   const fetchAMC = () => {
     axios
       .get(AMCUrl)
       .then((res) => {
-        setAMC(res);
+        setAMC(res.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -29,17 +34,20 @@ const MtualFundDetails = () => {
   const fetchAMCCategory = async () => {
     try {
       const res2 = await axios.get(AMCCategoryUrl);
-      setAMCCategoryData(res2);
+      setAMCCategoryData(res2.data.data);
     } catch (err) {
       console.log(err);
     }
   };
-  
-  const fetchAMCScheme = () => {
+
+  const fetchAMCScheme = (url) => {
+    setSchemsLoading(true)
     axios
-      .get(AMCSchemeUrl)
+      .get(url)
       .then((res2) => {
-        setAMCSchemeData(res2);
+        setAMCSchemeData(res2.data.data);
+    setSchemsLoading(false)
+
       })
       .catch((err) => {
         console.log(err);
@@ -49,7 +57,20 @@ const MtualFundDetails = () => {
   useEffect(() => {
     fetchAMC();
     fetchAMCCategory();
+
   }, []);
+
+  const bindAmcScheme = () => {
+    if (selectedAMC && selectedAMCCategory) {
+      const EncodedSelectedAMC = encodeURIComponent(selectedAMC);
+      const EncodedSelectedAMCCategory =
+        encodeURIComponent(selectedAMCCategory);
+      fetchAMCScheme(
+        AMCSchemeUrl + EncodedSelectedAMC+"/"+EncodedSelectedAMCCategory  
+      );
+      console.log(AMCSchemeUrl+EncodedSelectedAMC+"/"+EncodedSelectedAMCCategory )
+    }
+  };
 
   useEffect(() => {
     const scrollDelay = 100; // 100 ms delay
@@ -60,11 +81,7 @@ const MtualFundDetails = () => {
 
     return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
   }, []);
-  const options = [
-    { value: "test1", label: "test1" },
-    { value: "test2", label: "test2" },
-    { value: "test3", label: "test3" },
-  ];
+
   return (
     <React.Fragment>
       <HaderContent2 Title="Mutual Funds " SubTitle="Mutual Funds" />
@@ -77,27 +94,29 @@ const MtualFundDetails = () => {
           </h5>
           <Card style={{ padding: "20px" }}>
             <Row>
-            <Col className="mtualFundDiv" lg="3" md="6">
+              <Col className="mtualFundDiv" lg="3" md="6">
                 <h5>Category :</h5>
                 <select
                   className="form-select"
                   id="category"
                   name="category"
                   onChange={(e) => {
-                    // productForm.handleChange(e);
-                    // handelCategorySelect(e);
+                    setSelectedAMC(e.target.value);
+                    setAMCSchemeData([])
                   }}
                 >
                   <option value={null}>--select--</option>
-                  {/* {AMCData
-                    ? (AMCData.map((category) => (
-                        <option key={category.AMCName} value={category.AMCName}>
-                          {category.AMCName}
-                        </option>
-                      ))
-                      ):(
-                        <option value="" disabled>Loading...</option>
-                      )}  */}
+                  {AMCData ? (
+                    AMCData.map((category, key) => (
+                      <option key={key} value={category.AMCName}>
+                        {category.AMCName}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="" disabled>
+                      Loading...
+                    </option>
+                  )}
                 </select>
               </Col>
               <Col className="mtualFundDiv" lg="3" md="6">
@@ -108,44 +127,61 @@ const MtualFundDetails = () => {
                   id="category"
                   name="category"
                   onChange={(e) => {
-                    // productForm.handleChange(e);
-                    // handelCategorySelect(e);
+                    setSelectedCategory(e.target.value);
+                    setAMCSchemeData([])
+
                   }}
                 >
-                  <option value={null}>--select--</option>
-                  {/* {AMCCategoryData
-                    ? (AMCCategoryData.map((category) => (
-                        <option key={category.CategoryName} value={category.CategoryName}>
-                          {category.CategoryName}
-                        </option>
-                      ))
-                      ):(
-                        <option value="" disabled>Loading...</option>
-                      )}  */}
+                  
+
+                    <option value="" disabled>
+                     --select--
+                    </option>
+                  {AMCCategoryData ? (
+                    AMCCategoryData.map((category, key) => (
+                      <option key={key} value={category.CategoryName}>
+                        {category.CategoryName}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="" disabled>
+                    loading...
+                   </option>
+                  )}
                 </select>
               </Col>
-              
+
               <Col className="mtualFundDiv" lg="3" md="6">
                 <h5>Scheme :</h5>
                 <select
                   className="form-select"
                   id="category"
                   name="category"
-                  onChange={(e) => {
-                    // productForm.handleChange(e);
-                    // handelCategorySelect(e);
+                  onClick={() => {
+                    bindAmcScheme();
                   }}
                 >
-                  <option value={null}>--select--</option>
-                  {/* {AMCCategoryData
-                    ? (AMCCategoryData.map((category) => (
-                        <option key={category.CategoryName} value={category.CategoryName}>
-                          {category.CategoryName}
-                        </option>
-                      ))
-                      ):(
-                        <option value="" disabled>Loading...</option>
-                      )} */}
+                 { schemsLoading?
+                    <option value="" disabled>
+                      Loading...
+                    </option>:<option value="" disabled>
+                    --select--
+                    </option>}
+                  {AMCSchemeData ? (
+                    AMCSchemeData.map((category, key) => (
+                      <option key={key} value={category.SchemeName}>
+                        {category.SchemeName}
+                      </option>
+                    ))
+                  ) : (
+                   
+                    schemsLoading?
+                    <option value="" disabled>
+                      Loading...
+                    </option>:<option value="" disabled>
+                      no scheme
+                    </option>
+                  )}
                 </select>
               </Col>
               <Col className="mtualFundDiv" lg="3" md="6">
