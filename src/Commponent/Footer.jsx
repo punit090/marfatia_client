@@ -440,7 +440,7 @@ const Footer = () => {
                 <i className="icon-23">
                   <HiOutlineLocationMarker className="footerLink" />
                 </i>
-                <span className="footerLinkContact"> vadodara & Gujarat</span>
+                <span className="footerLinkContact"> vadodara , Gujarat</span>
               </Col>
               <Col lg="2" md="3">
                 <i className="icon-2">

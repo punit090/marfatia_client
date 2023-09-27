@@ -492,6 +492,14 @@
   }
 }
 
+@media only screen and (max-width: 820px) {
+  .pt_150 {
+    padding-top: 80px !important;
+  }
+  .pb_150 {
+    padding-bottom: 80px !important;
+  }
+}
 @media only screen and (max-width: 768px) {
   .banner-carousel .content-box h2 {
     font-size: 40px;
@@ -516,7 +524,7 @@
   }
 
   .about-section {
-    padding: 40px 0px;
+    padding: 40px 0px !important;
   }
 
   .service-section .more-btn {
@@ -746,6 +754,12 @@
     .single-item {
     margin-bottom: 0px;
   }
+  .service-block-one .inner-box .overlay-content {
+    padding: 40px 55px 34px 55px !important;
+  }
+  /* .feature-block-three .inner-box {
+    height: 386px !important;
+  } */
 
   .faq-page-section .content-column {
     margin-bottom: 30px;
