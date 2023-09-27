@@ -11,12 +11,13 @@ const DynamicContent = () => {
   const [fatchingData,setFatchingData] = useState(false)
 
   const location = useLocation();
-  const propsData = location.state;
+  const propsData = location.state|| "6501c54415bfa912f1831806";
+
   console.log(propsData);
 
   const arrayOfContents = useSelector((state) => state.content);
   const pageContent = arrayOfContents.find(
-    (item) => item._id === propsData || "6501c54415bfa912f1831806"
+    (item) => item._id === propsData 
   );
 
   useEffect(() => {
