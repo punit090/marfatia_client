@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import {
@@ -19,6 +19,17 @@ import ShaperImg2 from "../assets/img/shape-33.png";
 import "../css/elements-css/contact.css";
 
 const ContactUs = () => {
+
+  useEffect(() => {
+    const scrollDelay = 100; // 100 ms delay
+  
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 650);
+    }, scrollDelay);
+  
+    return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
+  }, []);
+
   const schema = Yup.object().shape({
     email: Yup.string()
       .required("Email is  required ")

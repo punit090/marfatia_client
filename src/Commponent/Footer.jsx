@@ -121,7 +121,7 @@ const Footer = () => {
                       </li>
 
                       <li>
-                        <Link to="http://203.88.142.27:8181/webmail3/">
+                        <Link to="http://203.88.142.27:8181/webmail3/" target="_blank">
                           Web Mail
                         </Link>
                       </li>
@@ -132,7 +132,7 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="https://attendee.gotowebinar.com/pageNotFound.tmpl">
+                        <Link to="https://attendee.gotowebinar.com/pageNotFound.tmpl" target="_blank">
                           Webiner
                         </Link>
                       </li>
@@ -247,6 +247,7 @@ const Footer = () => {
                       <li>
                         <Link
                           to="https://www.nseindia.com/circulars/circular.htm"
+                          
                           target="_blanck"
                         >
                           NSE Circulars

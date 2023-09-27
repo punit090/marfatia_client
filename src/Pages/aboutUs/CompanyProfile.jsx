@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Container } from "react-bootstrap";
 
 import ContentFooterButton from "../../Commponent/contentFooterButton";
@@ -8,6 +8,15 @@ import "../../css/elements-css/page-title.css";
 import "../../css/elements-css/stock.css";
 
 const CompanyProfile = () => {
+  useEffect(() => {
+    const scrollDelay = 100; // 100 ms delay
+
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 200);
+    }, scrollDelay);
+
+    return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
+  }, []);
   return (
     <div>
       <HaderContent2 Title=" Company  Profile" SubTitle="Company  Profile" />

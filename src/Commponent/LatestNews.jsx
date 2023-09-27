@@ -118,7 +118,7 @@ const LatestNews = () => {
                               }}
                             >
                               {item.newsTitle.length > 30
-                                ? item.newsTitle.substring(0, 30) + "..."
+                                ? item.newsTitle.substring(0, 40) + "..."
                                 : item.newsTitle}
                             </Link>
                           </h3>
