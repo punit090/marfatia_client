@@ -126,14 +126,14 @@ const AllNews = () => {
                                       handleClick(item);
                                     }}
                                   >
-                                    {item.newsTitle.length > 30
-                                      ? item.newsTitle.substring(0, 30) + "..."
+                                    {item.newsTitle.length > 40
+                                      ? item.newsTitle.substring(0, 40) + "..."
                                       : item.newsTitle}
                                   </Link>
                                 </h3>
                                 <p>
-                                  {item.description.length > 100
-                                    ? item.description.substring(0, 100) + "..."
+                                  {item.description.length > 90
+                                    ? item.description.substring(0, 90) + "..."
                                     : item.description}
                                 </p>
                                 <ul className="post-info">
