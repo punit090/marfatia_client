@@ -135,9 +135,8 @@ const Hader = () => {
                       to="https://www.facebook.com/vadodaraMarfatia"
                       target="_blank"
                     >
-                      <i className="fab fa-facebook-f">
+                      
                         <FaFacebookF />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -145,9 +144,7 @@ const Hader = () => {
                       to="https://api.whatsapp.com/send?phone=919925142538&"
                       target="_blank"
                     >
-                      <i className="fab fa-facebook-f">
                         <FaWhatsapp />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -155,9 +152,7 @@ const Hader = () => {
                       to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
                       target="_blank"
                     >
-                      <i className="fab fa-twitter">
                         <FaTwitter />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -165,9 +160,7 @@ const Hader = () => {
                       to="https://workspace.google.com/blog/product-announcements/what-you-need-to-know-about-the-sunset-of-consumer-google-plus-on-april-second"
                       target="_blank"
                     >
-                      <i className="fab fa-facebook-f">
                         <FaGooglePlusG />
-                      </i>
                     </Link>
                   </li>
 
@@ -176,9 +169,7 @@ const Hader = () => {
                       to="https://www.youtube.com/channel/UCRmBOZt6mmMekA7_UbxdLSw"
                       target="_blank"
                     >
-                      <i className="fab fa-linkedin-in">
                         <FaYoutube />
-                      </i>
                     </Link>
                   </li>
                 </ul>
