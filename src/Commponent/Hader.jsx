@@ -398,7 +398,7 @@ const Hader = () => {
                             >
                               IPO
                             </a>
-                            <Link to="/all-news">News</Link>
+                            <a to="/all-news">News</a>
                           </div>
                         </div>
                       </li>
