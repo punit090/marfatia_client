@@ -40,19 +40,19 @@ const MtualFundDetails = () => {
     }
   };
 
-  const fetchAMCScheme = (url) => {
-    setSchemsLoading(true)
-    axios
-      .get(url)
-      .then((res2) => {
-        setAMCSchemeData(res2.data.data);
-    setSchemsLoading(false)
-
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const fetchAMCScheme = async (url) => {
+    setSchemsLoading(true);
+  
+    try {
+      const res2 = await axios.get(url);
+      setAMCSchemeData(res2.data.data);
+    } catch (err) {
+      console.error(err);
+    }
+  
+    setSchemsLoading(false);
   };
+  
 
   useEffect(() => {
     fetchAMC();
@@ -95,7 +95,7 @@ const MtualFundDetails = () => {
           <Card style={{ padding: "20px" }}>
             <Row>
               <Col className="mtualFundDiv" lg="3" md="6">
-                <h5>Category :</h5>
+                <h5>Select AMC:</h5>
                 <select
                   className="form-select"
                   id="category"
@@ -120,7 +120,7 @@ const MtualFundDetails = () => {
                 </select>
               </Col>
               <Col className="mtualFundDiv" lg="3" md="6">
-                <h5>Select AMC :</h5>
+                <h5>Select Category :</h5>
 
                 <select
                   className="form-select"
@@ -132,9 +132,7 @@ const MtualFundDetails = () => {
 
                   }}
                 >
-                  
-
-                    <option value="" disabled>
+                    <option value="" >
                      --select--
                     </option>
                   {AMCCategoryData ? (
@@ -161,12 +159,13 @@ const MtualFundDetails = () => {
                     bindAmcScheme();
                   }}
                 >
+                   <option value="" >
+                     --select--
+                    </option>
                  { schemsLoading?
                     <option value="" disabled>
                       Loading...
-                    </option>:<option value="" disabled>
-                    --select--
-                    </option>}
+                    </option>:null}
                   {AMCSchemeData ? (
                     AMCSchemeData.map((category, key) => (
                       <option key={key} value={category.SchemeName}>

@@ -249,7 +249,7 @@ const Complain = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.address}
-                            placeholder="Enter your contact number"
+                            placeholder="Enter your address"
                             className="form-control inp_text"
                             id="address"
                             rows={4}

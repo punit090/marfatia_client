@@ -316,7 +316,9 @@ const ContactUs = () => {
                               <textarea
                                 name="message"
                                 placeholder="Type message"
-                                defaultValue={values.message}
+                                onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.message}
                                 rows={4}
                                 className="contactTextAria"
                               />
