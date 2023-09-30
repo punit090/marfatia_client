@@ -51,7 +51,10 @@ const Feedback = () => {
     email: Yup.string()
       .required("Email is  required ")
       .email("Invalid email format"),
-    contactNo: Yup.string().required(" Contact No. is required"),
+    contactNo: Yup.string().required("Contact number is required")
+    .matches(/^[0-9]+$/, "Contact number must contain only digits")
+    .min(10, "Contact number must be at least 10 digits")
+    .max(10, "Contact number cannot exceed 10 digits"),
     modeOfCommute: Yup.string().required("  This field is required"),
     address: Yup.string().required(" Addres  is  required "),
     feedback: Yup.string().required(" Feedback  is  required "),
@@ -231,7 +234,7 @@ const Feedback = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.address}
-                            placeholder="Enter your contact number"
+                            placeholder="Enter your address"
                             className="form-control inp_text"
                             id="address"
                             rows={4}

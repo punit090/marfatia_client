@@ -3,6 +3,8 @@ import HaderContent2 from "./HaderContent2";
 import { useSelector } from "react-redux";
 import { Container, Spinner } from "react-bootstrap";
 import { content } from "./content";
+import 'font-awesome/css/font-awesome.min.css'; // Adjust the path as needed
+
 
 
 const ContentTesting = () => {

@@ -123,7 +123,7 @@ const Footer = () => {
                       </li>
 
                       <li>
-                        <Link to="http://203.88.142.27:8181/webmail3/">
+                        <Link to="http://203.88.142.27:8181/webmail3/" target="_blank">
                           Web Mail
                         </Link>
                       </li>
@@ -132,8 +132,10 @@ const Footer = () => {
                         <Link to="/new-downloads">New Downloads</Link>
                       </li>
                       <li>
-                        <Link to="https://attendee.gotowebinar.com/pageNotFound.tmpl">
-                          Webinar
+
+                        <Link to="https://attendee.gotowebinar.com/pageNotFound.tmpl" target="_blank">
+                          Webiner
+
                         </Link>
                       </li>
                       {/* <li>
@@ -242,26 +244,28 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
+                     
+
                         <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>
                           Disclaimer
                         </Link>
                       </li>
                       <li>
-                        <Link to="#">PMS Disclosure</Link>
+                        <Link to={`${BASE_API_URL}/api/files/Disclosure_Document_September_2021_PMS.pdf`} target="_blanck">PMS Disclosure</Link>
                       </li>
                       <li>
                         <Link
+                        
                           to="https://www.nseindia.com/circulars/circular.htm"
+                          
                           target="_blanck"
                         >
                           NSE Circulars
                         </Link>
                       </li>
+                      
                       <li>
-                        <Link to="#">FTP Access</Link>
-                      </li>
-                      <li>
-                        <Link to="https://evoting.cdslindia.com/Evoting/EvotingLogin">
+                        <Link to="https://evoting.cdslindia.com/Evoting/EvotingLogin" target="_blanck">
                           E Voting from CDSL
                         </Link>
                       </li>
@@ -327,7 +331,7 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#">Step by Step Producer of eKYC</Link>
+                        <Link to={`${BASE_API_URL}/api/files/StepbyStep-Procedure-for-Account-opening.pdf`} target="_blank">Step by Step Producer of eKYC</Link>
                       </li>
                       <li>
                         <KeyManagerialPersonnels />

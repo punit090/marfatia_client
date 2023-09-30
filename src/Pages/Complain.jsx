@@ -1,12 +1,22 @@
 import axios from "axios";
 import { Formik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import HaderContent2 from "../Commponent/HaderContent2";
 import { BASE_API_URL } from "../helpers/apiHelper";
 
 const Complain = () => {
+  useEffect(() => {
+    const scrollDelay = 100; // 100 ms delay
+  
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 650);
+    }, scrollDelay);
+  
+    return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
+  }, []);
+
   const [errorBanner, setErrorBanner] = useState("");
   const [successBanner, setSuccessBanner] = useState("");
 
@@ -239,7 +249,7 @@ const Complain = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.address}
-                            placeholder="Enter your contact number"
+                            placeholder="Enter your address"
                             className="form-control inp_text"
                             id="address"
                             rows={4}

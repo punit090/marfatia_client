@@ -133,9 +133,8 @@ const Hader = () => {
                       to="https://www.facebook.com/vadodaraMarfatia"
                       target="_blank"
                     >
-                      <i className="fab fa-facebook-f">
+                      
                         <FaFacebookF />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -143,9 +142,7 @@ const Hader = () => {
                       to="https://api.whatsapp.com/send?phone=919925142538&"
                       target="_blank"
                     >
-                      <i className="fab fa-facebook-f">
                         <FaWhatsapp />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -153,9 +150,7 @@ const Hader = () => {
                       to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
                       target="_blank"
                     >
-                      <i className="fab fa-twitter">
                         <FaTwitter />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -163,6 +158,7 @@ const Hader = () => {
                       to="https://apps.apple.com/in/app/share4surepro/id6446141699"
                       target="_blank"
                     >
+
                       <i className="fab fa-facebook-f">
                         <AiFillApple />
                       </i>
@@ -176,6 +172,7 @@ const Hader = () => {
                       <i className="fab fa-facebook-f">
                         <AiFillAndroid />
                       </i>
+
                     </Link>
                   </li>
 
@@ -184,9 +181,7 @@ const Hader = () => {
                       to="https://www.youtube.com/channel/UCRmBOZt6mmMekA7_UbxdLSw"
                       target="_blank"
                     >
-                      <i className="fab fa-linkedin-in">
                         <FaYoutube />
-                      </i>
                     </Link>
                   </li>
                 </ul>
@@ -415,7 +410,7 @@ const Hader = () => {
                             >
                               IPO
                             </a>
-                            <Link to="/all-news">News</Link>
+                            <a to="/all-news">News</a>
                           </div>
                         </div>
                       </li>

@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import {
@@ -19,6 +19,17 @@ import ShaperImg2 from "../assets/img/shape-33.png";
 import "../css/elements-css/contact.css";
 
 const ContactUs = () => {
+
+  useEffect(() => {
+    const scrollDelay = 100; // 100 ms delay
+  
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 650);
+    }, scrollDelay);
+  
+    return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
+  }, []);
+
   const schema = Yup.object().shape({
     email: Yup.string()
       .required("Email is  required ")
@@ -57,9 +68,7 @@ const ContactUs = () => {
                     }}
                   />
                   <div className="icon-box">
-                    <i className="icon-48">
                       <HiOutlineLocationMarker />{" "}
-                    </i>
                   </div>
                   <h3>Our Location</h3>
                   <p>
@@ -77,9 +86,7 @@ const ContactUs = () => {
               >
                 <div className="inner-box">
                   <div className="icon-box">
-                    <i className="icon-49">
                       <HiOutlineMailOpen />
-                    </i>
                   </div>
                   <h3>Email Address</h3>
                   <p>
@@ -105,9 +112,7 @@ const ContactUs = () => {
                     }}
                   />
                   <div className="icon-box">
-                    <i className="icon-50">
                       <FiPhoneCall />
-                    </i>
                   </div>
                   <h3>Phone Number</h3>
                   <p>
@@ -143,9 +148,7 @@ const ContactUs = () => {
                       to="https://www.facebook.com/vadodaraMarfati"
                       target="_blanck"
                     >
-                      <i className="fab fa-facebook-f">
                         <BiLogoFacebook />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -153,9 +156,7 @@ const ContactUs = () => {
                       to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
                       target="_blanck"
                     >
-                      <i className="fab fa-twitter">
                         <BiLogoTwitter />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -163,9 +164,7 @@ const ContactUs = () => {
                       to="https://www.youtube.com/channel/UCRmBOZt6mmMekA7_UbxdLSw"
                       target="_blanck"
                     >
-                      <i className="fab fa-pinterest-p">
                         <BiLogoYoutube />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -173,9 +172,7 @@ const ContactUs = () => {
                       to="https://api.whatsapp.com/send?phone=919925142538&"
                       target="_blanck"
                     >
-                      <i className="fab fa-instagram">
                         <BiLogoWhatsapp />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -183,9 +180,7 @@ const ContactUs = () => {
                       to="https://workspace.google.com/blog/product-announcements/what-you-need-to-know-about-the-sunset-of-consumer-google-plus-on-april-second"
                       target="_blanck"
                     >
-                      <i className="fab fa-instagram">
                         <FcGoogle />
-                      </i>
                     </Link>
                   </li>
                 </ul>
@@ -305,7 +300,9 @@ const ContactUs = () => {
                               <textarea
                                 name="message"
                                 placeholder="Type message"
-                                defaultValue={values.message}
+                                onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.message}
                                 rows={4}
                                 className="contactTextAria"
                               />

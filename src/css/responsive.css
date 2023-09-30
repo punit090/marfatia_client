@@ -860,9 +860,10 @@
   .page-title h1 {
     font-size: 30px !important;
   }
+
   .theme-btn-one {
-    font-size: 12px !important;
-    padding: 13px 45px !important;
+    font-size: 11px !important;
+    padding: 13px 15px !important;
   }
   .footerLinkContact {
     font-size: 17px !important;
