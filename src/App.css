@@ -1,12 +1,23 @@
 .loading-spinner-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(33, 56, 6, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 56, 6, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.mainDivWhatsapp {
+  position: absolute;
+  z-index: 999;
+}
+.whatsappDiv {
+  position: fixed;
+  z-index: 999999;
+
+  right: 27px;
+  bottom: 108px;
+}

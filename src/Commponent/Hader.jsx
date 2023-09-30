@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { AiOutlineDown } from "react-icons/ai";
+import { AiFillAndroid, AiFillApple, AiOutlineDown } from "react-icons/ai";
 import { BiSearch, BiSolidPhoneCall } from "react-icons/bi";
 import {
   FaClock,
   FaFacebookF,
-  FaGooglePlusG,
   FaTwitter,
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
-import { BASE_API_URL } from "../helpers/apiHelper";
 import MobileHader from "./../Commponent/MobileHader";
 import Logo from "./../assets/img/Logo1new.png";
 import "./../css/color.css";
@@ -118,7 +116,7 @@ const Hader = () => {
                       <FiMail />
                     </i>
                     <Link to="mailto:info@example.com">
-                      marfatiastockbroking@example.com
+                      customercare@marfatia.net
                     </Link>
                   </li>
                 </ul>
@@ -157,10 +155,24 @@ const Hader = () => {
                   </li>
                   <li>
                     <Link
-                      to="https://workspace.google.com/blog/product-announcements/what-you-need-to-know-about-the-sunset-of-consumer-google-plus-on-april-second"
+                      to="https://apps.apple.com/in/app/share4surepro/id6446141699"
                       target="_blank"
                     >
-                        <FaGooglePlusG />
+
+                      <i className="fab fa-facebook-f">
+                        <AiFillApple />
+                      </i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="https://play.google.com/store/apps/details?id=com.marfatia.xts&pcampaignid=web_share"
+                      target="_blank"
+                    >
+                      <i className="fab fa-facebook-f">
+                        <AiFillAndroid />
+                      </i>
+
                     </Link>
                   </li>
 
@@ -403,7 +415,7 @@ const Hader = () => {
                         </div>
                       </li>
 
-                      <li className="current">
+                      {/* <li className="current">
                         <div className="dropdown">
                           <button className="dropbtn">
                             Mutual Funds <AiOutlineDown />
@@ -412,7 +424,7 @@ const Hader = () => {
                             <Link to="/mtual-fund-details">MF Schemes</Link>
                           </div>
                         </div>
-                      </li>
+                      </li> */}
                       <li className="current">
                         <div className="dropdown">
                           <button className="dropbtn">
@@ -481,6 +493,13 @@ const Hader = () => {
                             >
                               Partner With Us
                             </Link>
+                            <Link
+                              to="https://www.marfatia.net/uploads/pdf/NEWKYCFORM.pdf"
+                              target="_blank"
+                            >
+                              Open An Account
+                            </Link>
+                            <Link to="/complains">Support / Query</Link>
                           </div>
                         </div>
                       </li>
@@ -496,7 +515,7 @@ const Hader = () => {
                 </li> */}
                 <li className="btn-box">
                   <Link
-                    to={`${BASE_API_URL}/api/files/Trading Account Activation Form.pdf`}
+                    to="https://smartkyc.co.in/m/gbrk_130psp"
                     target="_blank"
                   >
                     Activate Dormant A/C

@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./../css/elements-css/team.css";
-import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { setCategory, storeGallery, storeGalleryCategory } from "../state/action";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { BASE_API_URL } from "../helpers/apiHelper";
+import {
+  setCategory,
+  storeGallery,
+  storeGalleryCategory,
+} from "../state/action";
+import "./../css/elements-css/team.css";
 
-const categoryApiPath = BASE_API_URL+"/api/gallery-category"
-const galleryApiPath = BASE_API_URL+"/api/gallery"
-const galleryFilesPath = BASE_API_URL+"/api/gallery-images/"
-
+const categoryApiPath = BASE_API_URL + "/api/gallery-category";
+const galleryApiPath = BASE_API_URL + "/api/gallery";
+const galleryFilesPath = BASE_API_URL + "/api/gallery-images/";
 
 const GalleryComponent = () => {
   const arrayOfContents = useSelector((state) => state.galleryCategoryList);
@@ -37,8 +40,8 @@ const GalleryComponent = () => {
       });
   };
 
-  function handleClick(item){
-      dispatch(setCategory(item));
+  function handleClick(item) {
+    dispatch(setCategory(item));
   }
 
   useEffect(() => {
@@ -61,7 +64,9 @@ const GalleryComponent = () => {
                 <div className="col-lg-3 col-md-6 mb-4 col-sm-12 team-block">
                   <Link
                     to="/gallery-details"
-                    onClick={()=>{handleClick(item)}}
+                    onClick={() => {
+                      handleClick(item);
+                    }}
                   >
                     <div
                       className="team-block-one wow fadeInUp animated"
@@ -72,14 +77,17 @@ const GalleryComponent = () => {
                         <div className="image-box">
                           <figure className="image">
                             <img
-                              src={galleryFilesPath+item.imagePath}
+                              src={galleryFilesPath + item.imagePath}
                               alt="img"
                             />
                           </figure>
                         </div>
                         <div className="lower-content">
                           <h3>
-                            <Link to="/gallery-details" onClick={handleClick(item)}>
+                            <Link
+                              to="/gallery-details"
+                              onClick={handleClick(item)}
+                            >
                               {item.gallaryCategoryTitle}
                             </Link>
                           </h3>

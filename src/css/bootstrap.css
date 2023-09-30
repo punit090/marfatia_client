@@ -4572,9 +4572,7 @@ fieldset:disabled .btn {
   background-size: var(--bs-accordion-btn-icon-width);
   transition: var(--bs-accordion-btn-icon-transition);
 } */
-.accordion-button:not(.collapsed)::after {
-  display: none !important;
-}
+
 @media (prefers-reduced-motion: reduce) {
   .accordion-button::after {
     transition: none;

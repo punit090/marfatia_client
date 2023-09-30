@@ -1,15 +1,11 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { AiOutlineStock, AiTwotoneGold } from "react-icons/ai";
-import { BiCoinStack, BiDollar } from "react-icons/bi";
-import { GiGoldBar } from "react-icons/gi";
+import { AiOutlineStock } from "react-icons/ai";
+import { BiCoinStack } from "react-icons/bi";
 import { HiOfficeBuilding } from "react-icons/hi";
 import { LiaPiggyBankSolid } from "react-icons/lia";
-import { MdOutlineTipsAndUpdates, MdToday } from "react-icons/md";
-import { RiStockFill } from "react-icons/ri";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
-import Commodity from "./../assets/img/commodity.png";
 import EKyc from "./../assets/img/e-kyc.png";
 
 const Categori = () => {
@@ -68,7 +64,7 @@ const Categori = () => {
               </Card>
             </Link>
           </Col>
-          <Col lg="3" md="6" sm="12">
+          {/* <Col lg="3" md="6" sm="12">
             <Card className="categoryCard">
               <div className="mainDivCategory">
                 <div>
@@ -77,12 +73,12 @@ const Categori = () => {
                 <h5 className="categoryTitle">Today's Tips</h5>
               </div>
             </Card>
-          </Col>
-          <Col lg="3" md="6" sm="12">
+          </Col> */}
+          {/* <Col lg="3" md="6" sm="12">
             <Card className="categoryCard">
               <div className="mainDivCategory">
                 <div>
-                  {/* <LiaPiggyBankSolid className="categoryIcon" /> */}
+               
                   <img
                     style={{
                       filter:
@@ -96,7 +92,7 @@ const Categori = () => {
                 <h5 className="categoryTitle">Commodities</h5>
               </div>
             </Card>
-          </Col>
+          </Col> */}
           <Col lg="3" md="6" sm="12">
             <Link className="categoryLink" to="#">
               <Card className="categoryCard">
@@ -112,7 +108,7 @@ const Categori = () => {
           <Col lg="3" md="6" sm="12">
             <Link
               className="categoryLink"
-              to="https://smartkyc.co.in/"
+              to="https://smartkyc.co.in/d/gbrk_130psp"
               target="_blank"
             >
               <Card className="categoryCard">
@@ -128,7 +124,7 @@ const Categori = () => {
           <Col lg="3" md="6" sm="12">
             <Link
               className="categoryLink"
-              to="https://smartkyc.co.in/"
+              to="https://smartkyc.co.in/m/gbrk_130psp"
               target="_blank"
             >
               <Card className="categoryCard">
@@ -144,7 +140,7 @@ const Categori = () => {
           <Col lg="3" md="6" sm="12">
             <Link
               className="categoryLink"
-              to="https://smartkyc.co.in/"
+              to="https://smartkyc.co.in/d/gbrk_130psp"
               target="_blank"
             >
               <Card className="categoryCard">
@@ -157,7 +153,7 @@ const Categori = () => {
               </Card>
             </Link>
           </Col>
-          <Col lg="3" md="6" sm="12">
+          {/* <Col lg="3" md="6" sm="12">
             <Card className="categoryCard">
               <div className="mainDivCategory">
                 <div>
@@ -207,8 +203,8 @@ const Categori = () => {
                 <h5 className="categoryTitle">Silver N/A </h5>
               </div>
             </Card>
-          </Col>
-          <Col lg="3" md="6" sm="12">
+          </Col> */}
+          {/* <Col lg="3" md="6" sm="12">
             <Link
               className="categoryLink"
               to="/todays-online-trade"
@@ -223,7 +219,7 @@ const Categori = () => {
                 </div>
               </Card>
             </Link>
-          </Col>
+          </Col> */}
         </Row>
       </div>
     </div>
