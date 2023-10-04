@@ -44,7 +44,7 @@ const AddreshHadeOffice = () => {
                 <td>9925002650</td>
 
                 <td>
-                  <Link to="#"> customercare@marfatia.net</Link>
+                <a className="tableLink" href="mailto:customercare@marfatia.net">customercare@marfatia.net</a>
                 </td>
               </tr>
               <tr>
@@ -58,7 +58,7 @@ const AddreshHadeOffice = () => {
                 <td> Branch</td>
                 <td> 9825244678</td>
                 <td>
-                  <Link to="#"> branch_chhani@marfatia.net</Link>
+                  <a className="tableLink" href="mailto:branch_chhani@marfatia.net"> branch_chhani@marfatia.net</a>
                 </td>
               </tr>
 
@@ -70,7 +70,7 @@ const AddreshHadeOffice = () => {
                 <td>9825244678</td>
 
                 <td>
-                  <Link to="#"> branch_chhani@marfatia.net</Link>
+                  <a className="tableLink" href="mailto:branch_nizampura@marfatia.net">branch_nizampura@marfatia.net</a>
                 </td>
               </tr>
               <tr>
@@ -81,7 +81,7 @@ const AddreshHadeOffice = () => {
                 <td>99250026476</td>
 
                 <td>
-                  <Link to="#"> branch_mehsana@marfatia.net</Link>
+                  <a className="tableLink" href="mailto:branch_mehsana@marfatia.net"> branch_mehsana@marfatia.net</a>
                 </td>
               </tr>
               <tr>
@@ -96,7 +96,7 @@ const AddreshHadeOffice = () => {
                 <td>90990304803</td>
 
                 <td>
-                  <Link to="#"> branch_surat@marfatia.net</Link>
+                  <a className="tableLink" href="mailto:branch_surat@marfatia.net" target="_black"> branch_surat@marfatia.net</a>
                 </td>
               </tr>
               <tr>
@@ -109,7 +109,7 @@ const AddreshHadeOffice = () => {
                 <td>9925003381</td>
 
                 <td>
-                  <Link to="#"> branch_makarpura@marfatia.net</Link>
+                  <a className="tableLink" href="mailto:marfatia_n@yahoo.co.in"> branch_makarpura@marfatia.net</a>
                 </td>
               </tr>
             </tbody>

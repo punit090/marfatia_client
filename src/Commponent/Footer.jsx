@@ -134,7 +134,7 @@ const Footer = () => {
                       <li>
 
                         <Link to="https://attendee.gotowebinar.com/pageNotFound.tmpl" target="_blank">
-                          Webiner
+                        Webinar
 
                         </Link>
                       </li>

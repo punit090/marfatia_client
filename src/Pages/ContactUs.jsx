@@ -90,10 +90,10 @@ const ContactUs = () => {
                   </div>
                   <h3>Email Address</h3>
                   <p>
-                    <Link to="#">customercare@marfatia.net</Link>
+                    <a href="mailto:customercare@marfatia.net">customercare@marfatia.net</a>
                     <br />
 
-                    <Link to="#">compliance@marfatia.net</Link>
+                    <a href="mailto:compliance@marfatia.net">compliance@marfatia.net</a>
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const ContactUs = () => {
                   <h3>Phone Number</h3>
                   <p>
                     Emergency Cases <br />
-                    <Link to="#">0265-2351355</Link> (24/7)
+                    <a href="tel:0265-23513553">0265-2351355</a> (24/7)
                   </p>
                 </div>
               </div>
@@ -414,6 +414,7 @@ const ContactUs = () => {
                 <Link
                   to="https://scores.gov.in/scores/Welcome.html"
                   className="linkContact"
+                  target="_blank"
                 >
                   {" "}
                   https://scores.gov.in/scores/Welcome.html
@@ -422,6 +423,8 @@ const ContactUs = () => {
                 <Link
                   to="https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx"
                   className="linkContact"
+                  target="_blank"
+
                 >
                   https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx
                 </Link>
