@@ -355,9 +355,9 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 </td>
                   <td>
-                    <Link className="tableLink" to="#">
+                    <a className="tableLink" href="mailto:customercare@marfatia.net">
                       customercare@marfatia.net
-                    </Link>
+                    </a>
                   </td>
                   <td>8.30 AM TO 5.30 PM</td>
                 </tr>
@@ -369,9 +369,9 @@ const ContactUs = () => {
                   </td>
                   <td>9925002653</td>
                   <td>
-                    <Link className="tableLink" to="#">
+                    <a className="tableLink" href="mailto:kyc@marfatia.net">
                       kyc@marfatia.net
-                    </Link>
+                    </a>
                   </td>
                   <td>10.00 AM TO 7.00 PM</td>
                 </tr>
@@ -383,9 +383,9 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 (Ext.-508) </td>
                   <td>
-                    <Link className="tableLink" to="#">
+                    <a className="tableLink" href="mailto:compliance@marfatia.net">
                       compliance@marfatia.net
-                    </Link>
+                    </a>
                   </td>
                   <td>10.00 AM TO 7.00 PM</td>
                 </tr>
@@ -397,9 +397,9 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 (Ext.-514)</td>
                   <td>
-                    <Link className="tableLink" to="#">
+                    <a className="tableLink" href="mailto:shreyanishil@yahoo.com">
                       shreyanishil@yahoo.com
-                    </Link>
+                    </a>
                   </td>
                   <td>10.00 AM TO 7.00 PM</td>
                 </tr>
@@ -412,7 +412,7 @@ const ContactUs = () => {
                 In absence of response/complaint not addressed to your
                 satisfaction, you may lodge a complaint with SEBI at
                 <Link
-                  to="In absence of response/complaint not addressed "
+                  to="https://scores.gov.in/scores/Welcome.html"
                   className="linkContact"
                 >
                   {" "}

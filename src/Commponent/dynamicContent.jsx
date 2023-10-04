@@ -80,7 +80,7 @@ const DynamicContent = () => {
         <React.Fragment>
           <HaderContent2
             Title={pageContent.contentType}
-            SubTitle={parent||"nothing"}
+            SubTitle={parent?parent:pageContent.contentType}
           />
           <Container>
             <div dangerouslySetInnerHTML={{ __html: pageContent.content }} />

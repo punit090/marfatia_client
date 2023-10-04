@@ -10,7 +10,7 @@ import { BASE_API_URL } from "../helpers/apiHelper";
 
 const DownloadForm = () => {
 
-  const mainFilePath = BASE_API_URL+"/api/download-form/"
+  const mainFilePath = BASE_API_URL+"/api/downloads/"
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
