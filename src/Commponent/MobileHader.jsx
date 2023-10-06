@@ -344,7 +344,7 @@ const MobileHader = () => {
                   </div>
                 )}
 
-                <div className="dropdowMobile" onClick={() => setFund(!fund)}>
+                {/* <div className="dropdowMobile" onClick={() => setFund(!fund)}>
                   <li className="mobileHaderLi">
                     <Link className="mobileHaderLink" to="#">
                       <PiHandCoinsLight className="iconDiv" />
@@ -362,7 +362,7 @@ const MobileHader = () => {
                       </Link>
                     </div>
                   </div>
-                )}
+                )} */}
 
                 <div
                   className="dropdowMobile"

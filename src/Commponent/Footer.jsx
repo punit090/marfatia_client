@@ -331,7 +331,7 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/StepbyStep-Procedure-for-Account-opening.pdf`} target="_blank">Step by Step Producer of eKYC</Link>
+                        <Link to={`${BASE_API_URL}/api/files/StepbyStep-Procedure-for-Account-opening.pdf`} target="_blank">Step by Step Procedure of eKYC</Link>
                       </li>
                       <li>
                         <KeyManagerialPersonnels />
@@ -440,9 +440,9 @@ const Footer = () => {
                 <i className="icon-3">
                   <HiOutlineMail className="footerLink" />
                 </i>
-                <Link className="footerLinkContact" to="#">
+                <a className="footerLinkContact" href="mailto:customercare@marfatia.net">
                   customercare@marfatia.net
-                </Link>
+                </a>
               </Col>
               <Col lg="2" md="3">
                 <i className="icon-23">

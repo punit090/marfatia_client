@@ -145,23 +145,21 @@ const Hader = () => {
                         <FaWhatsapp />
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
                       target="_blank"
                     >
                         <FaTwitter />
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       to="https://apps.apple.com/in/app/share4surepro/id6446141699"
                       target="_blank"
                     >
 
-                      <i className="fab fa-facebook-f">
                         <AiFillApple />
-                      </i>
                     </Link>
                   </li>
                   <li>
@@ -169,9 +167,7 @@ const Hader = () => {
                       to="https://play.google.com/store/apps/details?id=com.marfatia.xts&pcampaignid=web_share"
                       target="_blank"
                     >
-                      <i className="fab fa-facebook-f">
                         <AiFillAndroid />
-                      </i>
 
                     </Link>
                   </li>
@@ -410,7 +406,7 @@ const Hader = () => {
                             >
                               IPO
                             </a>
-                            <a to="/all-news">News</a>
+                            <Link to="/all-news">News</Link>
                           </div>
                         </div>
                       </li>
@@ -493,12 +489,12 @@ const Hader = () => {
                             >
                               Partner With Us
                             </Link>
-                            <Link
+                            {/* <Link
                               to="https://www.marfatia.net/uploads/pdf/NEWKYCFORM.pdf"
                               target="_blank"
                             >
                               Open An Account
-                            </Link>
+                            </Link> */}
                             <Link to="/complains">Support / Query</Link>
                           </div>
                         </div>

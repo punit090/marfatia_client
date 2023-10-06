@@ -17,6 +17,7 @@ import HaderContent2 from "../Commponent/HaderContent2";
 import ShaperImg from "../assets/img/shape-32.png";
 import ShaperImg2 from "../assets/img/shape-33.png";
 import "../css/elements-css/contact.css";
+import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 
 const ContactUs = () => {
 
@@ -153,12 +154,21 @@ const ContactUs = () => {
                   </li>
                   <li>
                     <Link
+                      to="https://play.google.com/store/apps/details?id=com.marfatia.xts&pcampaignid=web_share"
+                      target="_blank"
+                    >
+                        <AiFillAndroid />
+
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <Link
                       to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
                       target="_blanck"
                     >
                         <BiLogoTwitter />
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       to="https://www.youtube.com/channel/UCRmBOZt6mmMekA7_UbxdLSw"
@@ -177,12 +187,22 @@ const ContactUs = () => {
                   </li>
                   <li>
                     <Link
+                      to="https://apps.apple.com/in/app/share4surepro/id6446141699"
+                      target="_blank"
+                    >
+
+                        <AiFillApple />
+                    </Link>
+                  </li>
+                 
+                  {/* <li>
+                    <Link
                       to="https://workspace.google.com/blog/product-announcements/what-you-need-to-know-about-the-sunset-of-consumer-google-plus-on-april-second"
                       target="_blanck"
                     >
                         <FcGoogle />
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
