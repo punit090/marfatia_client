@@ -123,7 +123,10 @@ const Footer = () => {
                       </li>
 
                       <li>
-                        <Link to="http://203.88.142.27:8181/webmail3/" target="_blank">
+                        <Link
+                          to="http://203.88.142.27:8181/webmail3/"
+                          target="_blank"
+                        >
                           Web Mail
                         </Link>
                       </li>
@@ -132,10 +135,11 @@ const Footer = () => {
                         <Link to="/new-downloads">New Downloads</Link>
                       </li>
                       <li>
-
-                        <Link to="https://attendee.gotowebinar.com/pageNotFound.tmpl" target="_blank">
-                        Webinar
-
+                        <Link
+                          to="https://attendee.gotowebinar.com/pageNotFound.tmpl"
+                          target="_blank"
+                        >
+                          Webinar
                         </Link>
                       </li>
                       {/* <li>
@@ -244,28 +248,32 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                     
-
                         <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>
                           Disclaimer
                         </Link>
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/Disclosure_Document_September_2021_PMS.pdf`} target="_blanck">PMS Disclosure</Link>
+                        <Link
+                          to={`${BASE_API_URL}/api/files/Disclosure_Document_September_2021_PMS.pdf`}
+                          target="_blanck"
+                        >
+                          PMS Disclosure
+                        </Link>
                       </li>
                       <li>
                         <Link
-                        
                           to="https://www.nseindia.com/circulars/circular.htm"
-                          
                           target="_blanck"
                         >
                           NSE Circulars
                         </Link>
                       </li>
-                      
+
                       <li>
-                        <Link to="https://evoting.cdslindia.com/Evoting/EvotingLogin" target="_blanck">
+                        <Link
+                          to="https://evoting.cdslindia.com/Evoting/EvotingLogin"
+                          target="_blanck"
+                        >
                           E Voting from CDSL
                         </Link>
                       </li>
@@ -331,7 +339,12 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to={`${BASE_API_URL}/api/files/StepbyStep-Procedure-for-Account-opening.pdf`} target="_blank">Step by Step Procedure of eKYC</Link>
+                        <Link
+                          to={`${BASE_API_URL}/api/files/StepbyStep-Procedure-for-Account-opening.pdf`}
+                          target="_blank"
+                        >
+                          Step by Step Procedure of eKYC
+                        </Link>
                       </li>
                       <li>
                         <KeyManagerialPersonnels />
@@ -380,7 +393,11 @@ const Footer = () => {
                 </Link>
               </Col>
               <Col lg="1" md="2">
-                <Link className="footerLink" to="https://www.nsdl.co.in/">
+                <Link
+                  className="footerLink"
+                  target="_blanck"
+                  to="https://www.nsdl.co.in/"
+                >
                   NSDL
                 </Link>
               </Col>
@@ -436,11 +453,14 @@ const Footer = () => {
                   <h3>Contact</h3>
                 </div>
               </Col>
-              <Col lg="3" md="3">
+              <Col lg="3" md="4">
                 <i className="icon-3">
                   <HiOutlineMail className="footerLink" />
                 </i>
-                <a className="footerLinkContact" href="mailto:customercare@marfatia.net">
+                <a
+                  className="footerLinkContact"
+                  href="mailto:customercare@marfatia.net"
+                >
                   customercare@marfatia.net
                 </a>
               </Col>
@@ -458,7 +478,7 @@ const Footer = () => {
                   0265-2351355
                 </a>
               </Col>
-              <Col lg="3" md="3">
+              <Col lg="3" md="4">
                 <Link
                   className="footerLinkContact"
                   to="https://www.facebook.com/vadodaraMarfatia"
