@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_API_URL } from "../helpers/apiHelper";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Gallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -11,7 +11,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import HaderContent2 from "../Commponent/HaderContent2";
 import galleryimage1 from "../assets/img/gallary_category_Image.png";
 import "../css/elements-css/GalleryNew.css"; // Import your custom CSS for styling
-import { AiOutlineCloseCircle} from "react-icons/ai";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import {
   setCategory,
   storeGallery,
@@ -23,7 +23,7 @@ const galleryApiPath = BASE_API_URL + "/api/gallery";
 const galleryFilesPath = BASE_API_URL + "/api/gallery-images/";
 
 const GalleryPageNew = () => {
-  const initialImages = [
+  const [initialImages, setInitialImages] = useState([
     {
       original: galleryimage1,
       Title: "title`1",
@@ -51,18 +51,28 @@ const GalleryPageNew = () => {
 
       thumbnail: galleryimage1,
     },
-  ];
+  ]);
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const selectedCategory = useSelector((state) => state.selectedCategory)||"zasd";
-
+  const arrayOfCategories = useSelector((state) => state.galleryCategoryList);
   const arrayOfAllImages = useSelector((state) => state.gallery);
-  const filterdImages = arrayOfAllImages.filter((item) => item.gallaryCategoryId === selectedCategory._id);
+  const dispatch = useDispatch();
 
   const openSlider = (index) => {
     setSelectedImageIndex(index);
+    const filteredImages = arrayOfAllImages.filter(
+      (item) => item.gallaryCategoryId === arrayOfCategories[index]._id
+    );
+
+    const initialImages = filteredImages.map((item) => ({
+      original: galleryFilesPath + item.imagePath,
+      title: "title1", // Remove the backticks (`) and provide a valid title
+      thumbnail: galleryFilesPath + item.imagePath,
+    }));
+
+    setInitialImages(initialImages);
     setIsOpen(true);
   };
 
@@ -91,9 +101,6 @@ const GalleryPageNew = () => {
     },
   ];
 
-  const arrayOfContents = useSelector((state) => state.galleryCategoryList);
-  const dispatch = useDispatch();
-
   const fetchgalleryCategory = () => {
     axios
       .get(categoryApiPath)
@@ -120,26 +127,17 @@ const GalleryPageNew = () => {
     dispatch(setCategory(item));
   }
 
-
   useEffect(() => {
     fetchgalleryCategory();
     fetchGallery();
-  }, [dispatch]);
+    console.log(initialImages);
+  }, [dispatch, initialImages]);
   return (
     <>
       <HaderContent2 Title="Gallery " SubTitle="Gallery" />
       <div className="gallery-container main">
         <div className="gallery container">
-          {arrayOfContents.map((image, index) => (
-            // <div key={index} className="gallery-item card gallery-card">
-            //   <div className="card-image">
-            //     <img
-            //       src={image.thumbnail}
-            //       alt={`Nature Image ${index + 1}`}
-            //       onClick={() => openSlider(index)}
-            //     />
-            //   </div>
-            // </div>
+          {arrayOfCategories.map((image, index) => (
             <div
               className="team-block-one wow fadeInUp animated"
               data-wow-delay="00ms"
@@ -152,17 +150,19 @@ const GalleryPageNew = () => {
                     <img
                       src={galleryFilesPath + image.imagePath}
                       alt={`Nature Image ${index + 1}`}
-                      onClick={() => openSlider(index)}
+                      onClick={() => {
+                        openSlider(index);
+                      }}
                     />
                     <div className="lower-content">
                       <h3>
-                        <a className="lower-content"
-                        onClick={() => {
-                          handleClick(image);
-                        }}
+                        <a
+                          className="lower-content"
+                          onClick={() => {
+                            handleClick(image);
+                          }}
                         >
                           {image.gallaryCategoryTitle}
-                          
                         </a>
                       </h3>
                     </div>
@@ -174,25 +174,27 @@ const GalleryPageNew = () => {
         </div>
 
         {isOpen && (
-  <div className="overlay">
-    <div className="slider-modal" style={{ width: '80%', height: '80%',borderRadius:"5px" }}>
-      <button className="close-button" onClick={closeSlider}>
-      <AiOutlineCloseCircle></AiOutlineCloseCircle>
-      </button>
-      <Gallery
-        items={filterdImages}
-        startIndex={selectedImageIndex}
-        showThumbnails={false}
-        showFullscreenButton={false}
-        showPlayButton={false}
-        showBullets
-        onClose={closeSlider}
-        responsive={responsiveSettings}
-      />
-    </div>
-  </div>
-)}
-
+          <div className="overlay">
+            <div
+              className="slider-modal"
+              style={{ width: "80%", height: "80%", borderRadius: "5px" }}
+            >
+              <button className="close-button" onClick={closeSlider}>
+                <AiOutlineCloseCircle></AiOutlineCloseCircle>
+              </button>
+              <Gallery
+                items={initialImages}
+                startIndex={selectedImageIndex}
+                showThumbnails={false}
+                showFullscreenButton={false}
+                showPlayButton={false}
+                showBullets
+                onClose={closeSlider}
+                responsive={responsiveSettings}
+              />
+            </div>
+          </div>
+        )}
       </div>
       {/* <Subscribe />
       <Featured />

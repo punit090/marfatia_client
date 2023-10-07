@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { AiFillAndroid, AiFillApple, AiOutlineDown ,AiOutlineCloseCircle} from "react-icons/ai";
+import {
+  AiFillAndroid,
+  AiFillApple,
+  AiOutlineDown,
+  AiOutlineCloseCircle,
+} from "react-icons/ai";
 import { BiSearch, BiSolidPhoneCall } from "react-icons/bi";
 import {
   FaClock,
@@ -15,35 +20,13 @@ import Logo from "./../assets/img/Logo1new.png";
 import "./../css/color.css";
 
 const Hader = () => {
-  const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate();
-  const navigateToAnother = (id) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate("/cms/", { state: id });
-    }, 700);
-  };
 
   return (
     <div>
       {/*Search Popup*/}
 
-      {isLoading ? (
-        <div className="container">
-          <div className="loading-spinner-overlay">
-            <div
-              className="spinner-border  text-success"
-              style={{ width: "6rem", height: "6rem" }}
-              role="status"
-            >
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
+      
       <div id="search-popup" className="search-popup">
         <div className="popup-inner">
           <div className="upper-box clearfix">
@@ -133,8 +116,7 @@ const Hader = () => {
                       to="https://www.facebook.com/vadodaraMarfatia"
                       target="_blank"
                     >
-                      
-                        <FaFacebookF />
+                      <FaFacebookF />
                     </Link>
                   </li>
                   <li>
@@ -142,7 +124,7 @@ const Hader = () => {
                       to="https://api.whatsapp.com/send?phone=919925142538&"
                       target="_blank"
                     >
-                        <FaWhatsapp />
+                      <FaWhatsapp />
                     </Link>
                   </li>
                   {/* <li>
@@ -158,8 +140,7 @@ const Hader = () => {
                       to="https://apps.apple.com/in/app/share4surepro/id6446141699"
                       target="_blank"
                     >
-
-                        <AiFillApple />
+                      <AiFillApple />
                     </Link>
                   </li>
                   <li>
@@ -167,8 +148,7 @@ const Hader = () => {
                       to="https://play.google.com/store/apps/details?id=com.marfatia.xts&pcampaignid=web_share"
                       target="_blank"
                     >
-                        <AiFillAndroid />
-
+                      <AiFillAndroid />
                     </Link>
                   </li>
 
@@ -177,7 +157,7 @@ const Hader = () => {
                       to="https://www.youtube.com/channel/UCRmBOZt6mmMekA7_UbxdLSw"
                       target="_blank"
                     >
-                        <FaYoutube />
+                      <FaYoutube />
                     </Link>
                   </li>
                 </ul>
@@ -219,41 +199,21 @@ const Hader = () => {
                             About us <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            <a
-                              onClick={() => {
-                                navigateToAnother("6501c54415bfa912f1831806");
-                              }}
-                            >
+                            <Link to="/cms/6501c54415bfa912f1831806">
                               Company Profile
-                            </a>
-                            <a
-                              onClick={() => {
-                                navigateToAnother("6501c56515bfa912f1831809");
-                              }}
-                            >
+                            </Link>
+                            <Link to="/cms/6501c56515bfa912f1831809">
                               Vision and Mission
-                            </a>
-                            <a
-                              onClick={() => {
-                                navigateToAnother("6501c59215bfa912f183180c");
-                              }}
-                            >
+                            </Link>
+                            <Link to="/cms/6501c59215bfa912f183180c">
                               Advantages
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c5a615bfa912f183180f")
-                              }
-                            >
+                            </Link>
+                            <Link to="/cms/6501c5a615bfa912f183180f">
                               The Team
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c5be15bfa912f1831812")
-                              }
-                            >
+                            </Link>
+                            <Link to="/cms/6501c5be15bfa912f1831812">
                               Milestones
-                            </a>
+                            </Link>
                             {/* <Link to="/cms" state={"6501c5ce15bfa912f1831815"}>Client Speaks</Link> */}
                             <Link to="/gallery">Gallery</Link>
                           </div>
@@ -268,60 +228,24 @@ const Hader = () => {
                           <div className="dropdown-content">
                             <div className="row">
                               <div className="col-lg-6">
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c5f215bfa912f1831818"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c5f215bfa912f1831818">
                                   Stock Market
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c60615bfa912f183181b"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c60615bfa912f183181b">
                                   Currency
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c61615bfa912f183181e"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c61615bfa912f183181e">
                                   Depository Services
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c62d15bfa912f1831821"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c62d15bfa912f1831821">
                                   Mobile Trading{" "}
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c64115bfa912f1831824"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c64115bfa912f1831824">
                                   Portfolio Management Services
                                 </Link>
                               </div>
                               <div className="col-lg-6">
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c64f15bfa912f1831827"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c5be15bfa912f1831812">
                                   Premium Client Services
                                 </Link>
                                 <Link
@@ -330,40 +254,16 @@ const Hader = () => {
                                 >
                                   Mutual Funds
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c65f15bfa912f183182a"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c65f15bfa912f183182a">
                                   Digital Library
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c66d15bfa912f183182d"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c66d15bfa912f183182d">
                                   Dial N Trade
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c68415bfa912f1831830"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c68415bfa912f1831830">
                                   NRI Desk
                                 </Link>
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c69d15bfa912f1831833"
-                                    )
-                                  }
-                                >
+                                <Link to="/cms/6501c69d15bfa912f1831833">
                                   SLBM [Security Landing & Borrowing
                                   Merchandise]
                                 </Link>
@@ -378,34 +278,16 @@ const Hader = () => {
                             Markets <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c7ed15bfa912f1831836")
-                              }
-                            >
+                            <Link to="/cms/6501c7ed15bfa912f1831836">
                               Equity
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c7fe15bfa912f1831839")
-                              }
-                            >
+                            </Link>
+                            <Link to="/cms/6501c7fe15bfa912f1831839">
                               Derivatives
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c80b15bfa912f183183c")
-                              }
-                            >
+                            </Link>
+                            <Link to="/cms/6501c80b15bfa912f183183c">
                               Currency{" "}
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c81915bfa912f183183f")
-                              }
-                            >
-                              IPO
-                            </a>
+                            </Link>
+                            <Link to="/cms/6501c81915bfa912f183183f">IPO</Link>
                             <Link to="/all-news">News</Link>
                           </div>
                         </div>
@@ -429,27 +311,13 @@ const Hader = () => {
                           <div className="dropdown-content2">
                             {/* <Link to="/cms" state={"6501c84215bfa912f1831842"}>Daily Tips</Link> */}
                             {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c86415bfa912f1831848")
-                              }
-                            >
+                            <Link to="/cms/6501c86415bfa912f1831848">
                               How to Trade
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c87115bfa912f183184b")
-                              }
-                            >
+                            </Link>
+                            <Link to="/cms/6501c87115bfa912f183184b">
                               Mobile App{" "}
-                            </a>
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c88015bfa912f183184e")
-                              }
-                            >
-                              PMS
-                            </a>
+                            </Link>
+                            <Link to="/cms/6501c88015bfa912f183184e">PMS</Link>
                           </div>
                         </div>
                       </li>
@@ -482,11 +350,7 @@ const Hader = () => {
                             >
                               Open An Account
                             </Link>
-                            <Link
-                              onClick={() =>
-                                navigateToAnother("6501c8a115bfa912f1831851")
-                              }
-                            >
+                            <Link to="/cms/6501c8a115bfa912f1831851">
                               Partner With Us
                             </Link>
                             {/* <Link
