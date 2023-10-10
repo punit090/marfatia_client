@@ -44,7 +44,12 @@ const AddreshHadeOffice = () => {
                 <td>9925002650</td>
 
                 <td>
-                <a className="tableLink" href="mailto:customercare@marfatia.net">customercare@marfatia.net</a>
+                  <Link
+                    className="tableLink"
+                    to="mailto:customercare@marfatia.net"
+                  >
+                    customercare@marfatia.net
+                  </Link>
                 </td>
               </tr>
               <tr>
@@ -58,7 +63,13 @@ const AddreshHadeOffice = () => {
                 <td> Branch</td>
                 <td> 9825244678</td>
                 <td>
-                  <a className="tableLink" href="mailto:branch_chhani@marfatia.net"> branch_chhani@marfatia.net</a>
+                  <a
+                    className="tableLink"
+                    href="mailto:branch_chhani@marfatia.net"
+                  >
+                    {" "}
+                    branch_chhani@marfatia.net
+                  </a>
                 </td>
               </tr>
 
@@ -70,7 +81,12 @@ const AddreshHadeOffice = () => {
                 <td>9825244678</td>
 
                 <td>
-                  <a className="tableLink" href="mailto:branch_nizampura@marfatia.net">branch_nizampura@marfatia.net</a>
+                  <a
+                    className="tableLink"
+                    href="mailto:branch_nizampura@marfatia.net"
+                  >
+                    branch_nizampura@marfatia.net
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -81,7 +97,13 @@ const AddreshHadeOffice = () => {
                 <td>99250026476</td>
 
                 <td>
-                  <a className="tableLink" href="mailto:branch_mehsana@marfatia.net"> branch_mehsana@marfatia.net</a>
+                  <a
+                    className="tableLink"
+                    href="mailto:branch_mehsana@marfatia.net"
+                  >
+                    {" "}
+                    branch_mehsana@marfatia.net
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -96,7 +118,14 @@ const AddreshHadeOffice = () => {
                 <td>90990304803</td>
 
                 <td>
-                  <a className="tableLink" href="mailto:branch_surat@marfatia.net" target="_black"> branch_surat@marfatia.net</a>
+                  <a
+                    className="tableLink"
+                    href="mailto:branch_surat@marfatia.net"
+                    target="_black"
+                  >
+                    {" "}
+                    branch_surat@marfatia.net
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -109,7 +138,10 @@ const AddreshHadeOffice = () => {
                 <td>9925003381</td>
 
                 <td>
-                  <a className="tableLink" href="mailto:marfatia_n@yahoo.co.in"> branch_makarpura@marfatia.net</a>
+                  <a className="tableLink" href="mailto:marfatia_n@yahoo.co.in">
+                    {" "}
+                    branch_makarpura@marfatia.net
+                  </a>
                 </td>
               </tr>
             </tbody>

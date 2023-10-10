@@ -220,11 +220,11 @@
     font-size: 17px !important;
   }
   .footerLinkContact {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .main-menu .navigation > li > ul,
   .main-menu .navigation > li > ul > li > ul,
   .main-menu .navigation > li > .megamenu {
@@ -240,6 +240,9 @@
   }
   .mt_60 {
     margin-top: 4px !important;
+  }
+  .whatsappDiv {
+    bottom: 115px;
   }
   .video-btn {
     left: 280px !important;
@@ -506,7 +509,7 @@
     padding: 20px 55px 34px 55px !important;
   }
   .news-section {
-    padding-bottom: 45px !important;
+    /* padding-bottom: 45px !important; */
   }
   .service-block-one .inner-box {
     padding: 20px 55px 34px !important;
@@ -523,7 +526,7 @@
   }
 
   .sec-pad {
-    padding: 63px 0px 70px 0px;
+    padding: 50px 0px 70px 0px !important;
   }
 
   .sec-title h2 {
@@ -1066,5 +1069,8 @@
   .blog-sidebar .sidebar-widget {
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .whatsappDiv {
+    bottom: 143px;
   }
 }

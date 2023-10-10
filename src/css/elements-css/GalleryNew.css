@@ -59,13 +59,15 @@ body {
 
 /* Main section styles */
 .main .container {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   justify-content: center;
   align-items: center;
 }
-
+.galleryImgCol {
+  padding: 15px;
+}
 /* Card styles */
 .main .card {
   color: #252a32; /* $color-black */

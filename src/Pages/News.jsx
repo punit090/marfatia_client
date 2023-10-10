@@ -1,22 +1,29 @@
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import HaderContent2 from "../Commponent/HaderContent2";
-import NewsImg from "../assets/img/Sensex.jpg";
 import PostNews from "../assets/img/post-1.jpg";
 import "../css/elements-css/blog.css";
-import { useSelector } from "react-redux";
 import { BASE_API_URL } from "../helpers/apiHelper";
-
 
 const News = () => {
   const shortMonthNames = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
-  const mainFilePath = BASE_API_URL+"/api/news-images/"
+  const mainFilePath = BASE_API_URL + "/api/news-images/";
 
   const selectedNews = useSelector((state) => state.selectedNews);
-
 
   useEffect(() => {
     const scrollTimeout = setTimeout(() => {
@@ -25,7 +32,6 @@ const News = () => {
 
     return () => clearTimeout(scrollTimeout);
   }, []);
-
 
   return (
     <React.Fragment>
@@ -40,22 +46,35 @@ const News = () => {
                   <div className="inner-box">
                     <div className="image-box">
                       <figure className="image">
-                        <img src={mainFilePath+selectedNews.imagePath} alt="img" />
+                        <img
+                          src={mainFilePath + selectedNews.imagePath}
+                          alt="img"
+                        />
                       </figure>
                       <h2>
-                      {selectedNews.date.split("T")[0].split("-")[2]}<span>{shortMonthNames[parseInt(selectedNews.date.split("T")[0].split("-")[2], 10)-1]}</span>
+                        {selectedNews.date.split("T")[0].split("-")[2]}
+                        <span>
+                          {
+                            shortMonthNames[
+                              parseInt(
+                                selectedNews.date.split("T")[0].split("-")[2],
+                                10
+                              ) - 1
+                            ]
+                          }
+                        </span>
                       </h2>
                     </div>
                     <div className="lower-content">
-                      <h2>
-                      {selectedNews.newsTitle}
-                      </h2>
-                      <p>
-                      {selectedNews.description}
-                      </p>
-                     <div>
-                     <div dangerouslySetInnerHTML={{ __html: selectedNews.news }} />
-                     </div>
+                      <h2>{selectedNews.newsTitle}</h2>
+                      <p>{selectedNews.description}</p>
+                      <div>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: selectedNews.news,
+                          }}
+                        />
+                      </div>
                       {/* <blockquote>
                         <div className="icon-box">
                           <i className="icon-47" />
@@ -124,7 +143,9 @@ const News = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="https://www.bseindia.com/">BSE </Link>
+                        <Link to="https://www.bseindia.com/" target="_blanck">
+                          BSE{" "}
+                        </Link>
                       </li>
                       <li>
                         <Link
@@ -267,7 +288,6 @@ const News = () => {
         </div>
       </section>
       {/* sidebar-page-container end */}
-
     </React.Fragment>
   );
 };
