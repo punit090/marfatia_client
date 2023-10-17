@@ -8,7 +8,6 @@ import {
   MdOutlinePayments,
   MdOutlinePermContactCalendar,
 } from "react-icons/md";
-import { PiHandCoinsLight } from "react-icons/pi";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -391,7 +390,7 @@ const MobileHader = () => {
                       </Link>
                     </div>
 
-                    <div>
+                    {/* <div>
                       <Link
                         className="titleLink"
                         onClick={() =>
@@ -400,7 +399,7 @@ const MobileHader = () => {
                       >
                         Mobile App
                       </Link>
-                    </div>
+                    </div> */}
                     <div>
                       <Link
                         className="titleLink"
@@ -430,7 +429,7 @@ const MobileHader = () => {
                 </div>
                 {payment && (
                   <div className="list">
-                    <div>
+                    {/* <div>
                       <Link
                         className="titleLink"
                         to="http://136.233.133.90:8787"
@@ -439,7 +438,7 @@ const MobileHader = () => {
                         {" "}
                         Transfer Marfatia
                       </Link>
-                    </div>
+                    </div> */}
                     <div>
                       <Link className="titleLink" to="/withdrawl-form">
                         Withdraw Funds
