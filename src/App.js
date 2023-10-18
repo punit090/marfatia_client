@@ -85,7 +85,7 @@ function App() {
           <Route path="/todays-online-trade" element={<TodaysTrade />} />
           {/* <Route path="/careers" element={<Career />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/cms" element={<DynamicContent />} />
+          <Route path="/cms/:contentId" element={<DynamicContent />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/gallery-new" element={<GalleryPageNew/>} />
           <Route path="/complains" element={<Complain />} />

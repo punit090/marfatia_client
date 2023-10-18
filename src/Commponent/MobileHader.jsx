@@ -31,7 +31,7 @@ const MobileHader = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      navigate("/cms/", { state: id });
+      navigate(`/cms/${id}`);
     }, 700);
   };
 

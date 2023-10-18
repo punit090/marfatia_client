@@ -30,7 +30,7 @@ const Footer = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      navigate("/cms/", { state: id });
+      navigate(`/cms/${id}`);
     }, 700);
   };
 
@@ -108,10 +108,8 @@ const Footer = () => {
                         <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <Link
-                          onClick={() => {
-                            navigateToAnother("6501c54415bfa912f1831806");
-                          }}
+                        <Link  to="/cms/6501c54415bfa912f1831806"
+                         
                         >
                           About Us
                         </Link>
@@ -229,12 +227,12 @@ const Footer = () => {
                   <div className="widget-content">
                     <ul className="links-list clearfix">
                       <li>
-                        <Link to="/cms" state={"6501c8cf15bfa912f1831857"}>
+                        <Link to="/cms/6501c8cf15bfa912f1831857">
                           Privacy Policy
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c8db15bfa912f183185a"}>
+                        <Link to="/cms/6501c8db15bfa912f183185a">
                           Terms &amp; Condition
                         </Link>
                       </li>
@@ -247,7 +245,13 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
+<<<<<<< HEAD
+                     
+
+                        <Link to="/cms/6501c8bb15bfa912f1831854">
+=======
                         <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>
+>>>>>>> 6a7d165c4dc5a9778fd8c6b8dadcb897fa09e55e
                           Disclaimer
                         </Link>
                       </li>
@@ -307,35 +311,35 @@ const Footer = () => {
                         <QuickContact />
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c8f015bfa912f183185d"}>
+                        <Link to="/cms/6501c8f015bfa912f183185d" >
                           Advisory for Investors
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c90415bfa912f1831860"}>
+                        <Link to="/cms/6501c90415bfa912f1831860" >
                           Investor Charter Stock Broker
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c91515bfa912f1831863"}>
+                        <Link to="/cms/6501c91515bfa912f1831863" >
                           Investor Charter Research Analyst
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c92315bfa912f1831866"}>
+                        <Link to="/cms/6501c92315bfa912f1831866">
                           Investor Charter of Depository Participant
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c93115bfa912f1831869"}>
+                        <Link to="/cms/6501c93115bfa912f1831869">
                           Advisory KYC Compliance
                         </Link>
                       </li>
                       <li>
-                        <Link to="/cms" state={"6501c94115bfa912f183186c"}>
+                        <Link to="/cms/6501c94115bfa912f183186c" >
                           Investor Charter in Respect of Portfolio Management
                           Services
-                        </Link>
+                        </Link> 
                       </li>
                       <li>
                         <Link
@@ -349,9 +353,9 @@ const Footer = () => {
                         <KeyManagerialPersonnels />
                       </li>
                       <li>
-                        <Link to="#">
-                          <AddreshHadeOffice />
-                        </Link>
+                        <Link to="/cms/6521652926a358f4961ecec5" >
+                        Registered Address of Head Office and Branches
+                        </Link> 
                       </li>
                     </ul>
                   </div>
