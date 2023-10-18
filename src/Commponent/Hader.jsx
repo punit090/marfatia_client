@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import {
-  AiFillAndroid,
-  AiFillApple,
-  AiOutlineDown,
-  AiOutlineCloseCircle,
-} from "react-icons/ai";
+
+import { AiFillAndroid, AiFillApple, AiOutlineDown } from "react-icons/ai";
+
 import { BiSearch, BiSolidPhoneCall } from "react-icons/bi";
-import {
-  FaClock,
-  FaFacebookF,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaClock, FaFacebookF, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import MobileHader from "./../Commponent/MobileHader";
@@ -237,10 +228,24 @@ const Hader = () => {
                                 <Link to="/cms/6501c61615bfa912f183181e">
                                   Depository Services
                                 </Link>
-                                <Link to="/cms/6501c62d15bfa912f1831821">
+
+                                {/* <Link
+                                  onClick={() =>
+                                    navigateToAnother(
+                                      "6501c62d15bfa912f1831821"
+                                    )
+                                  }
+                                >
                                   Mobile Trading{" "}
-                                </Link>
-                                <Link to="/cms/6501c64115bfa912f1831824">
+                                </Link> */}
+                                <Link
+                                  onClick={() =>
+                                    navigateToAnother(
+                                      "6501c64115bfa912f1831824"
+                                    )
+                                  }
+                                >
+
                                   Portfolio Management Services
                                 </Link>
                               </div>
@@ -313,11 +318,23 @@ const Hader = () => {
                             {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
                             <Link to="/cms/6501c86415bfa912f1831848">
                               How to Trade
-                            </Link>
-                            <Link to="/cms/6501c87115bfa912f183184b">
+
+                            </a>
+                            {/* <a
+                              onClick={() =>
+                                navigateToAnother("6501c87115bfa912f183184b")
+                              }
+                            >
                               Mobile App{" "}
-                            </Link>
-                            <Link to="/cms/6501c88015bfa912f183184e">PMS</Link>
+                            </a> */}
+                            <a
+                              onClick={() =>
+                                navigateToAnother("6501c88015bfa912f183184e")
+                              }
+                            >
+                              PMS
+                            </a>
+
                           </div>
                         </div>
                       </li>
@@ -327,12 +344,12 @@ const Hader = () => {
                             Payment /Withdraw Funds <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            <Link
+                            {/* <Link
                               to="http://136.233.133.90:8787"
                               target="_blanck"
                             >
                               Transfer Marfatia
-                            </Link>
+                            </Link> */}
                             <Link to="/withdrawl-form">Withdraw Funds</Link>
                           </div>
                         </div>

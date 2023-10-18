@@ -59,8 +59,8 @@ const AboutOvrCompany = () => {
                       </div>
                       <h3>Solution Focused</h3>
                       <p>
-                        Lorem ipsum dolor sit amet tempus consectetur
-                        adipiscing.
+                        Marfatia Stock Broking is a leading financial services
+                        provider with a pan-India presence
                       </p>
                     </div>
                     <div className="single-item">
@@ -71,8 +71,8 @@ const AboutOvrCompany = () => {
                       </div>
                       <h3>99.99% Success</h3>
                       <p>
-                        Lorem ipsum dolor sit amet tempus consectetur
-                        adipiscing.
+                        Marfatia Stock Broking is a leading financial services
+                        provider with a pan-India presence
                       </p>
                     </div>
                   </div>

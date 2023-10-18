@@ -4,7 +4,6 @@ import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 
 import {
   BiLogoFacebook,
-  BiLogoTwitter,
   BiLogoWhatsapp,
   BiLogoYoutube,
   BiSolidPhoneCall,
@@ -497,13 +496,13 @@ const Footer = () => {
                 >
                   <BiLogoWhatsapp className="shareIconFooter" />
                 </Link>
-                <Link
+                {/* <Link
                   className="footerLinkContact"
                   to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
                   target="_blanck"
                 >
                   <BiLogoTwitter className="shareIconFooter" />
-                </Link>
+                </Link> */}
                 <Link
                   className="footerLinkContact"
                   to="https://apps.apple.com/in/app/share4surepro/id6446141699"

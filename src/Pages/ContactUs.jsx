@@ -2,13 +2,8 @@ import { Formik } from "formik";
 import React, { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import {
-  BiLogoFacebook,
-  BiLogoTwitter,
-  BiLogoWhatsapp,
-  BiLogoYoutube,
-} from "react-icons/bi";
-import { FcGoogle } from "react-icons/fc";
+import { AiFillAndroid, AiFillApple } from "react-icons/ai";
+import { BiLogoFacebook, BiLogoWhatsapp, BiLogoYoutube } from "react-icons/bi";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineLocationMarker, HiOutlineMailOpen } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -17,17 +12,15 @@ import HaderContent2 from "../Commponent/HaderContent2";
 import ShaperImg from "../assets/img/shape-32.png";
 import ShaperImg2 from "../assets/img/shape-33.png";
 import "../css/elements-css/contact.css";
-import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 
 const ContactUs = () => {
-
   useEffect(() => {
     const scrollDelay = 100; // 100 ms delay
-  
+
     const timeoutId = setTimeout(() => {
       window.scrollTo(0, 650);
     }, scrollDelay);
-  
+
     return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
   }, []);
 
@@ -69,12 +62,16 @@ const ContactUs = () => {
                     }}
                   />
                   <div className="icon-box">
-                      <HiOutlineLocationMarker />{" "}
+                    <HiOutlineLocationMarker />{" "}
                   </div>
                   <h3>Our Location</h3>
                   <p>
                     216, Glacier complex, Jetalpur Road, <br />
                     Vadodara-390 005.
+                  </p>
+                  <p>
+                    Share Trading : 0265-2351513 <br />
+                    Fax No. : 0265-2351468
                   </p>
                 </div>
               </div>
@@ -87,14 +84,18 @@ const ContactUs = () => {
               >
                 <div className="inner-box">
                   <div className="icon-box">
-                      <HiOutlineMailOpen />
+                    <HiOutlineMailOpen />
                   </div>
                   <h3>Email Address</h3>
                   <p>
-                    <a href="mailto:customercare@marfatia.net">customercare@marfatia.net</a>
+                    <a href="mailto:customercare@marfatia.net">
+                      customercare@marfatia.net
+                    </a>
                     <br />
 
-                    <a href="mailto:compliance@marfatia.net">compliance@marfatia.net</a>
+                    <a href="mailto:compliance@marfatia.net">
+                      compliance@marfatia.net
+                    </a>
                   </p>
                 </div>
               </div>
@@ -113,7 +114,7 @@ const ContactUs = () => {
                     }}
                   />
                   <div className="icon-box">
-                      <FiPhoneCall />
+                    <FiPhoneCall />
                   </div>
                   <h3>Phone Number</h3>
                   <p>
@@ -149,7 +150,7 @@ const ContactUs = () => {
                       to="https://www.facebook.com/vadodaraMarfati"
                       target="_blanck"
                     >
-                        <BiLogoFacebook />
+                      <BiLogoFacebook />
                     </Link>
                   </li>
                   <li>
@@ -157,8 +158,7 @@ const ContactUs = () => {
                       to="https://play.google.com/store/apps/details?id=com.marfatia.xts&pcampaignid=web_share"
                       target="_blank"
                     >
-                        <AiFillAndroid />
-
+                      <AiFillAndroid />
                     </Link>
                   </li>
                   {/* <li>
@@ -174,7 +174,7 @@ const ContactUs = () => {
                       to="https://www.youtube.com/channel/UCRmBOZt6mmMekA7_UbxdLSw"
                       target="_blanck"
                     >
-                        <BiLogoYoutube />
+                      <BiLogoYoutube />
                     </Link>
                   </li>
                   <li>
@@ -182,7 +182,7 @@ const ContactUs = () => {
                       to="https://api.whatsapp.com/send?phone=919925142538&"
                       target="_blanck"
                     >
-                        <BiLogoWhatsapp />
+                      <BiLogoWhatsapp />
                     </Link>
                   </li>
                   <li>
@@ -190,11 +190,10 @@ const ContactUs = () => {
                       to="https://apps.apple.com/in/app/share4surepro/id6446141699"
                       target="_blank"
                     >
-
-                        <AiFillApple />
+                      <AiFillApple />
                     </Link>
                   </li>
-                 
+
                   {/* <li>
                     <Link
                       to="https://workspace.google.com/blog/product-announcements/what-you-need-to-know-about-the-sunset-of-consumer-google-plus-on-april-second"
@@ -321,8 +320,8 @@ const ContactUs = () => {
                                 name="message"
                                 placeholder="Type message"
                                 onChange={handleChange}
-                                  onBlur={handleBlur}
-                                  value={values.message}
+                                onBlur={handleBlur}
+                                value={values.message}
                                 rows={4}
                                 className="contactTextAria"
                               />
@@ -375,7 +374,10 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 </td>
                   <td>
-                    <a className="tableLink" href="mailto:customercare@marfatia.net">
+                    <a
+                      className="tableLink"
+                      href="mailto:customercare@marfatia.net"
+                    >
                       customercare@marfatia.net
                     </a>
                   </td>
@@ -403,7 +405,10 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 (Ext.-508) </td>
                   <td>
-                    <a className="tableLink" href="mailto:compliance@marfatia.net">
+                    <a
+                      className="tableLink"
+                      href="mailto:compliance@marfatia.net"
+                    >
                       compliance@marfatia.net
                     </a>
                   </td>
@@ -417,7 +422,10 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 (Ext.-514)</td>
                   <td>
-                    <a className="tableLink" href="mailto:shreyanishil@yahoo.com">
+                    <a
+                      className="tableLink"
+                      href="mailto:shreyanishil@yahoo.com"
+                    >
                       shreyanishil@yahoo.com
                     </a>
                   </td>
@@ -444,7 +452,6 @@ const ContactUs = () => {
                   to="https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx"
                   className="linkContact"
                   target="_blank"
-
                 >
                   https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx
                 </Link>
