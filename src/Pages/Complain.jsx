@@ -9,19 +9,21 @@ import { BASE_API_URL } from "../helpers/apiHelper";
 const Complain = () => {
   useEffect(() => {
     const scrollDelay = 100; // 100 ms delay
-  
+
     const timeoutId = setTimeout(() => {
       window.scrollTo(0, 650);
     }, scrollDelay);
-  
+
     return () => clearTimeout(timeoutId); // Cleanup the timeout when the component unmounts
   }, []);
 
   const [errorBanner, setErrorBanner] = useState("");
   const [successBanner, setSuccessBanner] = useState("");
+  const [complainStatus, setComplainStatus] = useState("");
+  const [complainCode, setComplainCode] = useState("");
 
   const addComplain = async (data) => {
-    console.log("called postPI");
+    
 
     try {
       const res = await axios.post(BASE_API_URL + "/api/complain", data);
@@ -45,6 +47,44 @@ const Complain = () => {
       }, 3000);
     }
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(complainStatus);
+    try {
+      const response = await axios.get(
+        `${BASE_API_URL}/api/complain/getByComplainNo/${complainCode}`
+      );
+
+      if (response.status === 200) {
+        setComplainStatus(response.data.data[0]);
+      } else {
+        console.error("API request failed");
+      }
+    } catch (error) {
+      console.error("API request error:", error);
+    }
+  };
+  let bannerColor = '';
+  let statusMessage = '';
+
+  if (complainStatus) {
+    switch (complainStatus.status) {
+      case 'In Process':
+        bannerColor = 'alert-info';
+        statusMessage = 'is currently in process';
+        break;
+     
+      case 'Closed':
+        bannerColor = 'alert-success';
+        statusMessage = 'is closed';
+        break;
+      default:
+        bannerColor = 'alert-danger';
+        statusMessage = 'is currently open we will start working on it soon';
+        break;
+    }
+  }
 
   const schema = Yup.object().shape({
     fName: Yup.string()
@@ -90,8 +130,53 @@ const Complain = () => {
     <React.Fragment>
       <HaderContent2 Title="Complain" SubTitle="Complain" />
       <Container>
-      <Card class>ok</Card>
+        <Card className="mt-5">
+          <form onSubmit={handleSubmit}>
+            <Row className="m-3">
+              <Col lg="6">
+                <div className="mainLableDiv">
+                  <lable>Complain code</lable>
+                  <input
+                    type="text"
+                    name="fName"
+                    placeholder="Enter your complain code here"
+                    className="form-control inp_text"
+                    value={complainCode}
+                    onChange={(e) => setComplainCode(e.target.value)}
+                    id="fName"
+                  />
 
+                  <p className="error"></p>
+                </div>
+              </Col>
+              <Col>
+                <div>
+                  <Button
+                    className="mt-4 btn-success "
+                    style={{ backgroundColor: "#85c226" }}
+                    type="submit"
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+          </form>
+          <Row>
+            <div className="text-center mt-4">
+            {complainStatus && (
+        <div className={`alert ${bannerColor}`} role="alert">
+          <h4 className="alert-heading">
+            Dear {complainStatus.fname} {complainStatus.lname}
+          </h4>
+          <p className="mb-0">
+            Your complain {statusMessage}.
+          </p>
+        </div>
+      )}
+            </div>
+          </Row>
+        </Card>
 
         <Formik
           validationSchema={schema}
@@ -281,6 +366,8 @@ const Complain = () => {
                           />
                           {/* If validation is not passed show errors */}
                           <p className="error">
+                            {" "}
+                            <div className="more-btn"></div>
                             {errors.complain &&
                               touched.complain &&
                               errors.complain}

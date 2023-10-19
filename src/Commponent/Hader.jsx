@@ -388,8 +388,7 @@ const Hader = () => {
                 </li> */}
                 <li className="btn-box">
                   <Link
-                    to="https://smartkyc.co.in/m/gbrk_130psp"
-                    target="_blank"
+                    to="#"
                   >
                     Activate Dormant A/C
                   </Link>
