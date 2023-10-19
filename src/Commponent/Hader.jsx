@@ -239,11 +239,8 @@ const Hader = () => {
                                   Mobile Trading{" "}
                                 </Link> */}
                                 <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c64115bfa912f1831824"
-                                    )
-                                  }
+                                to="/cms/6501c64115bfa912f1831824"
+                                  
                                 >
 
                                   Portfolio Management Services
@@ -319,7 +316,7 @@ const Hader = () => {
                             <Link to="/cms/6501c86415bfa912f1831848">
                               How to Trade
 
-                            </a>
+                            </Link>
                             {/* <a
                               onClick={() =>
                                 navigateToAnother("6501c87115bfa912f183184b")
@@ -327,13 +324,12 @@ const Hader = () => {
                             >
                               Mobile App{" "}
                             </a> */}
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c88015bfa912f183184e")
-                              }
+                            <Link
+                            to="/cms/6501c88015bfa912f183184e"
+                             
                             >
                               PMS
-                            </a>
+                            </Link>
 
                           </div>
                         </div>

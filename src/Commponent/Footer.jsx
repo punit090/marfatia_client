@@ -245,13 +245,7 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-<<<<<<< HEAD
-                     
-
-                        <Link to="/cms/6501c8bb15bfa912f1831854">
-=======
                         <Link to="/cms" state={"6501c8bb15bfa912f1831854"}>
->>>>>>> 6a7d165c4dc5a9778fd8c6b8dadcb897fa09e55e
                           Disclaimer
                         </Link>
                       </li>
