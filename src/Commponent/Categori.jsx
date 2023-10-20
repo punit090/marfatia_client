@@ -121,7 +121,7 @@ const Categori = () => {
               </Card>
             </Link>
           </Col>
-          {/* <Col lg="3" md="6" sm="12">
+           <Col lg="3" md="6" sm="12">
             <Link
               className="categoryLink"
               to="https://smartkyc.co.in/m/gbrk_130psp"
@@ -136,7 +136,7 @@ const Categori = () => {
                 </div>
               </Card>
             </Link>
-          </Col> */}
+          </Col>
           <Col lg="3" md="6" sm="12">
             <Link
               className="categoryLink"
