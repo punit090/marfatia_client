@@ -69,10 +69,7 @@ const ContactUs = () => {
                     216, Glacier complex, Jetalpur Road, <br />
                     Vadodara-390 005.
                   </p>
-                  <p>
-                    Share Trading : 0265-2351513 <br />
-                    Fax No. : 0265-2351468
-                  </p>
+               
                 </div>
               </div>
             </div>
@@ -116,10 +113,13 @@ const ContactUs = () => {
                   <div className="icon-box">
                     <FiPhoneCall />
                   </div>
-                  <h3>Phone Number</h3>
+                  <h3>Contact details</h3>
                   <p>
-                    Emergency Cases <br />
-                    <a href="tel:0265-23513553">0265-2351355</a> (24/7)
+                    <span>Mobile number:</span><a href="tel:0265-23513553">0265-2351355</a> (24/7)
+                  </p>
+                  <p>
+                    Share Trading : 0265-2351513 <br />
+                    Fax No. : 0265-2351468
                   </p>
                 </div>
               </div>
