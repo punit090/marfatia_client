@@ -53,8 +53,8 @@ const AllNews = () => {
   useEffect(() => {
     fetchNews();
     const scrollTimeout = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 10);
+      window.scrollTo(0, 600);
+    }, 100);
 
     return () => clearTimeout(scrollTimeout);
   }, []);
