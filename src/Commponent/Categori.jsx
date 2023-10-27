@@ -75,6 +75,7 @@ const Categori = () => {
                     </div>
                     <h5 className="categoryTitle">Margin Trading Funding</h5>
                   </div>
+
                 </Card>
               </Link>
             </Col>
@@ -90,6 +91,23 @@ const Categori = () => {
                       <img src={EKyc} className="categoryIcon" alt="icon" />
                     </div>
                     <h5 className="categoryTitle">eKyc</h5>
+
+                  <h5 className="categoryTitle">eKyc</h5>
+                </div>
+              </Card>
+            </Link>
+          </Col>
+           <Col lg="3" md="6" sm="12">
+            <Link
+              className="categoryLink"
+              to="https://smartkyc.co.in/m/gbrk_130psp"
+              target="_blank"
+            >
+              <Card className="categoryCard">
+                <div className="mainDivCategory">
+                  <div>
+                    <img src={EKyc} className="categoryIcon" alt="icon" />
+
                   </div>
                 </Card>
               </Link>
