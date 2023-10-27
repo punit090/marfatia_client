@@ -263,7 +263,9 @@ const Hader = () => {
                                 >
                                   Mobile Trading{" "}
                                 </Link> */}
+
                                 <Link to="/cms/6501c64115bfa912f1831824">
+
                                   Portfolio Management Services
                                 </Link>
                               </div>
@@ -336,6 +338,7 @@ const Hader = () => {
                             {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
                             <Link to="/cms/6501c86415bfa912f1831848">
                               How to Trade
+
                             </Link>
                             {/* <a
                               onClick={() =>
@@ -344,7 +347,9 @@ const Hader = () => {
                             >
                               Mobile App{" "}
                             </a> */}
+
                             <Link to="/cms/6501c88015bfa912f183184e">PMS</Link>
+
                           </div>
                         </div>
                       </li>
@@ -402,8 +407,8 @@ const Hader = () => {
                 </li> */}
                 <li className="btn-box">
                   <Link
-                    to="https://smartkyc.co.in/m/gbrk_130psp"
-                    target="_blank"
+                   to="https://smartkyc.co.in/m/gbrk_130psp"
+                   target="_blank"
                   >
                     Activate Dormant A/C
                   </Link>

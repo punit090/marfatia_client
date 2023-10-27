@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import HaderContent2 from "../Commponent/HaderContent2";
 import PostNews from "../assets/img/post-1.jpg";
 import "../css/elements-css/blog.css";
 import { BASE_API_URL } from "../helpers/apiHelper";
+import { setNews, storeNews } from "../state/action";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 const News = () => {
   const shortMonthNames = [
@@ -24,6 +27,39 @@ const News = () => {
   const mainFilePath = BASE_API_URL + "/api/news-images/";
 
   const selectedNews = useSelector((state) => state.selectedNews);
+
+  const newsImagesPath = BASE_API_URL + "/api/news-images/";
+  const newsApi = BASE_API_URL + "/api/news-master";
+  const allNews = useSelector((state) => state.newsList);
+  const arrayOfNews = allNews.slice(0, 3);
+  const dispatch = useDispatch();
+
+  const fetchNews = () => {
+    if (arrayOfNews.length === 0) {
+      axios
+        .get(newsApi)
+        .then((res) => {
+          dispatch(storeNews(res.data.data));
+          console.log(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("news master done");
+        });
+    }
+  };
+
+  function handleClick(item) {
+    dispatch(setNews(item));
+  }
+
+  useEffect(() => {
+    if (allNews.length === 0) {
+      fetchNews();
+    }
+  }, []);
 
   useEffect(() => {
     const scrollTimeout = setTimeout(() => {
@@ -175,48 +211,49 @@ const News = () => {
                   <div className="widget-title">
                     <h3>Recent News</h3>
                   </div>
-                  <div className="post-inner">
-                    <div className="post">
-                      <figure className="post-thumb">
-                        <Link to="#">
-                          <img src={PostNews} alt="img" />
-                        </Link>
-                      </figure>
-                      <h5>
-                        <Link to="#">
-                          Tiger Global Fully Exits Zomato, Sells 1.4% Stake?
-                        </Link>
-                      </h5>
-                      <span className="post-date">Apr 17, 2023</span>
+                  {arrayOfNews && arrayOfNews.length > 0 ? (
+                    arrayOfNews.map((item) => (
+                      <div className="post-inner mt-4">
+                        <div className="post">
+                          <figure className="post-thumb">
+                            <Link to="#" >
+                              <img
+                                src={newsImagesPath + item.imagePath}
+                                onClick={() => {
+                                  handleClick(item);
+                                }}
+                                alt="img"
+                                style={{
+                                  borderRadius: '50%',
+                                  width: '100px', // Adjust the width and height as needed
+                                  height: '100px',
+                                }}
+                              />
+                            </Link>
+                          </figure>
+                          <h5>
+                            <Link to="#" onClick={() => {
+                                handleClick(item);
+                              }}>
+                             {item.newsTitle.length > 40
+                                ? item.newsTitle.substring(0, 40) + "..."
+                                : item.newsTitle}
+                            </Link>
+                          </h5>
+                          <span className="post-date">{new Date(item.date).toLocaleDateString(
+                                  "en-GB"
+                                )}</span>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div
+                      className="d-flex justify-content-center align-items-center"
+                      style={{ height: "100vh" }}
+                    >
+                      <Spinner animation="border" variant="primary" size="lg" />
                     </div>
-                    <div className="post">
-                      <figure className="post-thumb">
-                        <Link to="#">
-                          <img src={PostNews} alt="img" />
-                        </Link>
-                      </figure>
-                      <h5>
-                        <Link to="#">
-                          Rishabh Instruments IPO GMP (Grey Market Premium)
-                        </Link>
-                      </h5>
-                      <span className="post-date">Apr 16, 2023</span>
-                    </div>
-                    <div className="post">
-                      <figure className="post-thumb">
-                        <Link to="#">
-                          <img src={PostNews} alt="img" />
-                        </Link>
-                      </figure>
-                      <h5>
-                        <Link to="#">
-                          Vishnu Prakash R Punglia IPO subscribed 87.82 times at
-                          close
-                        </Link>
-                      </h5>
-                      <span className="post-date">Apr 15, 2023</span>
-                    </div>
-                  </div>
+                  )}
                 </div>
                 <div className="sidebar-widget tags-widget">
                   <div className="widget-title">

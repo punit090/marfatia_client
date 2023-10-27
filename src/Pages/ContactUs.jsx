@@ -1,5 +1,7 @@
 import { Formik } from "formik";
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
+import axios from "axios";
+
 import { Card, Col, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { AiFillAndroid, AiFillApple } from "react-icons/ai";
@@ -11,9 +13,39 @@ import * as Yup from "yup";
 import HaderContent2 from "../Commponent/HaderContent2";
 import ShaperImg from "../assets/img/shape-32.png";
 import ShaperImg2 from "../assets/img/shape-33.png";
+import { BASE_API_URL } from "../helpers/apiHelper";
+
 import "../css/elements-css/contact.css";
 
 const ContactUs = () => {
+
+  const [errorBanner, setErrorBanner] = useState("");
+  const [successBanner, setSuccessBanner] = useState("");
+
+  const addContect = async (data) => {
+    console.log("called postPI");
+
+    try {
+      const res = await axios.post(BASE_API_URL + "/api/quick-connect", data);
+      console.log("res == >", res);
+
+      if (res.data) {
+        setSuccessBanner(res.data.message);
+        setTimeout(() => {
+          setSuccessBanner(""); // Clear the success banner message
+        }, 3000);
+      }
+      if (res.error) {
+        setErrorBanner(res.error.message);
+        setTimeout(() => {
+          setErrorBanner(""); // Clear the success banner message
+        }, 3000);
+      }
+    } catch (err) {
+      setErrorBanner(err.message); // Assuming err.message contains the error message
+    }
+  };
+
   useEffect(() => {
     const scrollDelay = 100; // 100 ms delay
 
@@ -69,10 +101,7 @@ const ContactUs = () => {
                     216, Glacier complex, Jetalpur Road, <br />
                     Vadodara-390 005.
                   </p>
-                  <p>
-                    Share Trading : 0265-2351513 <br />
-                    Fax No. : 0265-2351468
-                  </p>
+               
                 </div>
               </div>
             </div>
@@ -116,10 +145,13 @@ const ContactUs = () => {
                   <div className="icon-box">
                     <FiPhoneCall />
                   </div>
-                  <h3>Phone Number</h3>
+                  <h3>Contact details</h3>
                   <p>
-                    Emergency Cases <br />
-                    <a href="tel:0265-23513553">0265-2351355</a> (24/7)
+                    <span>Mobile number:</span><a href="tel:0265-23513553">0265-2351355</a> (24/7)
+                  </p>
+                  <p>
+                    Share Trading : 0265-2351513 <br />
+                    Fax No. : 0265-2351468
                   </p>
                 </div>
               </div>
@@ -206,6 +238,16 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="col-lg-8 col-md-12 col-sm-12 form-column">
+            {successBanner ? (
+            <div class="alert alert-success" role="alert">
+              {successBanner}
+            </div>
+          ) : null}
+          {errorBanner ? (
+            <div class="alert alert-danger" role="alert">
+              {errorBanner}
+            </div>
+          ) : null}{" "}
               <Formik
                 validationSchema={schema}
                 initialValues={{
@@ -215,9 +257,11 @@ const ContactUs = () => {
                   message: "",
                   subject: "",
                 }}
-                onSubmit={(values) => {
+                onSubmit={async(values,{ resetForm }) => {
                   // Alert the input values of the form that we filled
                   alert(JSON.stringify(values));
+                  await addContect(values);
+                  resetForm();
                 }}
               >
                 {({

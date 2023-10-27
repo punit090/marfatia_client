@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Formik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import HaderContent2 from "../Commponent/HaderContent2";
@@ -50,6 +50,16 @@ const WithdrawlForm = () => {
     panNo: Yup.string().required(" pan number  is  required "),
     withdraw: Yup.string().required(" withdraw amount  is  required "),
   });
+
+  useEffect(() => {
+   
+    const scrollTimeout = setTimeout(() => {
+      window.scrollTo(0, 600);
+    }, 100);
+
+    return () => clearTimeout(scrollTimeout);
+  }, []);
+
   return (
     <React.Fragment>
       <HaderContent2 Title="Withdraw Funds" SubTitle="Withdraw Funds" />
