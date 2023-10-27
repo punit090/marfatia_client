@@ -108,14 +108,24 @@ const Hader = () => {
                       </b>
                     </Link>
                   </li>
+                  <li>
+                    <div className="login">
+                      <Link
+                        to="https://etrade.marfatia.net/#/app"
+                        target="_blanck"
+                      >
+                        Sing in (E Trade)
+                      </Link>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div className="top-right">
-                <div className="login">
+                {/* <div className="login">
                   <Link to="https://etrade.marfatia.net/#/app" target="_blanck">
                     Sing in (E Trade)
                   </Link>
-                </div>
+                </div> */}
                 <ul className="social-links clearfix shareLinkHader">
                   <li>
                     <Link
