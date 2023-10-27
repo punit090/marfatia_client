@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Spinner } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./../css/elements-css/news.css";
 
@@ -56,7 +56,22 @@ const LatestNews = () => {
   }, []);
 
   return (
-    <div>
+    <React.Fragment>
+      <Container>
+        <marquee
+          style={{
+            background: " #85c226",
+            color: "#000",
+            fontSize: "20px",
+            fontWight: "600",
+          }}
+        >
+          No need to issue cheques by investors while subscribing to IPO. Just
+          write the bank account number and sign in the application form to
+          authorise your bank to make payment in case of allotment. No worries
+          for refund as the money remains in investor's account.
+        </marquee>
+      </Container>
       {/* news-section */}
       <section className="news-section sec-pad">
         <div className="auto-container">
@@ -165,7 +180,7 @@ const LatestNews = () => {
         </div>
       </section>
       {/* news-section end */}
-    </div>
+    </React.Fragment>
   );
 };
 

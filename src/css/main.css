@@ -940,11 +940,11 @@ img {
 .header-top .info li {
   position: relative;
   display: inline-block;
-  margin-right: 30px;
-  font-size: 16px;
+  margin-right: 10px;
+  font-size: 15px;
   line-height: 24px;
   color: #fff;
-  padding-left: 25px;
+  padding-left: 20px;
 }
 
 .header-top .info li i {
@@ -972,9 +972,29 @@ img {
 
 .header-top .top-right .login {
   position: relative;
-  padding-right: 28px;
+
   margin-right: 30px;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* YourComponent.css */
+.blink-text {
+  animation: blink-animation 1s infinite;
+  color: #85c226;
+}
+
+@keyframes blink-animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink-link {
+  text-decoration: none;
+  color: red; /* You can set the color you prefer */
 }
 
 .header-top .top-right .login a {
@@ -1192,6 +1212,8 @@ img {
 .mobileHaderLink {
   color: #fff;
   font-size: 13px;
+  display: flex;
+  align-items: center;
 }
 .mobileHaderLi {
   padding: 10px 0px;
@@ -1221,6 +1243,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
 .main-header .menu-right-content .search-box-outer {

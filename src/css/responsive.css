@@ -856,10 +856,9 @@
   .image_block_one .image-box .video-btn a {
     width: 121px;
     height: 121px;
-  }
-  .image_block_one .image-box .video-btn a {
     line-height: 112px;
   }
+
   .page-title h1 {
     font-size: 30px !important;
   }
@@ -910,8 +909,8 @@
   }
 
   .image_block_one .image-box .video-btn {
-    left: 142px;
-    bottom: 242px;
+    left: 142px !important;
+    bottom: 242px !important;
   }
 
   .service-block-one .inner-box .overlay-content,

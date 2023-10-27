@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { AiFillAndroid, AiFillApple, AiOutlineDown } from "react-icons/ai";
 
 import { BiSearch, BiSolidPhoneCall } from "react-icons/bi";
 import { FaClock, FaFacebookF, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MobileHader from "./../Commponent/MobileHader";
 import Logo from "./../assets/img/Logo1new.png";
 import "./../css/color.css";
 
 const Hader = () => {
-
-
   return (
     <div>
       {/*Search Popup*/}
 
-      
       <div id="search-popup" className="search-popup">
         <div className="popup-inner">
           <div className="upper-box clearfix">
@@ -91,6 +88,24 @@ const Hader = () => {
                     </i>
                     <Link to="mailto:info@example.com">
                       customercare@marfatia.net
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/new-downloads" className="blink-link">
+                      Support
+                      <b>
+                        <span className="blink-text">Live</span>
+                      </b>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="https://evoting.cdslindia.com/Evoting/EvotingLogin"
+                      className="blink-link"
+                    >
+                      <b>
+                        <span className="blink-text">E Voting from CDSL</span>
+                      </b>
                     </Link>
                   </li>
                 </ul>
@@ -238,14 +253,7 @@ const Hader = () => {
                                 >
                                   Mobile Trading{" "}
                                 </Link> */}
-                                <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c64115bfa912f1831824"
-                                    )
-                                  }
-                                >
-
+                                <Link to="/cms/6501c64115bfa912f1831824">
                                   Portfolio Management Services
                                 </Link>
                               </div>
@@ -318,8 +326,7 @@ const Hader = () => {
                             {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
                             <Link to="/cms/6501c86415bfa912f1831848">
                               How to Trade
-
-                            </a>
+                            </Link>
                             {/* <a
                               onClick={() =>
                                 navigateToAnother("6501c87115bfa912f183184b")
@@ -327,14 +334,7 @@ const Hader = () => {
                             >
                               Mobile App{" "}
                             </a> */}
-                            <a
-                              onClick={() =>
-                                navigateToAnother("6501c88015bfa912f183184e")
-                              }
-                            >
-                              PMS
-                            </a>
-
+                            <Link to="/cms/6501c88015bfa912f183184e">PMS</Link>
                           </div>
                         </div>
                       </li>
@@ -396,6 +396,14 @@ const Hader = () => {
                     target="_blank"
                   >
                     Activate Dormant A/C
+                  </Link>
+                </li>
+                <li className="btn-box">
+                  <Link
+                    to="http://203.88.142.26:84/iTradeNet/Login.aspx?ReturnUrl=%2fiTradenet%2fdefault.aspx"
+                    target="_blank"
+                  >
+                    Trade Net
                   </Link>
                 </li>
               </ul>

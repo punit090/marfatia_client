@@ -22,7 +22,6 @@ import Complain from "./Pages/Complain";
 import ContactUs from "./Pages/ContactUs";
 import DailyTips from "./Pages/DailyTips";
 import Feedback from "./Pages/Feedback";
-import GalleryPage from "./Pages/GalleryPageNew";
 import Home from "./Pages/Home";
 import MtualFundDetails from "./Pages/MtualFundDetails";
 import NewDownloads from "./Pages/NewDownloads";
@@ -38,7 +37,6 @@ import "./css/elements-css/feature.css";
 import "./css/main.css";
 import { BASE_API_URL } from "./helpers/apiHelper";
 import { storeContent } from "./state/action";
-import GalleryPageNew from "./Pages/GalleryPageNew";
 
 const apiPath = BASE_API_URL + "/api/content-master";
 
@@ -86,8 +84,8 @@ function App() {
           {/* <Route path="/careers" element={<Career />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/cms/:contentId" element={<DynamicContent />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/gallery-new" element={<GalleryPageNew/>} />
+          {/* <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/gallery-new" element={<GalleryPageNew/>} /> */}
           <Route path="/complains" element={<Complain />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/all-news" element={<AllNews />} />

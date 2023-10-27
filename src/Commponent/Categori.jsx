@@ -10,219 +10,141 @@ import EKyc from "./../assets/img/e-kyc.png";
 
 const Categori = () => {
   return (
-    <div className="mainDivCaresol">
-      <div className="container">
-        <Row>
-          <div className="sec-title mb_25">
-            <span className="sub-title"> Our Category</span>
-          </div>
-          <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="https://marfatia.wealthmagic.in/"
-              target="_blank"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <LiaPiggyBankSolid className="categoryIcon" />
+    <React.Fragment>
+      <div className="mainDivCaresol">
+        <div className="container">
+          <Row>
+            <div className="sec-title mb_25">
+              <span className="sub-title"> Our Category</span>
+            </div>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="https://marfatia.wealthmagic.in/"
+                target="_blank"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <LiaPiggyBankSolid className="categoryIcon" />
+                    </div>
+                    <h5 className="categoryTitle">Online Mutual Fund</h5>
                   </div>
-                  <h5 className="categoryTitle">Online Mutual Fund</h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="https://etrade.marfatia.net/#/app"
-              target="_blank"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <AiOutlineStock className="categoryIcon" />
+                </Card>
+              </Link>
+            </Col>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="https://etrade.marfatia.net/#/app"
+                target="_blank"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <AiOutlineStock className="categoryIcon" />
+                    </div>
+                    <h5 className="categoryTitle">E-trade</h5>
                   </div>
-                  <h5 className="categoryTitle">E-trade</h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="http://203.88.142.26:84/TradeWeb/login.aspx?ReturnUrl=%2fTradeWeb"
-              target="_blanck"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <HiOfficeBuilding className="categoryIcon" />
+                </Card>
+              </Link>
+            </Col>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="http://203.88.142.26:84/TradeWeb/login.aspx?ReturnUrl=%2fTradeWeb"
+                target="_blanck"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <HiOfficeBuilding className="categoryIcon" />
+                    </div>
+                    <h5 className="categoryTitle">Back Office </h5>
                   </div>
-                  <h5 className="categoryTitle">Back Office </h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          {/* <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-                  <MdOutlineTipsAndUpdates className="categoryIcon" />
-                </div>
-                <h5 className="categoryTitle">Today's Tips</h5>
-              </div>
-            </Card>
-          </Col> */}
-          {/* <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-               
-                  <img
-                    style={{
-                      filter:
-                        " (48%) sepia(13%) saturate(2000%) hue-rotate(51deg) brightness(143%) contrast(78%) !important",
-                    }}
-                    src={Commodity}
-                    className="categoryIcon"
-                    alt="icon"
-                  />
-                </div>
-                <h5 className="categoryTitle">Commodities</h5>
-              </div>
-            </Card>
-          </Col> */}
-          <Col lg="3" md="6" sm="12">
-            <Link className="categoryLink" to="#">
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <BiCoinStack className="categoryIcon" />
-                  </div>
-                  <h5 className="categoryTitle">Margin Trading Funding</h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="https://smartkyc.co.in/d/gbrk_130psp"
-              target="_blank"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <img src={EKyc} className="categoryIcon" alt="icon" />
-                  </div>
-                  <h5 className="categoryTitle">eKyc</h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="https://smartkyc.co.in/m/gbrk_130psp"
-              target="_blank"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <img src={EKyc} className="categoryIcon" alt="icon" />
-                  </div>
-                  <h5 className="categoryTitle">ReKyc</h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="https://smartkyc.co.in/d/gbrk_130psp"
-              target="_blank"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <img src={EKyc} className="categoryIcon" alt="icon" />
-                  </div>
-                  <h5 className="categoryTitle">Close Kyc </h5>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-          {/* <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-                  <RiStockFill className="categoryIcon" />
-                </div>
-                <h5 className="categoryTitle">BSE SENSEX N/A </h5>
-              </div>
-            </Card>
-          </Col>
+                </Card>
+              </Link>
+            </Col>
 
-          <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-                  <AiOutlineStock className="categoryIcon" />
-                </div>
-                <h5 className="categoryTitle">NSE NIFTY N/A</h5>
-              </div>
-            </Card>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-                  <BiDollar className="categoryIcon" />
-                </div>
-                <h5 className="categoryTitle">USD N/A</h5>
-              </div>
-            </Card>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-                  <AiTwotoneGold className="categoryIcon" />
-                </div>
-                <h5 className="categoryTitle">Gold N/A </h5>
-              </div>
-            </Card>
-          </Col>
-          <Col lg="3" md="6" sm="12">
-            <Card className="categoryCard">
-              <div className="mainDivCategory">
-                <div>
-                  <GiGoldBar className="categoryIcon" />
-                </div>
-                <h5 className="categoryTitle">Silver N/A </h5>
-              </div>
-            </Card>
-          </Col> */}
-          {/* <Col lg="3" md="6" sm="12">
-            <Link
-              className="categoryLink"
-              to="/todays-online-trade"
-              target="_blank"
-            >
-              <Card className="categoryCard">
-                <div className="mainDivCategory">
-                  <div>
-                    <MdToday className="categoryIcon" />
+            <Col lg="3" md="6" sm="12">
+              <Link className="categoryLink" to="#">
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <BiCoinStack className="categoryIcon" />
+                    </div>
+                    <h5 className="categoryTitle">Margin Trading Funding</h5>
                   </div>
-                  <h5 className="categoryTitle">Today's Stock market </h5>
-                </div>
-              </Card>
-            </Link>
-          </Col> */}
-        </Row>
+                </Card>
+              </Link>
+            </Col>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="https://smartkyc.co.in/d/gbrk_130psp"
+                target="_blank"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <img src={EKyc} className="categoryIcon" alt="icon" />
+                    </div>
+                    <h5 className="categoryTitle">eKyc</h5>
+                  </div>
+                </Card>
+              </Link>
+            </Col>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="https://smartkyc.co.in/m/gbrk_130psp"
+                target="_blank"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <img src={EKyc} className="categoryIcon" alt="icon" />
+                    </div>
+                    <h5 className="categoryTitle">ReKyc</h5>
+                  </div>
+                </Card>
+              </Link>
+            </Col>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="https://smartkyc.co.in/d/gbrk_130psp"
+                target="_blank"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <img src={EKyc} className="categoryIcon" alt="icon" />
+                    </div>
+                    <h5 className="categoryTitle">Close Kyc </h5>
+                  </div>
+                </Card>
+              </Link>
+            </Col>
+          </Row>
+          <marquee
+            style={{
+              backgroundColor: "#85c226",
+              color: "#000",
+              fontSize: "20px",
+              fontWight: "600",
+            }}
+          >
+            <span style={{ color: "red" }}>Attention Investors:</span>- SCORES -
+            Filing compliant on SCORES – Easy &amp; quick a. register on SCORES
+            portal. b. Mandatory details for filing complaints on SCORES: Name,
+            PAN, Address, Mobile Number, Email ID. c. Benefits: Effective
+            communication. Speedy redressal of the grievances Website:
+            https://scores.gov.in
+          </marquee>
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
