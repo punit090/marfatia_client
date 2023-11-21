@@ -168,10 +168,7 @@ function JobApllayModal() {
                       rows={4}
                       className="contactTextAria modalInput"
                     />
-                    {/* If validation is not passed show errors */}
-                    {/* <p className="error">
-                      {errors.message && touched.message && errors.message}
-                    </p> */}
+
                     {/* Click on submit button to submit the form */}
 
                     <button

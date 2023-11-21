@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import { FaRupeeSign } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import BackgroundPricing from "./../assets/img/shape-31.png";
@@ -23,8 +24,8 @@ const Pricing = () => {
               leave the rest to us.
             </p>
           </div>
-          <div className="row clearfix">
-            <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <Row className=" clearfix">
+            <Col lg="4" md="6" sm="12" className=" feature-block">
               <div
                 className="feature-block-three wow fadeInUp animated"
                 data-wow-delay="00ms"
@@ -55,8 +56,8 @@ const Pricing = () => {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" feature-block">
               <div
                 className="feature-block-three wow fadeInUp animated"
                 data-wow-delay="300ms"
@@ -77,8 +78,8 @@ const Pricing = () => {
                   <p>F&O, Currencies & Commodities</p>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" feature-block">
               <div
                 className="feature-block-three wow fadeInUp animated"
                 data-wow-delay="600ms"
@@ -105,8 +106,8 @@ const Pricing = () => {
                   <p>For First Year</p>
                 </div>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
         <div className="more-btn ">
           <Link to="#" className="theme-btn-one">

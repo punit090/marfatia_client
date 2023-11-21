@@ -1,13 +1,12 @@
+import axios from "axios";
 import React, { useEffect } from "react";
+import { Col, Row, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import HaderContent2 from "../Commponent/HaderContent2";
-import PostNews from "../assets/img/post-1.jpg";
 import "../css/elements-css/blog.css";
 import { BASE_API_URL } from "../helpers/apiHelper";
 import { setNews, storeNews } from "../state/action";
-import axios from "axios";
-import { Spinner } from "react-bootstrap";
 
 const News = () => {
   const shortMonthNames = [
@@ -75,8 +74,8 @@ const News = () => {
       {/* sidebar-page-container */}
       <section className="sidebar-page-container pt_150 pb_150">
         <div className="auto-container">
-          <div className="row clearfix">
-            <div className="col-lg-8 col-md-12 col-sm-12 sidebar-side">
+          <Row className=" clearfix">
+            <Col lg="8" md="12" sm="12" className=" sidebar-side">
               <div className="blog-details-content">
                 <div className="news-block-one">
                   <div className="inner-box">
@@ -111,16 +110,7 @@ const News = () => {
                           }}
                         />
                       </div>
-                      {/* <blockquote>
-                        <div className="icon-box">
-                          <i className="icon-47" />
-                        </div>
-                        <p>
-                          Text Will Be Coming Soon...Text Will Be Coming
-                          Soon...Text Will Be Coming Soon...Text Will Be Coming
-                        </p>
-                        <h4>Text Will Be Coming Soon...</h4>
-                      </blockquote> */}
+
                       <p>
                         Text Will Be Coming Soon...Text Will Be Coming
                         Soon...Text Will Be Coming Soon...Text Will Be Coming
@@ -134,31 +124,9 @@ const News = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+            </Col>
+            <Col lg="4" md="12" sm="12" className=" sidebar-side">
               <div className="blog-sidebar ml_40">
-                {/* <div className="sidebar-widget search-widget">
-                  <div className="search-form">
-                    <form
-                      action="http://azim.commonsupport.com/Biztech/blog-2.html"
-                      method="post"
-                    >
-                      <div className="form-group">
-                        <input
-                          type="search"
-                          name="search-field"
-                          placeholder="Search..."
-                          required
-                        />
-                        <button type="submit">
-                          <i className="icon-4">
-                            <AiOutlineSearch />
-                          </i>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div> */}
                 <div className="sidebar-widget category-widget">
                   <div className="widget-title">
                     <h3>Categories</h3>
@@ -216,7 +184,7 @@ const News = () => {
                       <div className="post-inner mt-4">
                         <div className="post">
                           <figure className="post-thumb">
-                            <Link to="#" >
+                            <Link to="#">
                               <img
                                 src={newsImagesPath + item.imagePath}
                                 onClick={() => {
@@ -224,25 +192,28 @@ const News = () => {
                                 }}
                                 alt="img"
                                 style={{
-                                  borderRadius: '50%',
-                                  width: '100px', // Adjust the width and height as needed
-                                  height: '100px',
+                                  borderRadius: "50%",
+                                  width: "100px", // Adjust the width and height as needed
+                                  height: "100px",
                                 }}
                               />
                             </Link>
                           </figure>
                           <h5>
-                            <Link to="#" onClick={() => {
+                            <Link
+                              to="#"
+                              onClick={() => {
                                 handleClick(item);
-                              }}>
-                             {item.newsTitle.length > 40
+                              }}
+                            >
+                              {item.newsTitle.length > 40
                                 ? item.newsTitle.substring(0, 40) + "..."
                                 : item.newsTitle}
                             </Link>
                           </h5>
-                          <span className="post-date">{new Date(item.date).toLocaleDateString(
-                                  "en-GB"
-                                )}</span>
+                          <span className="post-date">
+                            {new Date(item.date).toLocaleDateString("en-GB")}
+                          </span>
                         </div>
                       </div>
                     ))
@@ -320,8 +291,8 @@ const News = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
       </section>
       {/* sidebar-page-container end */}

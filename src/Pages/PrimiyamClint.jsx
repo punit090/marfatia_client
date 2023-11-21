@@ -3,14 +3,12 @@ import { AiOutlineRight } from "react-icons/ai";
 import { BsCardChecklist } from "react-icons/bs";
 import { GiTwoCoins } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import Hader from "../Commponent/Hader";
-import Footer from "./../Commponent/Footer";
 import StockBackground from "./../assets/img/page-title.jpg";
 import StockBackgroundHelp from "./../assets/img/service-7.jpg";
 import ServiceImg from "./../assets/img/service-8.jpg";
 import ServiceDetailsImg from "./../assets/img/service-9.jpg";
 import "./../css/elements-css/page-title.css";
-import "./../css/elements-css/service-details.css";
+import "./../css/elements-css/shop-details.css";
 
 const PrimiyamClint = () => {
   return (

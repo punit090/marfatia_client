@@ -343,26 +343,6 @@ const MobileHader = () => {
                   </div>
                 )}
 
-                {/* <div className="dropdowMobile" onClick={() => setFund(!fund)}>
-                  <li className="mobileHaderLi">
-                    <Link className="mobileHaderLink" to="#">
-                      <PiHandCoinsLight className="iconDiv" />
-                      <span>Mutual Fund</span>
-                    </Link>
-                  </li>
-                  <div>{fund ? <RiArrowUpSLine /> : <RiArrowDownSLine />}</div>
-                </div>
-                {fund && (
-                  <div className="list">
-                    <div>
-                      <Link className="titleLink" to="/mtual-fund-details">
-                        {" "}
-                        MF Schemes
-                      </Link>
-                    </div>
-                  </div>
-                )} */}
-
                 <div
                   className="dropdowMobile"
                   onClick={() => setResearch(!research)}
@@ -390,16 +370,6 @@ const MobileHader = () => {
                       </Link>
                     </div>
 
-                    {/* <div>
-                      <Link
-                        className="titleLink"
-                        onClick={() =>
-                          navigateToAnother("6501c87115bfa912f183184b")
-                        }
-                      >
-                        Mobile App
-                      </Link>
-                    </div> */}
                     <div>
                       <Link
                         className="titleLink"
@@ -429,16 +399,6 @@ const MobileHader = () => {
                 </div>
                 {payment && (
                   <div className="list">
-                    {/* <div>
-                      <Link
-                        className="titleLink"
-                        to="http://136.233.133.90:8787"
-                        target="_blanck"
-                      >
-                        {" "}
-                        Transfer Marfatia
-                      </Link>
-                    </div> */}
                     <div>
                       <Link className="titleLink" to="/withdrawl-form">
                         Withdraw Funds

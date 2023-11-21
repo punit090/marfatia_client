@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import { AiOutlineStock } from "react-icons/ai";
 import { FaUserTie } from "react-icons/fa";
 import { GiPiggyBank } from "react-icons/gi";
@@ -33,8 +34,8 @@ const Services = () => {
               Services
             </h2>
           </div>
-          <div className="row clearfix">
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+          <Row className=" clearfix">
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-one wow fadeInLeft animated"
                 data-wow-delay="00ms"
@@ -54,7 +55,10 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="/cms" state={"6501c5f215bfa912f1831818"}>
+                      <Link
+                        to="/cms/6501c5f215bfa912f1831818"
+                        state={"6501c5f215bfa912f1831818"}
+                      >
                         Stock &amp; Market
                       </Link>
                     </h3>
@@ -75,7 +79,7 @@ const Services = () => {
                     <p>stock market is the aggregation of buyers and sellers</p>
                     <div className="btn-box">
                       <Link
-                        to="/cms"
+                        to="/cms/6501c5f215bfa912f1831818"
                         state={"6501c5f215bfa912f1831818"}
                         className="theme-btn-one"
                       >
@@ -85,8 +89,8 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className="service-block">
               <div
                 className="service-block-one wow fadeInUp animated"
                 data-wow-delay="00ms"
@@ -118,7 +122,7 @@ const Services = () => {
                     </p>
                     <div className="btn-box">
                       <Link
-                        to="/cms"
+                        to="/cms/6501c61615bfa912f183181e"
                         state={"6501c61615bfa912f183181e"}
                         className="theme-btn-one"
                       >
@@ -128,8 +132,8 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-one wow fadeInRight animated"
                 data-wow-delay="00ms"
@@ -170,7 +174,7 @@ const Services = () => {
                     <p>So you want to trade from any where?</p>
                     <div className="btn-box">
                       <Link
-                        to="/cms"
+                        to="/cms/6501c62d15bfa912f1831821"
                         state={"6501c62d15bfa912f1831821"}
                         className="theme-btn-one"
                       >
@@ -180,8 +184,8 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-one wow fadeInLeft animated"
                 data-wow-delay="300ms"
@@ -215,7 +219,10 @@ const Services = () => {
                       }}
                     />
                     <h3>
-                      <Link to="/cms" state={"6501c64115bfa912f1831824"}>
+                      <Link
+                        to="/cms/6501c64115bfa912f1831824"
+                        state={"6501c64115bfa912f1831824"}
+                      >
                         Portfolio Management
                       </Link>
                     </h3>
@@ -225,7 +232,7 @@ const Services = () => {
                     </p>
                     <div className="btn-box">
                       <Link
-                        to="/cms"
+                        to="/cms/6501c64115bfa912f1831824"
                         state={"6501c64115bfa912f1831824"}
                         className="theme-btn-one"
                       >
@@ -235,8 +242,8 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-one wow fadeInUp animated"
                 data-wow-delay="300ms"
@@ -250,7 +257,10 @@ const Services = () => {
                       </i>
                     </div>
                     <h3>
-                      <Link to="/cms" state={"6501c64f15bfa912f1831827"}>
+                      <Link
+                        to="/cms/6501c64f15bfa912f1831827"
+                        state={"6501c64f15bfa912f1831827"}
+                      >
                         Premium Client Services
                       </Link>
                     </h3>
@@ -268,7 +278,7 @@ const Services = () => {
                     </p>
                     <div className="btn-box">
                       <Link
-                        to="/cms"
+                        to="/cms/6501c64f15bfa912f1831827"
                         state={"6501c64f15bfa912f1831827"}
                         className="theme-btn-one"
                       >
@@ -278,8 +288,8 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-one wow fadeInRight animated"
                 data-wow-delay="300ms"
@@ -339,13 +349,8 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          {/* <div className="more-btn mt_60">
-            <Link to="#" className="theme-btn-one">
-              More Services
-            </Link>
-          </div> */}
+            </Col>
+          </Row>
         </div>
       </section>
       {/* service-section end */}

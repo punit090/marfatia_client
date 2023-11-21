@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { BsCardChecklist } from "react-icons/bs";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { GiTwoCoins } from "react-icons/gi";
@@ -34,8 +34,8 @@ const Invester = () => {
                 Investor.
               </h2>
             </div>
-            <div className="row clearfix">
-              <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <Row className=" clearfix">
+              <Col lg="4" md="6" sm="12" className=" feature-block">
                 <div
                   className="feature-block-one wow fadeInUp animated"
                   data-wow-delay="00ms"
@@ -61,8 +61,8 @@ const Invester = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+              </Col>
+              <Col lg="4" md="6" sm="12" className="feature-block">
                 <div
                   className="feature-block-one wow fadeInUp animated"
                   data-wow-delay="300ms"
@@ -88,8 +88,8 @@ const Invester = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+              </Col>
+              <Col lg="4" md="6" sm="12" className=" feature-block">
                 <div
                   className="feature-block-one wow fadeInUp animated"
                   data-wow-delay="600ms"
@@ -115,8 +115,8 @@ const Invester = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </Container>
       </section>

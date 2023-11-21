@@ -1,16 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import { Link } from "react-router-dom";
-import "./../Modal/modal.css";
 import { useDispatch, useSelector } from "react-redux";
-import { storeDownloadForm, storeDownloads, storeGalleryCategory } from "../state/action";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import { BASE_API_URL } from "../helpers/apiHelper";
+import { storeDownloadForm } from "../state/action";
+import "./../Modal/modal.css";
 
 const DownloadForm = () => {
-
-  const mainFilePath = BASE_API_URL+"/api/downloads/"
+  const mainFilePath = BASE_API_URL + "/api/downloads/";
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -22,9 +21,8 @@ const DownloadForm = () => {
 
   const fetchDownloads = () => {
     axios
-      .get(BASE_API_URL+"/api/download-form/")
+      .get(BASE_API_URL + "/api/download-form/")
       .then((res) => {
-       
         dispatch(storeDownloadForm(res.data.data));
       })
       .catch((err) => {
@@ -32,12 +30,10 @@ const DownloadForm = () => {
       });
   };
 
-
   useEffect(() => {
     fetchDownloads();
-    console.log(arrayOfContents)
+    console.log(arrayOfContents);
   }, [dispatch]);
-
 
   return (
     <div>
@@ -53,19 +49,15 @@ const DownloadForm = () => {
         </Modal.Header>
         <Modal.Body>
           <Row>
-          {arrayOfContents && arrayOfContents.length > 0 ? (
-              arrayOfContents.map((item,key) => (
-
-            <Col lg="6">
-              <a className="modalLable" href={mainFilePath+item.filePath}>
-                { (key+1)+". "+item.fileName}
-              </a>
-              {/* <button onClick={downloadTxtFile}>Download</button>+ */}
-            </Col>
-
-
-
-                ))
+            {arrayOfContents && arrayOfContents.length > 0 ? (
+              arrayOfContents.map((item, key) => (
+                <Col lg="6">
+                  <a className="modalLable" href={mainFilePath + item.filePath}>
+                    {key + 1 + ". " + item.fileName}
+                  </a>
+                  {/* <button onClick={downloadTxtFile}>Download</button>+ */}
+                </Col>
+              ))
             ) : (
               <div>loading plese wait ...</div>
             )}

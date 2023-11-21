@@ -1,7 +1,5 @@
 import React from "react";
-
 import { AiFillAndroid, AiFillApple, AiOutlineDown } from "react-icons/ai";
-
 import { BiSearch, BiSolidPhoneCall } from "react-icons/bi";
 import { FaClock, FaFacebookF, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
@@ -121,11 +119,6 @@ const Hader = () => {
                 </ul>
               </div>
               <div className="top-right">
-                {/* <div className="login">
-                  <Link to="https://etrade.marfatia.net/#/app" target="_blanck">
-                    Sing in (E Trade)
-                  </Link>
-                </div> */}
                 <ul className="social-links clearfix shareLinkHader">
                   <li>
                     <Link
@@ -143,14 +136,7 @@ const Hader = () => {
                       <FaWhatsapp />
                     </Link>
                   </li>
-                  {/* <li>
-                    <Link
-                      to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
-                      target="_blank"
-                    >
-                        <FaTwitter />
-                    </Link>
-                  </li> */}
+
                   <li>
                     <Link
                       to="https://apps.apple.com/in/app/share4surepro/id6446141699"
@@ -206,9 +192,6 @@ const Hader = () => {
                     id="navbarSupportedContent"
                   >
                     <ul className="navigation clearfix">
-                      {/* <li className="current ">
-                        <Link to="/">Home</Link>
-                      </li> */}
                       <li className="current">
                         <div className="dropdown">
                           <button className="dropbtn">
@@ -230,7 +213,7 @@ const Hader = () => {
                             <Link to="/cms/6501c5be15bfa912f1831812">
                               Milestones
                             </Link>
-                            {/* <Link to="/cms" state={"6501c5ce15bfa912f1831815"}>Client Speaks</Link> */}
+
                             <Link to="/gallery">Gallery</Link>
                           </div>
                         </div>
@@ -254,18 +237,7 @@ const Hader = () => {
                                   Depository Services
                                 </Link>
 
-                                {/* <Link
-                                  onClick={() =>
-                                    navigateToAnother(
-                                      "6501c62d15bfa912f1831821"
-                                    )
-                                  }
-                                >
-                                  Mobile Trading{" "}
-                                </Link> */}
-
                                 <Link to="/cms/6501c64115bfa912f1831824">
-
                                   Portfolio Management Services
                                 </Link>
                               </div>
@@ -318,38 +290,17 @@ const Hader = () => {
                         </div>
                       </li>
 
-                      {/* <li className="current">
-                        <div className="dropdown">
-                          <button className="dropbtn">
-                            Mutual Funds <AiOutlineDown />
-                          </button>
-                          <div className="dropdown-content2">
-                            <Link to="/mtual-fund-details">MF Schemes</Link>
-                          </div>
-                        </div>
-                      </li> */}
                       <li className="current">
                         <div className="dropdown">
                           <button className="dropbtn">
                             Research & Knowledge <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            {/* <Link to="/cms" state={"6501c84215bfa912f1831842"}>Daily Tips</Link> */}
-                            {/* <Link to="/cms" state={"6501c85315bfa912f1831845"}>Research Reports</Link> */}
                             <Link to="/cms/6501c86415bfa912f1831848">
                               How to Trade
-
                             </Link>
-                            {/* <a
-                              onClick={() =>
-                                navigateToAnother("6501c87115bfa912f183184b")
-                              }
-                            >
-                              Mobile App{" "}
-                            </a> */}
 
                             <Link to="/cms/6501c88015bfa912f183184e">PMS</Link>
-
                           </div>
                         </div>
                       </li>
@@ -359,12 +310,6 @@ const Hader = () => {
                             Payment /Withdraw Funds <AiOutlineDown />
                           </button>
                           <div className="dropdown-content2">
-                            {/* <Link
-                              to="http://136.233.133.90:8787"
-                              target="_blanck"
-                            >
-                              Transfer Marfatia
-                            </Link> */}
                             <Link to="/withdrawl-form">Withdraw Funds</Link>
                           </div>
                         </div>
@@ -385,12 +330,7 @@ const Hader = () => {
                             <Link to="/cms/6501c8a115bfa912f1831851">
                               Partner With Us
                             </Link>
-                            {/* <Link
-                              to="https://www.marfatia.net/uploads/pdf/NEWKYCFORM.pdf"
-                              target="_blank"
-                            >
-                              Open An Account
-                            </Link> */}
+
                             <Link to="/complains">Support / Query</Link>
                           </div>
                         </div>
@@ -400,15 +340,10 @@ const Hader = () => {
                 </nav>
               </div>
               <ul className="menu-right-content">
-                {/* <li className="search-box-outer search-toggler">
-                  <i className="icon-4">
-                    <BiSearch />
-                  </i>
-                </li> */}
                 <li className="btn-box">
                   <Link
-                   to="https://smartkyc.co.in/m/gbrk_130psp"
-                   target="_blank"
+                    to="https://smartkyc.co.in/m/gbrk_130psp"
+                    target="_blank"
                   >
                     Activate Dormant A/C
                   </Link>

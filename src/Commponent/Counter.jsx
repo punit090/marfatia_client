@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsDownload } from "react-icons/bs";
@@ -13,7 +14,7 @@ const Counter = () => {
     <React.Fragment>
       {/* funfact-section */}
       <section className="funfact-section centred">
-        <div className="container">
+        <Container>
           <div className="inner-container">
             <div className="shape">
               <div
@@ -29,8 +30,8 @@ const Counter = () => {
                 }}
               />
             </div>
-            <div className="row clearfix">
-              <div className="col-lg-3 col-md-6 col-sm-12 funfact-block">
+            <Row className=" clearfix">
+              <Col lg="3" md="6" sm="12" className="funfact-block">
                 <div className="funfact-block-one">
                   <div className="inner-box">
                     <div className="count-outer count-box">
@@ -54,8 +55,8 @@ const Counter = () => {
                     <p>Years of Trust</p>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-12 funfact-block">
+              </Col>
+              <Col lg="3" md="6" sm="12" className=" funfact-block">
                 <div className="funfact-block-one">
                   <div className="inner-box">
                     <div className="count-outer count-box">
@@ -73,8 +74,8 @@ const Counter = () => {
                     <p>Registered Users</p>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-12 funfact-block">
+              </Col>
+              <Col lg="3" md="6" sm="12" className=" funfact-block">
                 <div className="funfact-block-one">
                   <div className="inner-box">
                     <div className="count-outer count-box">
@@ -92,8 +93,8 @@ const Counter = () => {
                     <p>Authorised Person</p>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-12 funfact-block">
+              </Col>
+              <Col lg="3" md="6" sm="12" className=" funfact-block">
                 <div className="funfact-block-one">
                   <div className="inner-box">
                     <div className="count-outer count-box">
@@ -111,10 +112,10 @@ const Counter = () => {
                     <p>App Downloads</p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
-        </div>
+        </Container>
       </section>
       {/* funfact-section end */}
     </React.Fragment>

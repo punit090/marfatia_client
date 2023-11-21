@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { BASE_API_URL } from "../helpers/apiHelper";
@@ -53,15 +54,15 @@ const GalleryComponent = () => {
     <div>
       {/* team-section */}
       <section className="team-section sec-pad">
-        <div className="container">
+        <Container>
           <div className="sec-title mb_50 centred">
             <h2>Gallery</h2>
           </div>
 
-          <div className="row clearfix" style={{ padding: "30px 0px" }}>
+          <Row className=" clearfix" style={{ padding: "30px 0px" }}>
             {arrayOfContents && arrayOfContents.length > 0 ? (
               arrayOfContents.map((item) => (
-                <div className="col-lg-3 col-md-6 mb-4 col-sm-12 team-block">
+                <Col lg="3" md="6" sm="12" className=" team-block">
                   <Link
                     to="/gallery-details"
                     onClick={() => {
@@ -95,18 +96,13 @@ const GalleryComponent = () => {
                       </div>
                     </div>
                   </Link>
-                </div>
+                </Col>
               ))
             ) : (
               <div>loading plese wait ...</div>
             )}
-          </div>
-          {/* <div className="more-btn mt_60">
-            <Link to="/gallery-details" className="theme-btn-one">
-              Explore More
-            </Link>
-          </div> */}
-        </div>
+          </Row>
+        </Container>
       </section>
       {/* team-section end */}
     </div>

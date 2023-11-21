@@ -1,8 +1,8 @@
-import { Formik } from "formik";
-import React, { useEffect ,useState} from "react";
 import axios from "axios";
+import { Formik } from "formik";
+import React, { useEffect, useState } from "react";
 
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 import { BiLogoFacebook, BiLogoWhatsapp, BiLogoYoutube } from "react-icons/bi";
@@ -18,7 +18,6 @@ import { BASE_API_URL } from "../helpers/apiHelper";
 import "../css/elements-css/contact.css";
 
 const ContactUs = () => {
-
   const [errorBanner, setErrorBanner] = useState("");
   const [successBanner, setSuccessBanner] = useState("");
 
@@ -79,8 +78,8 @@ const ContactUs = () => {
             <span className="sub-title">Contact Info</span>
             <h2>We’d Love To Help You</h2>
           </div>
-          <div className="row clearfix">
-            <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <Row className=" clearfix">
+            <Col lg="4" md="6" sm="12" className=" feature-block">
               <div
                 className="feature-block-three wow fadeInUp animated"
                 data-wow-delay="00ms"
@@ -101,11 +100,10 @@ const ContactUs = () => {
                     216, Glacier complex, Jetalpur Road, <br />
                     Vadodara-390 005.
                   </p>
-               
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" feature-block">
               <div
                 className="feature-block-three wow fadeInUp animated"
                 data-wow-delay="300ms"
@@ -117,19 +115,19 @@ const ContactUs = () => {
                   </div>
                   <h3>Email Address</h3>
                   <p>
-                    <a href="mailto:customercare@marfatia.net">
+                    <Link to="mailto:customercare@marfatia.net">
                       customercare@marfatia.net
-                    </a>
+                    </Link>
                     <br />
 
-                    <a href="mailto:compliance@marfatia.net">
+                    <Link to="mailto:compliance@marfatia.net">
                       compliance@marfatia.net
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" feature-block">
               <div
                 className="feature-block-three wow fadeInUp animated"
                 data-wow-delay="600ms"
@@ -147,7 +145,8 @@ const ContactUs = () => {
                   </div>
                   <h3>Contact details</h3>
                   <p>
-                    <span>Mobile number:</span><a href="tel:0265-23513553">0265-2351355</a> (24/7)
+                    <span>Mobile number:</span>
+                    <Link to="tel:0265-23513553">0265-2351355</Link> (24/7)
                   </p>
                   <p>
                     Share Trading : 0265-2351513 <br />
@@ -155,17 +154,17 @@ const ContactUs = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
       </section>
       {/* feature-style-three end */}
 
       {/* contact-style-two */}
       <section className="contact-style-two sec-pad">
-        <div className="container">
-          <div className="row clearfix">
-            <div className="col-lg-4 col-md-12 col-sm-12 content-column">
+        <Container>
+          <Row className=" clearfix">
+            <Col lg="4" md="12" sm="12" className=" content-column">
               <div className="content-box mr_70">
                 <div className="sec-title mb_35">
                   <span className="sub-title">Message</span>
@@ -236,18 +235,18 @@ const ContactUs = () => {
                   </li> */}
                 </ul>
               </div>
-            </div>
-            <div className="col-lg-8 col-md-12 col-sm-12 form-column">
-            {successBanner ? (
-            <div class="alert alert-success" role="alert">
-              {successBanner}
-            </div>
-          ) : null}
-          {errorBanner ? (
-            <div class="alert alert-danger" role="alert">
-              {errorBanner}
-            </div>
-          ) : null}{" "}
+            </Col>
+            <Col lg="8" md="12" sm="12" className=" form-column">
+              {successBanner ? (
+                <div class="alert alert-success" role="alert">
+                  {successBanner}
+                </div>
+              ) : null}
+              {errorBanner ? (
+                <div class="alert alert-danger" role="alert">
+                  {errorBanner}
+                </div>
+              ) : null}{" "}
               <Formik
                 validationSchema={schema}
                 initialValues={{
@@ -257,7 +256,7 @@ const ContactUs = () => {
                   message: "",
                   subject: "",
                 }}
-                onSubmit={async(values,{ resetForm }) => {
+                onSubmit={async (values, { resetForm }) => {
                   // Alert the input values of the form that we filled
                   alert(JSON.stringify(values));
                   await addContect(values);
@@ -379,7 +378,12 @@ const ContactUs = () => {
                           </Row>
 
                           {/* Click on submit button to submit the form */}
-                          <div className="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                          <Col
+                            lg="12"
+                            md="12"
+                            sm="12"
+                            className=" form-group message-btn"
+                          >
                             <button
                               className="theme-btn theme-btn-one"
                               type="submit"
@@ -387,15 +391,15 @@ const ContactUs = () => {
                             >
                               Send Message
                             </button>
-                          </div>
+                          </Col>
                         </Card>
                       </form>
                     </div>
                   </div>
                 )}
               </Formik>
-            </div>
-          </div>
+            </Col>
+          </Row>
           <div className="contactTable">
             <h1 style={{ paddingBottom: "10px" }}>Escalation Matrix</h1>
             <Table striped bordered hover responsive>
@@ -418,12 +422,12 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 </td>
                   <td>
-                    <a
+                    <Link
                       className="tableLink"
-                      href="mailto:customercare@marfatia.net"
+                      to="mailto:customercare@marfatia.net"
                     >
                       customercare@marfatia.net
-                    </a>
+                    </Link>
                   </td>
                   <td>8.30 AM TO 5.30 PM</td>
                 </tr>
@@ -435,9 +439,9 @@ const ContactUs = () => {
                   </td>
                   <td>9925002653</td>
                   <td>
-                    <a className="tableLink" href="mailto:kyc@marfatia.net">
+                    <Link className="tableLink" to="mailto:kyc@marfatia.net">
                       kyc@marfatia.net
-                    </a>
+                    </Link>
                   </td>
                   <td>10.00 AM TO 7.00 PM</td>
                 </tr>
@@ -449,12 +453,12 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 (Ext.-508) </td>
                   <td>
-                    <a
+                    <Link
                       className="tableLink"
-                      href="mailto:compliance@marfatia.net"
+                      to="mailto:compliance@marfatia.net"
                     >
                       compliance@marfatia.net
-                    </a>
+                    </Link>
                   </td>
                   <td>10.00 AM TO 7.00 PM</td>
                 </tr>
@@ -466,20 +470,20 @@ const ContactUs = () => {
                   </td>
                   <td>0265-3501500 / 0265-2351355 (Ext.-514)</td>
                   <td>
-                    <a
+                    <Link
                       className="tableLink"
-                      href="mailto:shreyanishil@yahoo.com"
+                      to="mailto:shreyanishil@yahoo.com"
                     >
                       shreyanishil@yahoo.com
-                    </a>
+                    </Link>
                   </td>
                   <td>10.00 AM TO 7.00 PM</td>
                 </tr>
               </tbody>
             </Table>
           </div>
-          <div className="row">
-            <div className="col-lg-12 col-sm-12">
+          <Row>
+            <Col lg="12" sm="12">
               <div style={{ fontSize: "16px" }}>
                 In absence of response/complaint not addressed to your
                 satisfaction, you may lodge a complaint with SEBI at
@@ -504,9 +508,9 @@ const ContactUs = () => {
                 Please quote your Service Ticket/Complaint Ref No. while raising
                 your complaint at SEBI SCORES/Exchange portal
               </p>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       {/* contact-style-two end */}
       {/* google-map-section */}

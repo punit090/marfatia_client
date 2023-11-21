@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 
 import {
@@ -25,13 +25,6 @@ const Footer = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const navigateToAnother = (id) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate(`/cms/${id}`);
-    }, 700);
-  };
 
   return (
     <React.Fragment>
@@ -67,36 +60,9 @@ const Footer = () => {
               }}
             />
           </div>
-          <div className="container">
-            <div className="row clearfix">
-              {/* <div className="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div className="logo-widget footer-widget">
-                  <figure className="footer-logo">
-                    <Link to="/">
-                      <img src={FooterLogo} alt />
-                    </Link>
-                  </figure>
-                  <div className="text">
-                    <p>
-                      Text Will Be Cooming Soon...Text Will Be Coming
-                      Soon...Text Will Be Coming Soon....
-                    </p>
-                    <div className="footerDiv">
-                      <div>
-                        <Link to="#">
-                          <img src={AppSoter} alt="img" />
-                        </Link>
-                      </div>
-                      <div>
-                        <Link to="#">
-                          <img src={PlayStore} alt="img" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-              <div className="col-lg-2 col-md-6 col-sm-12 footer-column">
+          <Container>
+            <Row className=" clearfix">
+              <Col lg="2" md="6" sm="12" className=" footer-column">
                 <div className="links-widget footer-widget ">
                   <div className="widget-title">
                     <h3>Quick Link</h3>
@@ -134,9 +100,6 @@ const Footer = () => {
                           Webinar
                         </Link>
                       </li>
-                      {/* <li>
-                        <Link to="/complains">Complains</Link>
-                      </li> */}
 
                       <li>
                         <Link to="/contact-us">Contact Us</Link>
@@ -144,7 +107,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </Col>
 
               <Col lg="3" md="6" sm="12">
                 <div className="links-widget footer-widget ml_30">
@@ -214,7 +177,7 @@ const Footer = () => {
                   </div>
                 </div>
               </Col>
-              <div className="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <Col lg="3" md="6" sm="12" className="footer-column">
                 <div className="links-widget footer-widget ml_30">
                   <div className="widget-title">
                     <h3>Useful Links</h3>
@@ -281,7 +244,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </Col>
 
               <Col lg="4" md="6" sm="12">
                 <div className="links-widget footer-widget ml_30">
@@ -350,7 +313,7 @@ const Footer = () => {
                   </div>
                 </div>
               </Col>
-            </div>
+            </Row>
             <Row className="footerRow">
               <Col lg="2" md="3" sm="12">
                 <div className="widget-title">
@@ -449,12 +412,12 @@ const Footer = () => {
                 <i className="icon-3">
                   <HiOutlineMail className="footerLink" />
                 </i>
-                <a
+                <Link
                   className="footerLinkContact"
-                  href="mailto:customercare@marfatia.net"
+                  to="mailto:customercare@marfatia.net"
                 >
                   customercare@marfatia.net
-                </a>
+                </Link>
               </Col>
               <Col lg="2" md="3">
                 <i className="icon-23">
@@ -466,9 +429,9 @@ const Footer = () => {
                 <i className="icon-2">
                   <BiSolidPhoneCall className="footerLink" />{" "}
                 </i>
-                <a className="footerLinkContact" href="tel:0265-2351355">
+                <Link className="footerLinkContact" to="tel:0265-2351355">
                   0265-2351355
-                </a>
+                </Link>
               </Col>
               <Col lg="3" md="4">
                 <Link
@@ -485,13 +448,7 @@ const Footer = () => {
                 >
                   <BiLogoWhatsapp className="shareIconFooter" />
                 </Link>
-                {/* <Link
-                  className="footerLinkContact"
-                  to="https://twitter.com/i/flow/login?redirect_after_login=%2FMarfatiaSeo"
-                  target="_blanck"
-                >
-                  <BiLogoTwitter className="shareIconFooter" />
-                </Link> */}
+
                 <Link
                   className="footerLinkContact"
                   to="https://apps.apple.com/in/app/share4surepro/id6446141699"
@@ -515,7 +472,7 @@ const Footer = () => {
                 </Link>
               </Col>
             </Row>
-          </div>
+          </Container>
         </div>
         <div className="footer-bottom centred">
           <div className="auto-container">

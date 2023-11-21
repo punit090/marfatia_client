@@ -1,7 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Footer from "../Commponent/Footer";
-import Hader from "../Commponent/Hader";
 import HaderContent2 from "../Commponent/HaderContent2";
 
 const ResearchReport = () => {

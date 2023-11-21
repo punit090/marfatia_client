@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import HaderContent2 from "../Commponent/HaderContent2";
@@ -76,11 +76,16 @@ const AllNews = () => {
                     <h1 class="section-title">Stock Market News</h1>
                   </div>
                 </div>
-                <div className="row clearfix">
+                <Row className=" clearfix">
                   {arrayOfNews && arrayOfNews.length > 0 ? (
                     arrayOfNews.map((item) => (
                       <React.Fragment>
-                        <div className="col-lg-4 mt-4 col-md-6 col-sm-12 news-block">
+                        <Col
+                          lg="4"
+                          md="6"
+                          sm="12"
+                          className=" mt-4  news-block"
+                        >
                           <div
                             className="news-block-one wow fadeInUp animated"
                             data-wow-delay="00ms"
@@ -154,13 +159,13 @@ const AllNews = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </Col>
                       </React.Fragment>
                     ))
                   ) : (
                     <div>loading plese wait ...</div>
                   )}
-                </div>
+                </Row>
               </div>
             </section>
             {/* news-section end */}

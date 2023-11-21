@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { BsCheck2Circle, BsPlayCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import About2 from "./../assets/img/about-2.jpg";
@@ -9,9 +10,9 @@ const AboutOvrCompany = () => {
     <React.Fragment>
       {/* about-section */}
       <section className="about-section p_relative">
-        <div className="container">
-          <div className="row clearfix">
-            <div className="col-lg-6 col-md-12 col-sm-12 image-column">
+        <Container>
+          <Row className=" clearfix">
+            <Col lg="6" md="12" sm="12" className=" image-column">
               <div className="image_block_one">
                 <div className="image-box p_relative pr_50 mr_30">
                   <figure className="image image-1">
@@ -29,8 +30,8 @@ const AboutOvrCompany = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-6 col-md-12 col-sm-12 content-column">
+            </Col>
+            <Col lg="6" md="12" sm="12" className=" content-column">
               <div className="content_block_one">
                 <div className="content-box p_relative ml_30">
                   <div className="sec-title mb_25">
@@ -83,9 +84,9 @@ const AboutOvrCompany = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       {/* about-section end */}
     </React.Fragment>

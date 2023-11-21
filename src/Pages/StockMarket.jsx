@@ -8,9 +8,7 @@ import {
 } from "react-icons/ai";
 import { BsArrowDownUp } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import Hader from "../Commponent/Hader";
 import Categori from "./../Commponent/Categori";
-import Footer from "./../Commponent/Footer";
 import LatestNews from "./../Commponent/LatestNews";
 import StockBackground from "./../assets/img/page-title.jpg";
 import "./../css/elements-css/page-title.css";

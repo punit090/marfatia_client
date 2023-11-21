@@ -14,22 +14,8 @@ const Home = () => {
       <HaderSlider />
       {/* category section ---> */}
       <Categori />
-
-      {/* investor section --->  */}
-      {/* <Invester /> */}
-      {/* about comapny section ---> */}
-
       <AboutOvrCompany />
-
-      {/* services section ---->  */}
       <Services />
-      {/* counter section ---->  */}
-      {/* <Counter /> */}
-      {/* pricing section ---> */}
-      {/* <Pricing /> */}
-      {/* helpfullcontant section ----> */}
-      {/* <HelpFullContant /> */}
-      {/* latest news -->  */}
       <LatestNews />
       <marquee style={{ background: " #85c226", fontSize: "20px" }}>
         PLEASE LINKING YOUR AADHAR WITH YOUR DEMAT ACCOUNT

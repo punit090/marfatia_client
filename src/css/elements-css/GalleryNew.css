@@ -1,20 +1,32 @@
+.main .card,
+body {
+  color: #252a32;
+  background: #fff;
+}
+.main .card-image img,
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .galleryCard {
   border: 1px solid gray;
   padding: 13px;
   border-radius: 7px;
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 .titleLink {
-  padding: 10px 0px;
+  padding: 10px 0;
 }
+.gallery-container,
 .team-section.sec-pad {
-  padding: 40px 0px;
+  padding: 40px 0;
 }
 .mb_50 {
   margin-bottom: 50px;
 }
 .image {
-  /* height: 300px; */
   overflow: hidden;
   margin: 0 auto;
 }
@@ -23,43 +35,30 @@
 }
 .image img {
   width: 100%;
-  transition: 0.5s all ease-in-out;
+  transition: 0.5s ease-in-out;
 }
-
 .image:hover img {
   transform: scale(1.3);
 }
-
-/* Reset styles */
 *,
-*::before,
-*::after {
+::after,
+::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style: none;
-  list-style-type: none;
   text-decoration: none;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
-/* Body styles */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1.5;
-  color: #252a32; /* $color-black */
-  background: #ffffff; /* $color-white */
 }
-
-/* Container styles */
-
-/* Main section styles */
 .main .container {
-  /* display: grid; */
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   justify-content: center;
@@ -68,43 +67,29 @@ body {
 .galleryImgCol {
   padding: 15px;
 }
-/* Card styles */
 .main .card {
-  color: #252a32; /* $color-black */
   border-radius: 2px;
-  background: #ffffff; /* $color-white */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24); /* $box-shadow */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
 }
-
-/* Card image styles */
 .main .card-image {
   position: relative;
   display: block;
   width: 100%;
   padding-top: 70%;
-  background: #ffffff; /* $color-white */
+  background: #fff;
 }
-
 .main .card-image img {
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   max-width: 100% !important;
-  height: 100%;
   object-fit: cover;
-  border-radius: 0px !important;
+  border-radius: 0 !important;
 }
 .image-box-gallery {
   border: 1px solid gray;
   padding: 20px;
   border-radius: 7px;
 }
-.gallery-container {
-  padding: 40px 0px;
-}
-/* Media query for small screens */
 @media only screen and (max-width: 600px) {
   .main .container {
     display: grid;
@@ -112,72 +97,50 @@ body {
     grid-gap: 1rem;
   }
 }
-
 .gallery-card {
-  padding: 0px !important;
+  padding: 0 !important;
 }
-
-/* Add this CSS to your Gallery.css or create a new CSS file for styling */
-
-/* Style for the overlay when the modal is open */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999; /* Ensure the overlay is on top of other elements */
+  z-index: 999;
 }
-
-/* Style for the modal content */
 .slider-modal {
   position: relative;
-  z-index: 1000; /* Ensure the modal is on top of the overlay */
-  background-color: #fff; /* Background color for the modal */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for the modal */
-  max-width: 80%; /* Adjust the maximum width as needed */
-  max-height: 80%; /* Adjust the maximum height as needed */
-  /* Enable scrolling if the content overflows */
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+  max-height: 80%;
 }
-
-/* Style for the close button */
 .close-button {
   position: absolute;
-
   right: 10px;
-  background: none;
+  background: 0 0;
   border: none;
   color: #333;
   font-size: 25px;
   cursor: pointer;
   z-index: 999;
 }
-
-/* Style for the slider arrows (optional) */
 .image-gallery-left-nav,
 .image-gallery-right-nav {
-  /* Background color for the arrow buttons */
-  color: #ffffff;
+  color: #fff;
   border: none;
   font-size: 0px;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
 }
-
-/* Style for the slider arrow icon (optional) */
 .image-gallery-left-nav:before,
 .image-gallery-right-nav:before {
-  content: "\2039"; /* Unicode character for left arrow */
-  /* Your custom styles for the arrow icon */
+  content: "\2039";
 }
-
 .image-gallery-right-nav:before {
-  content: "\203A"; /* Unicode character for right arrow */
+  content: "\203A";
 }
 .image-gallery-left-nav .image-gallery-svg,
 .image-gallery-right-nav .image-gallery-svg {

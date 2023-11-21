@@ -1,18 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import Gallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useDispatch, useSelector } from "react-redux";
-import { BASE_API_URL } from "../helpers/apiHelper";
-// import galleryimage2 from "../../images/gallery-image2.png";
-// import galleryimage3 from "../../images/gallery-image3.png";
-// import galleryimage4 from "../../images/gallery-image4.png";
-// import galleryimage5 from "../../images/gallery-image5.png";
-import { Col, Row } from "react-bootstrap";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import HaderContent2 from "../Commponent/HaderContent2";
 import galleryimage1 from "../assets/img/gallary_category_Image.png";
 import "../css/elements-css/GalleryNew.css"; // Import your custom CSS for styling
+import { BASE_API_URL } from "../helpers/apiHelper";
 import {
   setCategory,
   storeGallery,
@@ -62,7 +58,6 @@ const GalleryPageNew = () => {
     useSelector((state) => state.selectedCategory) || "zasd";
 
   const arrayOfAllImages = useSelector((state) => state.gallery);
-
 
   const closeSlider = () => {
     setIsOpen(false);
@@ -114,21 +109,20 @@ const GalleryPageNew = () => {
       });
   };
 
-  
   const openSlider = (index) => {
     setSelectedImageIndex(index);
     const selectedCategoryId = arrayOfContents[index]._id;
-    
+
     const filteredImages = arrayOfAllImages.filter(
       (item) => item.gallaryCategoryId === selectedCategoryId
     );
-  
+
     const modifiedFilteredImages = filteredImages.map((item) => ({
       original: `${galleryFilesPath}/${item.imagePath}`,
       thumbnail: `${galleryFilesPath}/${item.imagePath}`,
       Title: item.imageTitle, // Assuming 'imageTitle' is a property of 'item'
     }));
-    
+
     setFilteredImages(modifiedFilteredImages);
     setIsOpen(true);
   };
@@ -166,14 +160,14 @@ const GalleryPageNew = () => {
                         />
                         <div className="lower-content">
                           <h5>
-                            <a
+                            <Link
                               className="lower-content"
                               onClick={(image) => {
                                 handleClick(image);
                               }}
                             >
                               {image.gallaryCategoryTitle}
-                            </a>
+                            </Link>
                           </h5>
                         </div>
                       </figure>
@@ -187,10 +181,7 @@ const GalleryPageNew = () => {
 
         {isOpen && (
           <div className="overlay">
-            <div
-              className="slider-modal"
-              
-            >
+            <div className="slider-modal">
               <button className="close-button" onClick={closeSlider}>
                 <AiOutlineCloseCircle></AiOutlineCloseCircle>
               </button>
@@ -208,9 +199,6 @@ const GalleryPageNew = () => {
           </div>
         )}
       </div>
-      {/* <Subscribe />
-      <Featured />
-      <MidFooter /> */}
     </>
   );
 };

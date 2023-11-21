@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import DynamicContent from "../../Commponent/dynamicContent";
-import HaderContent2 from "../../Commponent/HaderContent2";
-import { useSelector } from "react-redux";
+import React from "react";
 import { Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import HaderContent2 from "../../Commponent/HaderContent2";
 import ContentFooterButton from "../../Commponent/contentFooterButton";
+import DynamicContent from "../../Commponent/dynamicContent";
 
 const TheTeam = () => {
   const arrayOfContents = useSelector((state) => state.content);
@@ -15,12 +15,8 @@ const TheTeam = () => {
     <React.Fragment>
       <HaderContent2 Title="The Team" SubTitle="The Team" />
       <Container>
-
         <DynamicContent content={pageContent.content}></DynamicContent>
-
-        
         <ContentFooterButton></ContentFooterButton>
-
       </Container>
     </React.Fragment>
   );

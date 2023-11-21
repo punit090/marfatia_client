@@ -1,18 +1,15 @@
-.mainDivStock{
-    border: 1px solid;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #85c226;
-    color: #fff;
+.mainDivStock {
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #85c226;
+  color: #fff;
 }
-.stockFilterTitle{
-    color:#fff;
-    line-height:45px
+.stockFilterTitle,
+.stockLink {
+  color: #fff;
+  line-height: 45px;
 }
-.stockLink{
-    color:#fff;
-    line-height:45px
-}
-.tbaleLink{
-    color: #000;
+.tbaleLink {
+  color: #000;
 }

@@ -1,18 +1,9 @@
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect } from "react";
-import "./App.css";
-import WahtsappImg from "./assets/img/whatsapp.png";
-import "./css/animate.css";
-import "./css/bootstrap.css";
-import "./css/color.css";
-import "./css/elements-css/about.css";
-import "./css/elements-css/feature.css";
-import "./css/elpath.css";
-import "./css/responsive.css";
-// import "./css/flaticon.css";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import "./App.css";
 import ContentTesting from "./Commponent/ContentTest";
 import Footer from "./Commponent/Footer";
 import Hader from "./Commponent/Hader";
@@ -29,12 +20,18 @@ import News from "./Pages/News";
 import PrimiyamClint from "./Pages/PrimiyamClint";
 import ResearchReport from "./Pages/ResearchReport";
 import StockMarket from "./Pages/StockMarket";
-import TodaysTrade from "./Pages/TodaysTrade";
 import WithdrawlForm from "./Pages/WithdrawlForm";
 import CompanyProfile from "./Pages/aboutUs/CompanyProfile";
 import GalleryDetails from "./Pages/aboutUs/GalleryDetails";
+import WahtsappImg from "./assets/img/whatsapp.png";
+import "./css/animate.css";
+import "./css/bootstrap.css";
+import "./css/color.css";
+import "./css/elements-css/about.css";
 import "./css/elements-css/feature.css";
+import "./css/elpath.css";
 import "./css/main.css";
+import "./css/responsive.css";
 import { BASE_API_URL } from "./helpers/apiHelper";
 import { storeContent } from "./state/action";
 
@@ -73,19 +70,14 @@ function App() {
           <Route path="/stock-market" element={<StockMarket />} />
           <Route path="/premuium-client" element={<PrimiyamClint />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
-          {/* <Route path="/gallery" element={<Gallery />} /> */}
           <Route path="/gallery-details" element={<GalleryDetails />} />
           <Route path="/news" element={<News />} />
           <Route path="/mtual-fund-details" element={<MtualFundDetails />} />
           <Route path="/daily-tips" element={<DailyTips />} />
           <Route path="/research -report" element={<ResearchReport />} />
           <Route path="/withdrawl-form" element={<WithdrawlForm />} />
-          <Route path="/todays-online-trade" element={<TodaysTrade />} />
-          {/* <Route path="/careers" element={<Career />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/cms/:contentId" element={<DynamicContent />} />
-          {/* <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/gallery-new" element={<GalleryPageNew/>} /> */}
           <Route path="/complains" element={<Complain />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/all-news" element={<AllNews />} />

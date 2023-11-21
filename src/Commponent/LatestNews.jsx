@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./../css/elements-css/news.css";
 
@@ -82,11 +82,11 @@ const LatestNews = () => {
               Trade
             </h2>
           </div>
-          <div className="row clearfix">
+          <Row className=" clearfix">
             {arrayOfNews && arrayOfNews.length > 0 ? (
               arrayOfNews.map((item) => (
                 <React.Fragment>
-                  <div className="col-lg-4 mt-4 col-md-6 col-sm-12 news-block">
+                  <Col lg="4" md="6" sm="12" className=" mt-4  news-block">
                     <div
                       className="news-block-one wow fadeInUp animated"
                       data-wow-delay="00ms"
@@ -160,7 +160,7 @@ const LatestNews = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Col>
                 </React.Fragment>
               ))
             ) : (
@@ -171,7 +171,7 @@ const LatestNews = () => {
                 <Spinner animation="border" variant="primary" size="lg" />
               </div>
             )}
-          </div>
+          </Row>
         </div>
         <div className="more-btn ">
           <Link to="/all-news" className="theme-btn-one">

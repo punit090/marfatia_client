@@ -43,16 +43,16 @@ const WithdrawlForm = () => {
     clinetCode: Yup.string().required("Clinet Code  is  required "),
     name: Yup.string().required("Name  is  required "),
     segment: Yup.string().required("Segment  is  required "),
-    contactNumber: Yup.string().required("Contact number is required")
-    .matches(/^[0-9]+$/, "Contact number must contain only digits")
-    .min(10, "Contact number must be at least 10 digits")
-    .max(10, "Contact number cannot exceed 10 digits"),
+    contactNumber: Yup.string()
+      .required("Contact number is required")
+      .matches(/^[0-9]+$/, "Contact number must contain only digits")
+      .min(10, "Contact number must be at least 10 digits")
+      .max(10, "Contact number cannot exceed 10 digits"),
     panNo: Yup.string().required(" pan number  is  required "),
     withdraw: Yup.string().required(" withdraw amount  is  required "),
   });
 
   useEffect(() => {
-   
     const scrollTimeout = setTimeout(() => {
       window.scrollTo(0, 600);
     }, 100);

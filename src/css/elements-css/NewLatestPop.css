@@ -10,7 +10,6 @@
   align-items: center;
   z-index: 9999999999;
 }
-
 .popup-content {
   background: #efe4b0;
   padding: 10px;
@@ -20,7 +19,6 @@
 .croseIcon {
   text-align: left;
   font-size: 30px;
-
   color: red;
 }
 .iconDiv {

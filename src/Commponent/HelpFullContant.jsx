@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { AiFillBank, AiFillFile } from "react-icons/ai";
 import { BsPersonVcardFill } from "react-icons/bs";
 import { FaFileDownload, FaHandsHelping } from "react-icons/fa";
@@ -21,16 +22,9 @@ const HelpFullContant = () => {
           className="pattern-layer-2"
           style={{ backgroundImage: "url(assets/images/shape/shape-35.png)" }}
         />
-        <div className="container">
-          {/* <div className="sec-title centred light mb_60">
-            <span className="sub-title">What We Do</span>
-            <h2>
-              Provide the Best Consulting <br />
-              in This Industry
-            </h2>
-          </div> */}
-          <div className="row clearfix">
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+        <Container>
+          <Row className=" clearfix">
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInLeft animated"
                 data-wow-delay="00ms"
@@ -47,8 +41,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInUp animated"
                 data-wow-delay="00ms"
@@ -65,8 +59,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInRight animated"
                 data-wow-delay="00ms"
@@ -83,8 +77,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInLeft animated"
                 data-wow-delay="300ms"
@@ -101,8 +95,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInUp animated"
                 data-wow-delay="300ms"
@@ -119,8 +113,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInRight animated"
                 data-wow-delay="300ms"
@@ -137,8 +131,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInLeft animated"
                 data-wow-delay="00ms"
@@ -155,8 +149,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInUp animated"
                 data-wow-delay="00ms"
@@ -173,8 +167,8 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 service-block">
+            </Col>
+            <Col lg="4" md="6" sm="12" className=" service-block">
               <div
                 className="service-block-three wow fadeInRight animated"
                 data-wow-delay="00ms"
@@ -191,14 +185,9 @@ const HelpFullContant = () => {
                   </h3>
                 </div>
               </div>
-            </div>
-          </div>
-          {/* <div className="more-btn centred">
-            <Link  to="services.html" className="theme-btn-one">
-              More Services
-            </Link>
-          </div> */}
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       {/* service-style-three end */}
     </div>

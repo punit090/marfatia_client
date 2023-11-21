@@ -41,10 +41,11 @@ const QuickContact = () => {
 
   const schema = Yup.object().shape({
     name: Yup.string().required(" Name is required !!!"),
-    contactNo: Yup.string().required("Contact number is required")
-    .matches(/^[0-9]+$/, "Contact number must contain only digits")
-    .min(10, "Contact number must be at least 10 digits")
-    .max(10, "Contact number cannot exceed 10 digits"),
+    contactNo: Yup.string()
+      .required("Contact number is required")
+      .matches(/^[0-9]+$/, "Contact number must contain only digits")
+      .min(10, "Contact number must be at least 10 digits")
+      .max(10, "Contact number cannot exceed 10 digits"),
     subject: Yup.string().required("Subject is required !!!"),
     email: Yup.string()
       .required("Email is required")
@@ -137,8 +138,7 @@ const QuickContact = () => {
                         touched.contactNo &&
                         errors.contactNo}
                     </p>
-                    {/* <lable className="modalLable">Prefered Location *</lable>
-                    <Select className=" modalInput" options={options} /> */}
+
                     <label className="modalLable">Email *</label>
                     <input
                       type="email"

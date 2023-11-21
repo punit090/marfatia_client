@@ -40,7 +40,9 @@ const KeyManagerialPersonnels = () => {
                 <td> 9925002650</td>
                 <td>
                   {" "}
-                  <a href="mailto:marfatia_n@yahoo.co.in">marfatia_n@yahoo.co.in</a>
+                  <a href="mailto:marfatia_n@yahoo.co.in">
+                    marfatia_n@yahoo.co.in
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -50,7 +52,9 @@ const KeyManagerialPersonnels = () => {
                 <td> 9925002626</td>
                 <td>
                   {" "}
-                  <a href="mailto:Surendram@marfatia.net">Surendram@marfatia.net</a>
+                  <a href="mailto:Surendram@marfatia.net">
+                    Surendram@marfatia.net
+                  </a>
                 </td>
               </tr>
               <tr>
@@ -60,7 +64,9 @@ const KeyManagerialPersonnels = () => {
                 <td> 9925002610</td>
                 <td>
                   {" "}
-                  <a href="mailto:compliance@marfatia.net">compliance@marfatia.net</a>
+                  <Link to="mailto:compliance@marfatia.net">
+                    compliance@marfatia.net
+                  </Link>
                 </td>
               </tr>
             </tbody>
