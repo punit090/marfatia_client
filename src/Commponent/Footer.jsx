@@ -209,7 +209,7 @@ const Footer = () => {
                       </li>
                       <li>
                         <Link
-                          to={`${BASE_API_URL}/api/files/Disclosure_Document_September_2021_PMS.pdf`}
+                          to={`${BASE_API_URL}/api/files/PMS-Disclosure-Document_Sep_2023.pdf`}
                           target="_blanck"
                         >
                           PMS Disclosure

@@ -180,11 +180,11 @@ const Hader = () => {
               </div>
               <div className="menu-area clearfix">
                 {/*Mobile Navigation Toggler*/}
-                <div className="mobile-nav-toggler">
+                {/* <div className="mobile-nav-toggler">
                   <i className="icon-bar" />
                   <i className="icon-bar" />
                   <i className="icon-bar" />
-                </div>
+                </div> */}
                 <MobileHader />
                 <nav className="main-menu navbar-expand-md navbar-light">
                   <div

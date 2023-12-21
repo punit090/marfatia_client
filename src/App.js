@@ -22,6 +22,7 @@ import ResearchReport from "./Pages/ResearchReport";
 import StockMarket from "./Pages/StockMarket";
 import WithdrawlForm from "./Pages/WithdrawlForm";
 import CompanyProfile from "./Pages/aboutUs/CompanyProfile";
+import Gallery from "./Pages/aboutUs/Gallery";
 import GalleryDetails from "./Pages/aboutUs/GalleryDetails";
 import WahtsappImg from "./assets/img/whatsapp.png";
 import "./css/animate.css";
@@ -71,6 +72,7 @@ function App() {
           <Route path="/premuium-client" element={<PrimiyamClint />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/gallery-details" element={<GalleryDetails />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/news" element={<News />} />
           <Route path="/mtual-fund-details" element={<MtualFundDetails />} />
           <Route path="/daily-tips" element={<DailyTips />} />

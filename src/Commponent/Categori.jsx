@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { AiOutlineStock } from "react-icons/ai";
+import { AiFillSound, AiOutlineStock } from "react-icons/ai";
 import { BiCoinStack } from "react-icons/bi";
 import { HiOfficeBuilding } from "react-icons/hi";
 import { LiaPiggyBankSolid } from "react-icons/lia";
@@ -123,6 +123,22 @@ const Categori = () => {
                       <img src={EKyc} className="categoryIcon" alt="icon" />
                     </div>
                     <h5 className="categoryTitle">Close Kyc </h5>
+                  </div>
+                </Card>
+              </Link>
+            </Col>
+            <Col lg="3" md="6" sm="12">
+              <Link
+                className="categoryLink"
+                to="https://meon.co.in/"
+                target="_blank"
+              >
+                <Card className="categoryCard">
+                  <div className="mainDivCategory">
+                    <div>
+                      <AiFillSound className="categoryIcon" />
+                    </div>
+                    <h5 className="categoryTitle">IPO </h5>
                   </div>
                 </Card>
               </Link>
