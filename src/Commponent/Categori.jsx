@@ -130,7 +130,7 @@ const Categori = () => {
             <Col lg="3" md="6" sm="12">
               <Link
                 className="categoryLink"
-                to="https://meon.co.in/"
+                to="https://meon.space/static/marfatia/marfatia.html"
                 target="_blank"
               >
                 <Card className="categoryCard">
