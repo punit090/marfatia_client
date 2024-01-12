@@ -241,6 +241,14 @@ const Footer = () => {
                           SEBI SCORES
                         </Link>
                       </li>
+                      <li>
+                        <Link
+                          to="https://investor.sebi.gov.in/"
+                          target="_blanck"
+                        >
+                          SEBI
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
